@@ -61,19 +61,3 @@ export default class Header extends Component {
     )
   }
 }
-
-
-// <div className={`${this.style.bg} footer_container __footer`}>
-//   <div className={`${this.style.bg} ${this.style.color} container`}>
-//     <FooterItem className="four columns">TWITTER LINK</FooterItem>
-//     <div className={`${this.style.footer_item} ${this.style.color} footer_item four columns link`}>
-//
-//     </div>
-//     <div className={`${this.style.footer_item} ${this.style.color} footer_item four columns link`}>
-//       GITHUB LINK
-//     </div>
-//     <div className={`${this.style.footer_item} ${this.style.color} footer_item four columns link`}>
-//       EMAIL LINK
-//     </div>
-//   </div>
-// </div>

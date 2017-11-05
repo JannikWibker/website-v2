@@ -85,39 +85,3 @@ export default class Header extends Component {
     )
   }
 }
-
-
-// <div className={this.style.bg + ' header_out __header'}>
-//   <header className={this.style.bg + ' header'}>
-//     <div className={'header_icon'}>
-//       <span style={{cursor: "pointer"}}>
-//         <svg width="40" height="40" role="button" onClick={event.trigger.bind(this, 'theme', this.theme)}>
-//           <circle cx="20" cy="20" r="20" fill={this.theme.color}/>
-//         </svg>
-//       </span>
-//     </div>
-
-//     <div className={this.style.bg + ' header_container_nav'}>
-//
-//       <div className={`header_container header_container_left`}>
-//         {this.json__header.left.map((item, i) => {
-//           return (
-//             <span role="button" className={`${this.style.header_item} header_item link`} key={i}>
-//               <Link prefetch href={item.url}><a>{item.name}</a></Link>
-//             </span>
-//           )})}
-//       </div>
-//
-//       <div className={`${this.style__header_container_right} header_container header_container_right`}>
-//         {this.json__header.right.map((item, i) => {
-//           return (
-//             <span role="button" className={`${this.style.header_item} header_item link`} key={i}>
-//               <Link prefetch href={item.url}><a>{item.name}</a></Link>
-//             </span>
-//           )})}
-//       </div>
-//
-//     </div>
-//
-//   </header>
-// </div>
