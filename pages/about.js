@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Markdown from 'react-markdown'
 
 import Header from '../components/Header.js'
 import Footer from '../components/Footer.js'
@@ -7,6 +8,59 @@ import Main from '../components/Main.js'
 import Globals from '../components/Globals.js'
 import Terminal from '../components/Terminal.js'
 import TerminalInfo from '../components/TerminalInfo.js'
+
+const md_string = `
+### who am I?
+text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here  text goes here text goes here text goes here text goes here text goes here
+
+### personal info
+- name
+- age
+- location
+- languages
+
+### technical skills
+
+#### programming languages:
+- javascript
+- java
+- C/C++
+- python
+- lua
+
+#### web stuff & technologies:
+- javascript
+- [nodejs](https://nodejs.org)
+- [react](https://reactjs.org)
+- html & css
+
+#### programming related interests:
+- web development
+- compiler design
+- raspberry pi's & IoT / automation
+- neural networks and artificial intelligene
+- blockchain technology
+- mathematics
+
+#### OS stuff:
+- Linux
+- OS X
+- Windows
+
+#### favourite editors & tools:
+- [atom](https://atom.io)
+- [nodejs](https://nodejs.org)
+- [react](https://reactjs.org)
+- [markdown-preview-enhanced](https://shd101wyy.github.io/markdown-preview-enhanced/) (w/ [headless chrome](https://www.npmjs.com/package/puppeteer))
+- [sublime](https://www.sublimetext.com/3)
+- [IntelliJ](http://www.jetbrains.com/idea/)
+- [tmux](https://tmux.github.io)
+- [zsh (oh-my-zsh)](http://ohmyz.sh/)
+
+#### other:
+- LaTeX
+- Microsoft Office
+`
 
 const About = styled.div`
   background-color: black;
@@ -23,38 +77,36 @@ const Info = styled.div`
   margin: auto;
   text-align: left;
   font-family: 'Menlo';
-`
 
-const SmallText = styled.span`
-  font-family: 'Menlo';
-  font-size: 11px;
-  font-align: left
-`
-
-const NormalText = styled.span`
-  font-family: 'Menlo';
-  font-size: 12px;
-  font-align: left
-`
-
-const BigText = styled.span`
-  font-family: 'Menlo';
-  font-size: 14px;
-  font-align: left;
-  text-decoration: underline;
-`
-
-const LI = styled.li`
-  font-family: 'Menlo';
-  font-size: 11px;
-  list-style-type: decimal;
-`
-
-const Link = styled.a`
-  color: unset;
-  text-decoration: none;
-  :hover {
-    text-decoration: underline;
+  .markdown {
+    li {
+      font-family: 'Menlo';
+      font-size: 11px;
+      list-style-type: decimal;
+    }
+    h3 {
+      font-family: 'Menlo';
+      font-size: 14px;
+      font-align: left;
+      text-decoration: underline;
+    }
+    h4 {
+      font-family: 'Menlo';
+      font-size: 12px;
+      font-align: left
+    }
+    p {
+      font-family: 'Menlo';
+      font-size: 12px;
+      font-align: left
+    }
+    a {
+      color: unset;
+      text-decoration: none;
+      :hover {
+        text-decoration: underline;
+      }
+    }
   }
 `
 
@@ -74,62 +126,7 @@ export default class AboutPage extends Component {
           </Terminal>
           <br />
           <Info>
-            <BigText>personal info:</BigText><br />
-            <ul>
-              <LI>name: Jannik Wibker</LI>
-              <LI>age: 18</LI>
-              <LI>location: North-Rhein-Westphalia, Germany</LI>
-              <LI>languages: German, English, French</LI>
-            </ul>
-
-            <br /><br />
-            <BigText>technical skills:</BigText><br /><br />
-            <NormalText>programming languages:</NormalText>
-            <ul>
-              <LI>javascript</LI>
-              <LI>Java</LI>
-              <LI>C/C++</LI>
-              <LI>python</LI>
-              <LI>lua</LI>
-            </ul>
-            <NormalText>web stuff & technologies:</NormalText>
-            <ul>
-              <LI>javascript</LI>
-              <LI><Link href="https://nodejs.org">nodejs</Link></LI>
-              <LI><Link href="https://reactjs.org/">react</Link></LI>
-              <LI>html & css</LI>
-            </ul>
-            <NormalText>programming related interests:</NormalText>
-            <ul>
-              <LI>web development</LI>
-              <LI>compiler design</LI>
-              <LI>raspberry pi's & IoT / automation</LI>
-              <LI>neural networks and artificial intelligence</LI>
-              <LI>blockchain technology</LI>
-              <LI>mathematics</LI>
-            </ul>
-            <NormalText>OS stuff:</NormalText>
-            <ul>
-              <LI>Windows</LI>
-              <LI>Linux</LI>
-              <LI>OS X</LI>
-            </ul>
-            <NormalText>favourite editors / tools:</NormalText>
-            <ul>
-              <LI><Link href="https://atom.io">atom</Link></LI>
-              <LI><Link href="https://nodejs.org">nodejs</Link></LI>
-              <LI><Link href="https://reactjs.org/">react</Link></LI>
-              <LI><Link href="https://shd101wyy.github.io/markdown-preview-enhanced/">markdown-preview-enhanced</Link> (w/ <Link href="https://www.npmjs.com/package/puppeteer">headless chrome</Link>)</LI>
-              <LI><Link href="https://www.sublimetext.com/3">sublime</Link></LI>
-              <LI><Link href="http://www.jetbrains.com/idea/">IntelliJ</Link></LI>
-              <LI><Link href="https://tmux.github.io">tmux</Link></LI>
-              <LI><Link href="http://ohmyz.sh/">zsh (oh-my-zsh)</Link></LI>
-            </ul>
-            <NormalText>other:</NormalText>
-            <ul>
-              <LI>LaTeX</LI>
-              <LI>Microsoft Office</LI>
-            </ul>
+            <Markdown className="markdown" source={md_string} />
           </Info>
         </Main>
         <Footer />
