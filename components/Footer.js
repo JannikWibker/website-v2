@@ -4,14 +4,18 @@ import styled from 'styled-components'
 import Link from './Link.js'
 
 const FooterWrapper = styled.footer`
+  box-sizing: content-box;
   width: 100%;
-  height: 72px;
+  max-height:96px;
+  min-height: 32px;
   padding: 20px 0;
+  overflow: auto;
 `
 
 const FooterItem = styled.div`
   text-align: center;
   width: 100%;
+  height: 32px;
   font-family: Menlo, DejaVu Sans Mono, Lucida Console, monospace, sans-serif;
   font-weight: 100;
   font-size: 12px;
@@ -34,27 +38,21 @@ export default class Header extends Component {
     return (
       <FooterWrapper className="container">
         <FooterItem className="four columns">
-          <Link style={false} url={'https://twitter.com/JannikWibker'}>
-            <div>
+          <Link style={true} url={'https://twitter.com/JannikWibker'}>
               <img alt="Twitter" src={'/static/images/twitter.png'} />
               <span>@JannikWibker</span>
-            </div>
           </Link>
         </FooterItem>
-        <FooterItem  className="four columns">
-          <Link style={false} url={'https://github.com/JannikWibker'}>
-            <div>
+        <FooterItem className="four columns">
+          <Link style={true} url={'https://github.com/JannikWibker'}>
               <img alt="GitHub" src={'/static/images/github.png'} />
               <span>JannikWibker</span>
-            </div>
           </Link>
         </FooterItem>
-        <FooterItem  className="four columns">
-          <Link style={false} url={'mailto:jannikwibker@gmail.com'}>
-            <div>
+        <FooterItem className="four columns">
+          <Link style={true} url={'mailto:jannikwibker@gmail.com'}>
               <img alt="E-mail" src={'/static/images/email.png'} />
               <span>jannikwibker@gmail.com</span>
-            </div>
           </Link>
         </FooterItem>
       </FooterWrapper>
