@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Markdown from 'react-markdown'
+import markdown from 'markdown-in-js'
 
 import Header from '../components/Header.js'
 import Footer from '../components/Footer.js'
@@ -8,10 +8,46 @@ import Main from '../components/Main.js'
 import Globals from '../components/Globals.js'
 import Terminal from '../components/Terminal.js'
 import TerminalInfo from '../components/TerminalInfo.js'
+import Link from '../components/Link.js'
 
-const md_string = `
+const H3 = styled.h3`
+  font-family: 'Menlo';
+  font-size: 14px;
+  font-align: left;
+  text-decoration: underline;
+`
+
+const H4 = styled.h4`
+  font-family: 'Menlo';
+  font-size: 12px;
+  font-align: left
+`
+
+const A = styled.a`
+  color: unset;
+  text-decoration: none;
+  :hover {
+    text-decoration: underline;
+  }
+`
+
+const P = styled.p`
+  font-family: 'Menlo';
+  font-size: 12px;
+  font-align: left
+`
+
+const LI = styled.li`
+  font-family: 'Menlo';
+  font-size: 11px;
+  list-style-type: decimal;
+`
+
+const Markdown = markdown({h3: H3, h4: H4, a: Link, p: P, li: LI})`
 ### who am I?
-text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here  text goes here text goes here text goes here text goes here text goes here
+Obi-Wan: It's over Anakin, I have the high ground.<br />
+Anakin Skywalker: You underestimate my power!<br />
+Obi-Wan: Don't try it.
 
 ### personal info
 - name
@@ -77,37 +113,6 @@ const Info = styled.div`
   margin: auto;
   text-align: left;
   font-family: 'Menlo';
-
-  .markdown {
-    li {
-      font-family: 'Menlo';
-      font-size: 11px;
-      list-style-type: decimal;
-    }
-    h3 {
-      font-family: 'Menlo';
-      font-size: 14px;
-      font-align: left;
-      text-decoration: underline;
-    }
-    h4 {
-      font-family: 'Menlo';
-      font-size: 12px;
-      font-align: left
-    }
-    p {
-      font-family: 'Menlo';
-      font-size: 12px;
-      font-align: left
-    }
-    a {
-      color: unset;
-      text-decoration: none;
-      :hover {
-        text-decoration: underline;
-      }
-    }
-  }
 `
 
 export default class AboutPage extends Component {
@@ -126,7 +131,7 @@ export default class AboutPage extends Component {
           </Terminal>
           <br />
           <Info>
-            <Markdown className="markdown" source={md_string} />
+            {Markdown}
           </Info>
         </Main>
         <Footer />

@@ -38,19 +38,19 @@ export default class Header extends Component {
     return (
       <FooterWrapper className="container">
         <FooterItem className="four columns">
-          <Link style={true} url={'https://twitter.com/JannikWibker'}>
+          <Link style={true} href={'https://twitter.com/JannikWibker'}>
               <img alt="Twitter" src={'/static/images/twitter.png'} />
               <span>@JannikWibker</span>
           </Link>
         </FooterItem>
         <FooterItem className="four columns">
-          <Link style={true} url={'https://github.com/JannikWibker'}>
+          <Link style={true} href={'https://github.com/JannikWibker'}>
               <img alt="GitHub" src={'/static/images/github.png'} />
               <span>JannikWibker</span>
           </Link>
         </FooterItem>
         <FooterItem className="four columns">
-          <Link style={true} url={'mailto:jannikwibker@gmail.com'}>
+          <Link style={true} href={'mailto:jannikwibker@gmail.com'}>
               <img alt="E-mail" src={'/static/images/email.png'} />
               <span>jannikwibker@gmail.com</span>
           </Link>

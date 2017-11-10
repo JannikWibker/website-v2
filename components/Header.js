@@ -69,14 +69,14 @@ export default class Header extends Component {
           <HeaderLeft>
             {this.props.left.map((item, i) => (
               <HeaderItem role="button" key={i}>
-                <Link url={item.url} name={item.name} />
+                <Link style={true} href={item.url} name={item.name} />
               </HeaderItem>
             ))}
           </HeaderLeft>
           <HeaderRight>
             {this.props.right.map((item, i) => (
               <HeaderItem role="button" key={i}>
-                <Link url={item.url} name={item.name} />
+                <Link style={true} href={item.url} name={item.name} />
               </HeaderItem>
             ))}
           </HeaderRight>

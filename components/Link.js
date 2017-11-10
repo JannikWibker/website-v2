@@ -1,18 +1,32 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
+import isAbsolute from 'is-absolute-url'
 
-const _Link = styled.a`
+const A = styled.a`
   text-decoration: none;
   color: inherit;
   :hover {
     ${props => props.styled ? 'background-color: rgba(248,28,229,0.75);' : ''}
+    ${props => props.styled ? '' : 'text-decoration: underline;'}
   }
 `
 
+export default ({href, name, children, style=false}) => {
+  const isAnchor = href => href.charAt(0) === '#'
 
-export default ({url, name, children, style=true}) => (
-  <_Link styled={style} prefetch href={url}>
-    {name || children}
-  </_Link>
-)
+  return (isAnchor(href)
+      ? <A  styled={style} href={href}>
+          {name || children}
+        </A>
+      : isAbsolute(href)
+        ? <A  styled={style} href={href} target="_blank" rel="noreferrer noopener">
+            {name || children}
+          </A>
+        : <Link href={href} prefetch>
+            <A styled={style}>
+              {name || children}
+            </A>
+          </Link>)
+
+}
