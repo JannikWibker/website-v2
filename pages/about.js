@@ -50,10 +50,10 @@ Anakin Skywalker: You underestimate my power!<br />
 Obi-Wan: Don't try it.
 
 ### personal info
-- name
-- age
-- location
-- languages
+- name: Jannik Wibker
+- age: 18
+- location: North-Rhein-Westfalia, Germany
+- languages: english, german, (a bit of) french
 
 ### technical skills
 
