@@ -12,14 +12,14 @@ const A = styled.a`
   }
 `
 
-export default ({href, name, children, style=false}) => {
+export default ({href, name, children, style=false, ignore_prefetch=false}) => {
   const isAnchor = href => href.charAt(0) === '#'
 
   return (isAnchor(href)
       ? <A  styled={style} href={href}>
           {name || children}
         </A>
-      : isAbsolute(href)
+      : isAbsolute(href) || ignore_prefetch
         ? <A  styled={style} href={href} target="_blank" rel="noreferrer noopener">
             {name || children}
           </A>

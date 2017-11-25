@@ -1,32 +1,44 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
+import info from '../static/school_stuff/info.json'
+
 import Header from '../components/Header.js'
 import Footer from '../components/Footer.js'
 import Main from '../components/Main.js'
 import Globals from '../components/Globals.js'
+import Link from '../components/Link.js'
 
-const Index = styled.div`
+const path = '/static/school_stuff/'
+
+const SchoolStuff = styled.div`
   background-color: black;
   color: white;
+
+  .Terminal {
+    margin: auto;
+  }
 `
 
-
-export default class IndexPage extends Component {
+export default class SchoolStuffPage extends Component {
   constructor(props) {
     super(props)
   }
 
   render() {
     return (
-      <Index>
-        <Globals pathname={'/'} />
+      <SchoolStuff>
+        <Globals pathname={'/about'} />
         <Header left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/school_stuff', name: 'school_stuff'}]} right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]} />
         <Main>
-          Index
+          {info.files.map((file, i) => (
+            <div key={i}>
+              <Link style={true} href={path + file.file} name={file.name} ignore_prefetch={true} />
+            </div>
+          ))}
         </Main>
         <Footer />
-      </Index>
+      </SchoolStuff>
     )
   }
 }
