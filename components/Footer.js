@@ -8,7 +8,8 @@ const FooterWrapper = styled.footer`
   width: 100%;
   max-height:96px;
   min-height: 32px;
-  padding: 20px 0;
+  padding-bottom: 20px;
+  padding-top: 20px;
   overflow: auto;
 `
 

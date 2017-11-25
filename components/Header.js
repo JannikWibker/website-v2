@@ -35,7 +35,7 @@ const HeaderLeft = styled.nav`
 
 const HeaderRight = styled.nav`
   margin-top: -6px;
-  padding: 10px;
+  padding: 8px;
   padding-right: 0;
   position: absolute;
   top: 50%;
@@ -44,7 +44,7 @@ const HeaderRight = styled.nav`
 `
 
 const HeaderItem = styled.span`
-  padding: 10px;
+  padding: 8px;
   font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
