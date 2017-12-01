@@ -1,6 +1,6 @@
 {
   "files": [
-    {"name": "LTI Script", "file": "LTI_Netzwerke_script.pdf"},
-    {"name": "Info Script", "file": "info_script.pdf"}
+    {"name": "LTI Script", "file": "LTI_Netzwerke_script.pdf", "format": "pdf"},
+    {"name": "Info Script", "file": "info_script.pdf", "format": "pdf"}
   ]
 }

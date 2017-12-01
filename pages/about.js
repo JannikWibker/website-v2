@@ -124,7 +124,9 @@ export default class AboutPage extends Component {
     return (
       <About>
         <Globals pathname={'/about'} />
-        <Header left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/school_stuff', name: 'school_stuff'}]} right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]} />
+        <Header
+          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/school_stuff', name: 'school_stuff'}]}
+          right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]} />
         <Main>
           <Terminal title={'Terminal'}>
             <TerminalInfo />

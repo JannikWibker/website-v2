@@ -20,6 +20,14 @@ const SchoolStuff = styled.div`
   }
 `
 
+const Display = styled.div`
+  max-width: 80vw;
+  min-width: 20vw;
+  width: 448px;
+  text-align: left;
+  margin: auto;
+`
+
 export default class SchoolStuffPage extends Component {
   constructor(props) {
     super(props)
@@ -29,13 +37,22 @@ export default class SchoolStuffPage extends Component {
     return (
       <SchoolStuff>
         <Globals pathname={'/about'} />
-        <Header left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/school_stuff', name: 'school_stuff'}]} right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]} />
+        <Header
+          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/school_stuff', name: 'school_stuff'}]}
+          right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]} />
         <Main>
-          {info.files.map((file, i) => (
-            <div key={i}>
-              <Link style={true} href={path + file.file} name={file.name} ignore_prefetch={true} />
-            </div>
-          ))}
+          <Display>
+            <h3>pdf files</h3>
+            <ul>
+            {info.files
+              .filter(file => file.format === 'pdf')
+              .map((file, i) => (
+              <li key={i}>
+                <Link style={true} href={path + file.file} name={file.name} ignore_prefetch={true} />
+              </li>
+            ))}
+            </ul>
+          </Display>
         </Main>
         <Footer />
       </SchoolStuff>
