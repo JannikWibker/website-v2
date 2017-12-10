@@ -52,6 +52,9 @@ const HeaderItem = styled.span`
   > a {
     text-decoration: none;
   }
+  > a:hover {
+    color: white;
+  }
 `
 
 export default class Header extends Component {
