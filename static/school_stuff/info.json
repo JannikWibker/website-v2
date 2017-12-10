@@ -1,6 +1,8 @@
 {
   "files": [
     {"name": "LTI Script", "file": "LTI_Netzwerke_script.pdf", "format": "pdf"},
-    {"name": "Info Script", "file": "info_script.pdf", "format": "pdf"}
+    {"name": "Info Script", "file": "info_script.pdf", "format": "pdf"},
+    {"name": "Mathe Script Kl. 1", "file": "Mathe-14-10-17.pdf", "format": "pdf"},
+    {"name": "Mathe Script Kl. 2", "file": "Mathe-02-12-17.pdf", "format": "pdf"}
   ]
 }
