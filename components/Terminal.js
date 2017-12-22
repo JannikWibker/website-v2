@@ -77,7 +77,7 @@ export default class Terminal extends Component {
       margin: 36px 12px 0 12px;
       text-align: left;
       font-size: 10px;
-      font-family: "Menlo";
+      font-family: "Menlo", DejaVu Sans Mono, Lucida Console, monospace, sans-serif;
       color: white;
     `
   }

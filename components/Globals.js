@@ -26,6 +26,7 @@ export default ({pathname}) => (
       ::selection {
         background-color: rgba(248,28,229,0.75);
         color: white
+        color: white
       }
     `}</style>
   </Head>

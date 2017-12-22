@@ -11,14 +11,12 @@ import TerminalInfo from '../components/TerminalInfo.js'
 import Link from '../components/Link.js'
 
 const H3 = styled.h3`
-  font-family: 'Menlo';
   font-size: 14px;
   font-align: left;
   text-decoration: underline;
 `
 
 const H4 = styled.h4`
-  font-family: 'Menlo';
   font-size: 12px;
   font-align: left
 `
@@ -32,13 +30,11 @@ const A = styled.a`
 `
 
 const P = styled.p`
-  font-family: 'Menlo';
   font-size: 12px;
   font-align: left
 `
 
 const LI = styled.li`
-  font-family: 'Menlo';
   font-size: 11px;
   list-style-type: decimal;
 `
@@ -101,6 +97,7 @@ Obi-Wan: Don't try it.
 const About = styled.div`
   background-color: black;
   color: white;
+  font-family: "Menlo", DejaVu Sans Mono, Lucida Console, monospace, sans-serif;
 
   .Terminal {
     margin: auto;
@@ -112,7 +109,6 @@ const Info = styled.div`
   width: 450px;
   margin: auto;
   text-align: left;
-  font-family: 'Menlo';
 `
 
 export default class AboutPage extends Component {

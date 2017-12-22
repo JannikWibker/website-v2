@@ -17,7 +17,7 @@ const FooterItem = styled.div`
   text-align: center;
   width: 100%;
   height: 32px;
-  font-family: Menlo, DejaVu Sans Mono, Lucida Console, monospace, sans-serif;
+  font-family: "Menlo", DejaVu Sans Mono, Lucida Console, monospace, sans-serif;
   font-weight: 100;
   font-size: 12px;
   line-height: 32px;

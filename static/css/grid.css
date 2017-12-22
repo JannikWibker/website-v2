@@ -1,6 +1,9 @@
 @font-face {
   font-family: Menlo;
-  src: url(/static/font/Menlo-Regular.ttf)
+  font-display: optional;
+  src:  local("Menlo"),
+        url(/static/font/Menlo-Regular.woff2) format("woff2"),
+        url(/static/font/Menlo-Regular.ttf) format("ttf");
 }
 
 .container {
