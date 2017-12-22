@@ -54,7 +54,7 @@ export default class SchoolStuffPage extends Component {
             </ul>
           </Display>
         </Main>
-        <Footer />
+        <Footer color={'black'} />
       </SchoolStuff>
     )
   }

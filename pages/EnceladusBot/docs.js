@@ -149,8 +149,8 @@ export default class EnceladusBotDocsPage extends Component {
               <h3 id="Introduction">Introduction</h3>
               <p></p>
             </Paragraph>
-          {Object.keys(commands).map(cmd => commands[cmd]).map(cmd => (
-            <Paragraph>
+          {Object.keys(commands).map(cmd => commands[cmd]).map((cmd, i) => (
+            <Paragraph key={i}>
               <h3 id={cmd.headline}>{cmd.headline}</h3>
               <p>{cmd.description}</p>
               <code>{cmd.usage}</code>
@@ -158,7 +158,7 @@ export default class EnceladusBotDocsPage extends Component {
           ))}
           </MainSection>
         </Main>
-        <Footer />
+        <Footer color={'white'} />
       </Docs>
     )
   }

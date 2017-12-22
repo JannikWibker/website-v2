@@ -27,7 +27,7 @@ export default class EnceladusBotIndexPage extends Component {
         <Main>
           EnceladusBot
         </Main>
-        <Footer />
+        <Footer color={'white'} />
       </EnceladusBot>
     )
   }
