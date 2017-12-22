@@ -64,7 +64,7 @@ export default class Header extends Component {
         <HeaderIcon>
           <span>
             <svg width="40" height="40" role="button">
-              <circle cx="20" cy="20" r="20" fill="#fff" />
+              <circle cx="20" cy="20" r="20" fill={this.props.color ? this.props.color === 'black' ? '#fff' : '#000' : '#fff'} />
             </svg>
           </span>
         </HeaderIcon>

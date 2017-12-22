@@ -128,7 +128,8 @@ export default class EnceladusBotDocsPage extends Component {
         <Globals pathname={'/EnceladusBot'} />
         <Header
           left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/school_stuff', name: 'school_stuff'}]}
-          right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]} />
+          right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
+          color={'white'} />
         <Main>
           <SideNav>
             <ul>
