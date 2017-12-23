@@ -103,7 +103,7 @@ const commands = {
   qr: {
     headline: 'qr',
     description: 'create a QR code for the specified text',
-    usage: '/qr http://jannik.ddns.net/EnceladusBot'
+    usage: '/qr http://jannik.ddns.net/enceladusbot'
   },
   md: {
     headline: 'md',
@@ -133,7 +133,7 @@ export default class EnceladusBotDocsPage extends Component {
         <Main>
           <SideNav>
             <ul>
-              <li><Link href="/EnceladusBot">EnceladusBot/</Link></li>
+              <li><Link href="/enceladusbot">EnceladusBot/</Link></li>
               <li>
                 <ul>
                   <li><a href="#Introduction">Introduction</a></li>
