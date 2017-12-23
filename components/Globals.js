@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
 
-// <meta property="og:image" content="https://avatars3.githubusercontent.com/u/16372321?s=400&amp;v=4">
 export default ({pathname}) => (
   <Head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
