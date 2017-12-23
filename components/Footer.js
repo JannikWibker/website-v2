@@ -29,18 +29,31 @@ const FooterItem = styled.div`
     margin: -4px 4px;
   }
 
+  span {
+    text-decoration: none;
+    color: ${props => props.color}
+  }
+
   svg {
     width: 16px;
     height: 16px;
     margin: -4px 4px;
   }
-`
 
-const Text = styled.span`
-  text-decoration: none;
-  color: ${props => props.color};
-`
+  svg path:not([fill]) {
+    fill: ${props => props.color}
+  }
 
+  a:hover svg path:not([fill]) {
+    fill: #fff;
+  }
+
+  a:hover span {
+    color: #fff;
+  }
+
+
+`
 export default class Header extends Component {
   render() {
     const color = this.props.color
@@ -51,22 +64,22 @@ export default class Header extends Component {
 
     return (
       <FooterWrapper className="container">
-        <FooterItem className="four columns">
+        <FooterItem color={color} className="four columns">
           <Link style={true} href={'https://twitter.com/JannikWibker'}>
               <TwitterIcon alt="Twitter" color={color} />
-              <Text color={color}>@JannikWibker</Text>
+              <span>@JannikWibker</span>
           </Link>
         </FooterItem>
-        <FooterItem className="four columns">
+        <FooterItem color={color} className="four columns">
           <Link style={true} href={'https://github.com/JannikWibker'}>
               <GithubIcon alt="Github" color={color} />
-              <Text color={color}>JannikWibker</Text>
+              <span>JannikWibker</span>
           </Link>
         </FooterItem>
-        <FooterItem className="four columns">
+        <FooterItem color={color} className="four columns">
           <Link style={true} href={'mailto:jannikwibker@gmail.com'}>
               <EmailIcon alt="E-mail" color={color} />
-              <Text color={color}>jannikwibker@gmail.com</Text>
+              <span>jannikwibker@gmail.com</span>
           </Link>
         </FooterItem>
       </FooterWrapper>

@@ -9,6 +9,7 @@ const A = styled.a`
   :hover {
     ${props => props.styled ? 'background-color: rgba(248,28,229,0.75);' : ''}
     ${props => props.styled ? '' : 'text-decoration: underline;'}
+    ${props => props.styled ? 'color: white;' : ''}
   }
 `
 
