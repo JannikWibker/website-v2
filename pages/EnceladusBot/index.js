@@ -6,9 +6,14 @@ import Footer from '../../components/Footer.js'
 import Main from '../../components/Main.js'
 import Globals from '../../components/Globals.js'
 
+const color = {
+  bg: 'white',
+  text: 'black'
+}
+
 const EnceladusBot = styled.div`
-  background-color: black;
-  color: white;
+  background-color: ${color.bg};
+  color: ${color.text};
 `
 
 export default class EnceladusBotIndexPage extends Component {
@@ -21,13 +26,13 @@ export default class EnceladusBotIndexPage extends Component {
       <EnceladusBot>
         <Globals pathname={'/EnceladusBot'} />
         <Header
-          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/school_stuff', name: 'school_stuff'}]}
+          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
           right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
-          color="white" />
+          color={color.bg} />
         <Main>
           EnceladusBot
         </Main>
-        <Footer color={'white'} />
+        <Footer color={color.bg} />
       </EnceladusBot>
     )
   }

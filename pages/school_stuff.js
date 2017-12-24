@@ -11,9 +11,14 @@ import Link from '../components/Link.js'
 
 const path = '/static/school_stuff/'
 
+const color = {
+  bg: 'black',
+  text: 'white'
+}
+
 const SchoolStuff = styled.div`
-  background-color: black;
-  color: white;
+  background-color: ${color.bg};
+  color: ${color.text};
 
   .Terminal {
     margin: auto;
@@ -38,8 +43,9 @@ export default class SchoolStuffPage extends Component {
       <SchoolStuff>
         <Globals pathname={'/about'} />
         <Header
-          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/school_stuff', name: 'school_stuff'}]}
-          right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]} />
+          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
+          right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
+          color={color.bg} />
         <Main>
           <Display>
             <h3>pdf files</h3>
@@ -54,7 +60,7 @@ export default class SchoolStuffPage extends Component {
             </ul>
           </Display>
         </Main>
-        <Footer color={'black'} />
+        <Footer color={color.bg} />
       </SchoolStuff>
     )
   }

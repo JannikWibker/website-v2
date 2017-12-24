@@ -10,6 +10,11 @@ import Terminal from '../components/Terminal.js'
 import TerminalInfo from '../components/TerminalInfo.js'
 import Link from '../components/Link.js'
 
+const color = {
+  bg: 'black',
+  text: 'white'
+}
+
 const H3 = styled.h3`
   font-size: 14px;
   font-align: left;
@@ -95,8 +100,8 @@ Obi-Wan: Don't try it.
 `
 
 const About = styled.div`
-  background-color: black;
-  color: white;
+  background-color: ${color.bg};
+  color: ${color.text};
   font-family: "Menlo", DejaVu Sans Mono, Lucida Console, monospace, sans-serif;
 
   .Terminal {
@@ -121,8 +126,9 @@ export default class AboutPage extends Component {
       <About>
         <Globals pathname={'/about'} />
         <Header
-          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/school_stuff', name: 'school_stuff'}]}
-          right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]} />
+          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
+          right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
+          color={color.bg} />
         <Main>
           <Terminal title={'Terminal'}>
             <TerminalInfo />
@@ -132,7 +138,7 @@ export default class AboutPage extends Component {
             {Markdown}
           </Info>
         </Main>
-        <Footer color={'black'} />
+        <Footer color={color.bg} />
       </About>
     )
   }

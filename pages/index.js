@@ -6,9 +6,14 @@ import Footer from '../components/Footer.js'
 import Main from '../components/Main.js'
 import Globals from '../components/Globals.js'
 
+const color = {
+  bg: 'black',
+  text: 'white'
+}
+
 const Index = styled.div`
-  background-color: black;
-  color: white;
+  background-color: ${color.bg};
+  color: ${color.text};
 `
 
 
@@ -22,12 +27,13 @@ export default class IndexPage extends Component {
       <Index>
         <Globals pathname={'/'} />
         <Header
-          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/school_stuff', name: 'school_stuff'}]}
-          right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]} />
+          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
+          right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
+          color={color.bg} />
         <Main>
           Index
         </Main>
-        <Footer color={'black'} />
+        <Footer color={color.bg} />
       </Index>
     )
   }

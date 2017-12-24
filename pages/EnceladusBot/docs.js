@@ -8,9 +8,14 @@ import Globals from '../../components/Globals.js'
 
 import Link from '../../components/Link.js'
 
+const color = {
+  bg: 'white',
+  text: 'black'
+}
+
 const Docs = styled.div`
-  background-color: white;
-  color: black;
+  background-color: ${color.bg};
+  color: ${color.text};
 `
 
 const SideNav = styled.nav`
@@ -127,9 +132,9 @@ export default class EnceladusBotDocsPage extends Component {
       <Docs>
         <Globals pathname={'/EnceladusBot'} />
         <Header
-          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/school_stuff', name: 'school_stuff'}]}
+          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
           right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
-          color={'white'} />
+          color={color.bg} />
         <Main>
           <SideNav>
             <ul>
@@ -158,7 +163,7 @@ export default class EnceladusBotDocsPage extends Component {
           ))}
           </MainSection>
         </Main>
-        <Footer color={'white'} />
+        <Footer color={color.bg} />
       </Docs>
     )
   }
