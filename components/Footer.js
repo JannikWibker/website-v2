@@ -66,20 +66,20 @@ export default class Header extends Component {
       <FooterWrapper className="container">
         <FooterItem color={color} className="four columns">
           <Link style={true} href={'https://twitter.com/JannikWibker'}>
-              <TwitterIcon alt="Twitter" color={color} />
-              <span>@JannikWibker</span>
+              <TwitterIcon labelledby="twitter_username" alt="Twitter" color={color} />
+              <span id="twitter_username">@JannikWibker</span>
           </Link>
         </FooterItem>
         <FooterItem color={color} className="four columns">
           <Link style={true} href={'https://github.com/JannikWibker'}>
-              <GithubIcon alt="Github" color={color} />
-              <span>JannikWibker</span>
+              <GithubIcon labelledby="github_username" alt="Github" color={color} />
+              <span id="github_username">JannikWibker</span>
           </Link>
         </FooterItem>
         <FooterItem color={color} className="four columns">
           <Link style={true} href={'mailto:jannikwibker@gmail.com'}>
-              <EmailIcon alt="E-mail" color={color} />
-              <span>jannikwibker@gmail.com</span>
+              <EmailIcon labelledby="email_adress" alt="E-mail" color={color} />
+              <span id="email_adress">jannikwibker@gmail.com</span>
           </Link>
         </FooterItem>
       </FooterWrapper>

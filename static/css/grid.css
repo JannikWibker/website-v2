@@ -1,11 +1,3 @@
-@font-face {
-  font-family: Menlo;
-  font-display: optional;
-  src:  local("Menlo"),
-        url(/static/font/Menlo-Regular.woff2) format("woff2"),
-        url(/static/font/Menlo-Regular.ttf) format("ttf");
-}
-
 .container {
   position: relative;
   width: 100%;

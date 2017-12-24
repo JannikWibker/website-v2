@@ -24,7 +24,7 @@ export default class LRMSIndexPage extends Component {
   render() {
     return (
       <LRMS>
-        <Globals pathname={'/LRMS'} />
+        <Globals pathname={'/LRMS'} color={color.bg} />
         <Header
           left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
           right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}

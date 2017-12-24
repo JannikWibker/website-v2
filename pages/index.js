@@ -25,7 +25,7 @@ export default class IndexPage extends Component {
   render() {
     return (
       <Index>
-        <Globals pathname={'/'} />
+        <Globals pathname={'/'} color={color.bg} />
         <Header
           left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
           right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
