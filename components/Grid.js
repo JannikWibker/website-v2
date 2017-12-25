@@ -1,12 +1,42 @@
-/* .container{position:relative;width:100%;max-width:960px;margin:0 auto;padding:0;box-sizing:border-box;}
-.column,.columns {width:100%;float:left;box-sizing:border-box;}
+import styled from 'styled-components'
 
-@media(min-width:400px){.container{width:85%;padding:0;}} */
+const Grid = styled.div`
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-@media(min-width:750px){
-  /* .container{width:80%;padding-top:20px;padding-bottom:20px;}
-  .column,.columns{margin-left:4%;}
-  .column:first-child,.columns:first-child{margin-left:0;} */
+  .column, .columns {
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+  }
+
+  @media(min-width:400px) {
+    .container {
+      width: 85%;
+      padding: 0;
+    }
+  }
+
+  @media(min-width:750px) {
+    .container {
+      width:80%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .column, .columns {
+      margin-left:4%;
+    }
+    .column:first-child, .columns:first-child {
+      margin-left: 0;
+    }
+  }
 
   .one.column,.one.columns {width:4.66666666667%;}
   .two.columns       {width:13.3333333333%;}
@@ -40,4 +70,6 @@
   .offset-by-one-third.column,.offset-by-one-third.columns   {margin-left:34.6666666667%;}
   .offset-by-two-thirds.column,.offset-by-two-thirds.columns {margin-left:69.3333333333%;}
   .offset-by-one-half.column,.offset-by-one-half.columns     {margin-left:52%;}
-}
+`
+
+export default Grid

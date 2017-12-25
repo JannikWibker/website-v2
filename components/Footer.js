@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { EmailIcon, TwitterIcon, GithubIcon } from './Icon.js'
 
 import Link from './Link.js'
+import Grid from './Grid.js'
 
 const FooterWrapper = styled.footer`
   box-sizing: content-box;
@@ -63,26 +64,28 @@ export default class Header extends Component {
       : '#fff'
 
     return (
-      <FooterWrapper className="container">
-        <FooterItem color={color} className="four columns">
-          <Link style={true} href={'https://twitter.com/JannikWibker'}>
-              <TwitterIcon labelledby="twitter_username" alt="Twitter" color={color} />
-              <span id="twitter_username">@JannikWibker</span>
-          </Link>
-        </FooterItem>
-        <FooterItem color={color} className="four columns">
-          <Link style={true} href={'https://github.com/JannikWibker'}>
-              <GithubIcon labelledby="github_username" alt="Github" color={color} />
-              <span id="github_username">JannikWibker</span>
-          </Link>
-        </FooterItem>
-        <FooterItem color={color} className="four columns">
-          <Link style={true} href={'mailto:jannikwibker@gmail.com'}>
-              <EmailIcon labelledby="email_adress" alt="E-mail" color={color} />
-              <span id="email_adress">jannikwibker@gmail.com</span>
-          </Link>
-        </FooterItem>
-      </FooterWrapper>
+      <Grid>
+        <FooterWrapper className="container">
+          <FooterItem color={color} className="four columns">
+            <Link style={true} href={'https://twitter.com/JannikWibker'}>
+                <TwitterIcon labelledby="twitter_username" alt="Twitter" color={color} />
+                <span id="twitter_username">@JannikWibker</span>
+            </Link>
+          </FooterItem>
+          <FooterItem color={color} className="four columns">
+            <Link style={true} href={'https://github.com/JannikWibker'}>
+                <GithubIcon labelledby="github_username" alt="Github" color={color} />
+                <span id="github_username">JannikWibker</span>
+            </Link>
+          </FooterItem>
+          <FooterItem color={color} className="four columns">
+            <Link style={true} href={'mailto:jannikwibker@gmail.com'}>
+                <EmailIcon labelledby="email_adress" alt="E-mail" color={color} />
+                <span id="email_adress">jannikwibker@gmail.com</span>
+            </Link>
+          </FooterItem>
+        </FooterWrapper>
+      </Grid>
     )
   }
 }
