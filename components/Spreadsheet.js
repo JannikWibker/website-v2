@@ -53,6 +53,25 @@ const Table = styled.table`
   }
 `
 
+const round = (number, decimals) => Number(Math.round(number + 'e' + decimals) + 'e-' + decimals)
+
+const format_data = (data, tp, stp, r_dec) => {
+  if(typeof data === 'undefined') throw Error('no data defined')
+  else if(typeof tp === 'undefined') throw Error('no type defined')
+  if(tp === 'NUMBER') {
+    if(stp === 'PERCENTAGE' && r_dec) return round(data * 100, r_dec) + '%'
+    if(stp === 'PERCENTAGE') return (data * 100) + '%'
+    if(r_dec) return round(data, r_dec)
+    else return data
+  } else if(tp === 'STRING') {
+    if(stp === 'UPPERCASE') return data.toUpperCase()
+    if(stp === 'LOWERCASE') return data.toLowerCase()
+    else return data
+  } else {
+    return data
+  }
+}
+
 const range = (l) => [...Array(l)].map((x,i) => i)
 
 const destructur = (obj, template) => {
@@ -152,7 +171,7 @@ export default class Spreadsheet extends Component {
     this.forceUpdate()
   }
 
-  generic_cell(id, contents, editable=false, isBorder=false, cb) {
+  generic_cell(id, contents, editable=false, isBorder=false, cb, raw_data) {
     return isBorder
       ? <th id={id} key={id}><div><span>{contents}</span></div></th>
       : (
@@ -160,7 +179,7 @@ export default class Spreadsheet extends Component {
         <div>
           {!editable
             ? <span>{contents}</span>
-            : <Editable cb={cb}>{contents}</Editable>}
+            : <Editable raw_data={raw_data} cb={cb}>{contents}</Editable>}
         </div>
       </td>
     )
@@ -173,7 +192,9 @@ export default class Spreadsheet extends Component {
       this.data[s[0]][s[1]].vl = parseFloat(value)
       this.update(cell.id)
     }
-    return this.generic_cell(s[0] + '.' + s[1], this.g(cell.id, cell.id, true, cell.id), editable, false, cb)
+
+    const v = this.g(cell.id, cell.id, true, cell.id)
+    return this.generic_cell(s[0] + '.' + s[1], format_data(v, cell.tp, cell.stp, cell.r_dec || this.props.options.rounding), editable, false, cb, v)
   }
 
   render() {
