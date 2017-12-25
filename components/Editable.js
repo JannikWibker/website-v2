@@ -22,8 +22,9 @@ export default class Editable extends Component {
 
     this.state = {
       editing: false,
-      old_text: this.props.text || this.props.children,
-      text: this.props.text || this.props.children
+      old_text: this.props.raw_data || this.props.text || this.props.children,
+      text: this.props.raw_data || this.props.text || this.props.children,
+      pretty_text: this.props.text || this.props.children
     }
 
     this.startEdit = this.startEdit.bind(this)
@@ -35,10 +36,10 @@ export default class Editable extends Component {
 
   componentWillReceiveProps(nextProps) {
     console.log(nextProps)
-    const newText = nextProps.text || nextProps.children
+    const newText = nextProps.raw_data || nextProps.text || nextProps.children
     if(newText !== this.state.text) {
       console.log('text has changed: ', newText, this.state.text)
-      this.setState({old_text: newText, text: this.state.editing ? this.state.text : newText})
+      this.setState({old_text: newText, text: this.state.editing ? this.state.text : newText, pretty_text: nextProps.text || nextProps.children})
     }
   }
 
@@ -77,6 +78,17 @@ export default class Editable extends Component {
           onKeyDown={this.onKeyDown}
           defaultValue={this.state.text}
           innerRef={el => this.el = el} />
-        : <span onClick={this.startEdit}>{this.state.text}</span>
+        : <span onClick={this.startEdit}>{this.state.pretty_text}</span>
   }
 }
+
+
+
+/*
+
+behavior with raw data:
+it should show the prettified (non-raw) data in the span and as soon as
+the user clicks on the span switch to an input field with the raw data in it
+the user can edit the raw data and as soon as he modifies it the callback function is called
+and the span now shows the new prettified data and not the old one
+*/
