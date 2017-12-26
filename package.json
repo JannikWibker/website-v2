@@ -4,12 +4,13 @@
   "scripts": {
     "dev": "node main.js dev",
     "build": "next build",
-    "start": "next start"
+    "start": "node main.js"
   },
   "author": "Jannik Wibker",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "compression": "^1.7.1",
     "express": "^4.16.2",
     "is-absolute-url": "^2.1.0",
