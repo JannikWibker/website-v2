@@ -5,6 +5,20 @@ import { EmailIcon, TwitterIcon, GithubIcon } from './Icon.js'
 import Link from './Link.js'
 import Grid from './Grid.js'
 
+const Offset = styled.div`
+  @media(min-width:400px) {
+    float: left;
+    position: relative;
+    display: inline-block;
+    width: 4%;
+    height: 32px;
+  }
+
+  @media(min-width:750px) {
+    display: none;
+  }
+`
+
 const FooterWrapper = styled.footer`
   box-sizing: content-box;
   width: 100%;
@@ -24,17 +38,6 @@ const FooterItem = styled.div`
   font-size: 12px;
   line-height: 32px;
 
-  img {
-    width: 16px;
-    height: 16px;
-    margin: -4px 4px;
-  }
-
-  span {
-    text-decoration: none;
-    color: ${props => props.color}
-  }
-
   svg {
     width: 16px;
     height: 16px;
@@ -53,6 +56,34 @@ const FooterItem = styled.div`
     color: #fff;
   }
 
+  @media(min-width:400px) {
+
+    display: inline-block;
+
+    span {
+      display: none;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  @media(min-width:750px) {
+
+    img {
+      width: 16px;
+      height: 16px;
+      margin: -4px 4px;
+    }
+
+    span {
+      display: inline;
+      text-decoration: none;
+      color: ${props => props.color}
+    }
+  }
 
 `
 export default class Header extends Component {
@@ -72,12 +103,14 @@ export default class Header extends Component {
                 <span id="twitter_username">@JannikWibker</span>
             </Link>
           </FooterItem>
+          <Offset />
           <FooterItem color={color} className="four columns">
             <Link style={true} href={'https://github.com/JannikWibker'}>
                 <GithubIcon labelledby="github_username" alt="Github" color={color} />
                 <span id="github_username">JannikWibker</span>
             </Link>
           </FooterItem>
+          <Offset />
           <FooterItem color={color} className="four columns">
             <Link style={true} href={'mailto:jannikwibker@gmail.com'}>
                 <EmailIcon labelledby="email_adress" alt="E-mail" color={color} />
