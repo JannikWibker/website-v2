@@ -6,6 +6,7 @@ import info from '../static/school_stuff/info.json'
 import Header from '../components/Header.js'
 import Footer from '../components/Footer.js'
 import Main from '../components/Main.js'
+import Display from '../components/Display.js'
 import Globals from '../components/Globals.js'
 import Link from '../components/Link.js'
 
@@ -35,14 +36,6 @@ const Projects = styled.div`
     content: "\uFE61";
     padding-right: 6px;
   }
-`
-
-const Display = styled.div`
-  max-width: 80vw;
-  min-width: 20vw;
-  width: 448px;
-  text-align: left;
-  margin: auto;
 `
 
 const Indent = styled.div`
