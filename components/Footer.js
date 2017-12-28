@@ -38,6 +38,10 @@ const FooterItem = styled.div`
   font-size: 12px;
   line-height: 32px;
 
+  div {
+    width: 100%;
+  }
+
   svg {
     width: 16px;
     height: 16px;
@@ -99,22 +103,22 @@ export default class Header extends Component {
         <FooterWrapper className="container">
           <FooterItem color={color} className="four columns">
             <Link style={true} href={'https://twitter.com/JannikWibker'}>
-                <TwitterIcon labelledby="twitter_username" alt="Twitter" color={color} />
-                <span id="twitter_username">@JannikWibker</span>
+              <TwitterIcon labelledby="twitter_username" alt="Twitter" color={color} />
+              <span id="twitter_username">@JannikWibker</span>
             </Link>
           </FooterItem>
           <Offset />
           <FooterItem color={color} className="four columns">
             <Link style={true} href={'https://github.com/JannikWibker'}>
-                <GithubIcon labelledby="github_username" alt="Github" color={color} />
-                <span id="github_username">JannikWibker</span>
+              <GithubIcon labelledby="github_username" alt="Github" color={color} />
+              <span id="github_username">JannikWibker</span>
             </Link>
           </FooterItem>
           <Offset />
           <FooterItem color={color} className="four columns">
             <Link style={true} href={'mailto:jannikwibker@gmail.com'}>
-                <EmailIcon labelledby="email_adress" alt="E-mail" color={color} />
-                <span id="email_adress">jannikwibker@gmail.com</span>
+              <EmailIcon labelledby="email_adress" alt="E-mail" color={color} />
+              <span id="email_adress">jannikwibker@gmail.com</span>
             </Link>
           </FooterItem>
         </FooterWrapper>

@@ -6,9 +6,14 @@ const Main = styled.main`
   font-size: 14px;
   text-align: center;
   font-weight: 300;
+  overflow: auto;
 
   @media(min-width:400px) {
     min-height: calc(100vh - 110px - 32px);
+  }
+
+  @media(min-width:750px) {
+    min-height: calc(100vh - 110px - 72px);
   }
 `
 
