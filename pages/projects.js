@@ -46,6 +46,7 @@ const projects = [
   {name: 'EnceladusBot', url: '/enceladusbot'},
   {name: 'LRMS', url: '/lrms'},
   {name: 'Spreadsheets', url: '/spreadsheets'},
+  {name: 'html_to_md', url: '/html_to_md'}
 ]
 
 export default class ProjectsPage extends Component {

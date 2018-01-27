@@ -1,8 +1,10 @@
 {
   "files": [
-    {"name": "LTI Script", "file": "LTI_Netzwerke_script.pdf", "format": "pdf"},
-    {"name": "Info Script", "file": "info_script.pdf", "format": "pdf"},
-    {"name": "Mathe Script Kl. 1", "file": "Mathe-14-10-17.pdf", "format": "pdf"},
-    {"name": "Mathe Script Kl. 2", "file": "Mathe-02-12-17.pdf", "format": "pdf"}
+    {"name": "LTI Script Kl. 1", "file": "LTI_Netzwerke_script_1.pdf", "format": "pdf"},
+    {"name": "LTI Script Kl. 2", "file": "LTI_Netzwerke_script_2.pdf", "format": "pdf"},
+    {"name": "Info Script Kl. 1", "file": "info_script_1.pdf", "format": "pdf"},
+    {"name": "Info Script Kl. 2", "file": "info_script_2.pdf", "format": "pdf"},
+    {"name": "Mathe Script Kl. 1", "file": "Mathe_script_1.pdf", "format": "pdf"},
+    {"name": "Mathe Script Kl. 2", "file": "Mathe_script_2.pdf", "format": "pdf"}
   ]
 }
