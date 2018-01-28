@@ -1,48 +1,103 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import Link from '../Link.js'
+import isNode from '../../util/isNode.js'
 
-const SideNav = styled.nav`
-  width: 128px;
-  padding: 10px;
+const SideNav = styled.div`
+  width: 144px;
   text-align: left;
-  float: left;
+  float: left
+`
 
-  > ul {
-    padding-left: 20px;
-  }
+const Category = styled.div`
 
-  > ul > li > ul {
-    padding-left: 20px;
-  }
+`
 
-  > ul > li > ul > li > a, > ul li > a {
-    text-decoration: none
-  }
+const Label = styled.div`
+  padding-left: 30px;
+  margin: 0 0 15px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 400;
+  color: #888;
+  cursor: default;
+  paddding-left: 30px;
+`
 
-  > ul > li > ul > li > a:hover {
-    background-color: rgba(248,28,229,0.75);
-    color: white;
-  }
-
-  > ul > li > a:hover {
-    background-color: rgba(248,28,229,0.75)
-    color: white;
+const Item = styled.div`
+  > div a {
+    text-decoration: none;
+    font-size: 14px;
+    box-sizing: border-box;
+    color: black;
   }
 `
 
-export default ({items, headline, headline_link}) => (
-  <SideNav>
-    <ul>
-      <li><Link href={headline_link}>{headline}/</Link></li>
-      <li>
-        <ul>
-          {items.map(item =>
-            <li key={item}><a href={'#' + item}>{item}</a></li>
-          )}
-        </ul>
-      </li>
-    </ul>
-  </SideNav>
-)
+const NotSelected = styled.div`
+  padding: 4px 10px 4px 30px;
+`
+
+const Selected = styled.div`
+  border-left: 4px solid black;
+  box-sizing: border-box;
+  padding: 4px 10px 4px 26px;
+
+  a {
+    font-weight: 600;
+    color: black;
+  }
+`
+
+export default class SideBar extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      route: ''
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(this.props.selected, nextProps.selected)
+    this.setState({ route: nextProps.selected })
+  }
+
+  componentWillMount() {
+    this.props.cb(!isNode && location.hash
+      ? location.hash.substring(1)
+      : Object.keys(this.props.data[Object.keys(this.props.data)[0]])[0]
+    )
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount component mounted; should update now')
+    this.setState({
+      route: !isNode && location.hash ? location.hash.substring(1) : 'html_to_md'
+    }, x => console.log('componentDidMount', this.state))
+  }
+
+  render() {
+    console.log({props: this.props, state: this.state})
+    return (
+      <SideNav>
+        {Object.keys(this.props.data).map((category, i) => (
+          <Category key={i}>
+            <Label>{category}</Label>
+            <div>
+              {Object.keys(this.props.data[category]).map((item, i) => (
+                <Item key={i}>
+                  {this.state.route === item
+                    ? <Selected><a onClick={this.props.cb.bind(this, item)} href={'#' + item}>{item}</a></Selected>
+                    : <NotSelected><a onClick={this.props.cb.bind(this, item)} href={'#' + item}>{item}</a></NotSelected>
+                  }
+                </Item>
+              ))}
+            </div>
+          </Category>
+        ))}
+      </SideNav>
+    )
+  }
+}
