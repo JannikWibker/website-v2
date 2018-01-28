@@ -7,7 +7,7 @@ import Main from '../../components/Main.js'
 import Globals from '../../components/Globals.js'
 
 import Sidebar from '../../components/docs/Sidebar.js'
-import Paragraph from '../../components/docs/Paragraph.js'
+import { Paragraph, P, Code, Codeblock } from '../../components/docs/Paragraph.js'
 import MainSection from '../../components/docs/Main.js'
 
 import Link from '../../components/Link.js'
@@ -25,35 +25,35 @@ const Docs = styled.div`
 const info = {
   'enceladusbot': {
     Introduction: [
-      <p></p>
+      <P>EnceladusBot is a telegram bot (@<strong>EnceladusBot</strong>)</P>
     ],
     author: [
-      <p>returns my name and telegram username</p>,
-      <code>/author</code>
+      <P>returns my name and telegram username</P>,
+      <Codeblock>/author</Codeblock>
     ],
     homepage: [
-      <p>returns the homepage of the bot</p>,
-      <code>/homepage</code>
+      <P>returns the homepage of the bot</P>,
+      <Codeblock>/homepage</Codeblock>
     ],
     github: [
-      <p>returns my github profile</p>,
-      <code>/github</code>
+      <P>returns my github profile</P>,
+      <Codeblock>/github</Codeblock>
     ],
     src: [
-      <p>returns the github repo with the source code of this bot</p>,
-      <code>/src</code>
+      <P>returns the github repo with the source code of this bot</P>,
+      <Codeblock>/src</Codeblock>
     ],
     qr: [
-      <p>create a QR code for the specified text</p>,
-      <code>/qr http://jannik.ddns.net/enceladusbot</code>
+      <P>create a QR code for the specified text</P>,
+      <Codeblock>/qr http://jannik.ddns.net/enceladusbot</Codeblock>
     ],
     md: [
-      <p>create a pdf from the specified markdown (supports LaTeX math syntax, dot diagrams, ...; uses mume and puppeteer under the hood)</p>,
-      <code>{'/md this is the **sum** for calculating the *left sum* for a given $f(x)$ from $0$ to $l$ and with a stepsize of $s$: $$\\sum_{i=0}^{\\frac{l}{s}} f(i \\cdot s) \\cdot s$$'}</code>
+      <P>create a pdf from the specified markdown (supports LaTeX math syntax, dot diagrams, ...; uses mume and puppeteer under the hood)</P>,
+      <Codeblock>{'/md this is the **sum** for calculating the *left sum* for a given $f(x)$ from $0$ to $l$ and with a stepsize of $s$: $$\\sum_{i=0}^{\\frac{l}{s}} f(i \\cdot s) \\cdot s$$'}</Codeblock>
     ],
     lmgtfy: [
-      <p>create a lmgtfy link for the specified text</p>,
-      <code>/lmgtfy how to use let me google that for you</code>
+      <P>create a lmgtfy link for the specified text</P>,
+      <Codeblock>/lmgtfy how to use let me google that for you</Codeblock>
     ]
   }
 }

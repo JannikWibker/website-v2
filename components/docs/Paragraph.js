@@ -1,49 +1,82 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Paragraph = styled.div`
-  text-align: left;
+const P = styled.p`
+  font-weight: 400px;
+  font-size: 14px;
+`
+
+const Codeblock = styled.code`
+  font-family: 'Menlo';
+  display: block;
   min-width: 200px;
-  max-width: calc(100vw - 256px);
+  font-size: 13px;
+  line-height: 20px;
+  border: 1px solid rgb(234, 234, 234);
+  border-image: initial;
+  padding: 8px;
+  overflow: auto;
+`
 
-  > span > h3, > h3 {
-    font-weight: bold;
-    font-size: 18px;
-  }
+const Code = styled.code`
+  font-family: 'Menlo';
+  margin: 0 2px 0 2px;
+`
 
-  > span > h3 > a, > h3 > a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  > span > h3 > a:hover, > h3 > a:hover {
+const H3 = styled.h3`
+  :hover {
     text-decoration: underline;
   }
 
-  > span > p, > p {
-    font-weight: 400;
-    font-size: 14px;
-  }
-
-  code {
-    font-family: 'Menlo';
-  }
-
-  > span > code, > code {
-    display: block;
-    min-width: 200px;
-    font-size: 13px;
-    line-height: 20px;
-    border: 1px solid rgb(234, 234, 234);
-    border-image: initial;
-    padding: 8px;
-    overflow: auto;
+  > a {
+    text-decoration: none;
+    color: inherit
   }
 `
 
-export default ({paragraph, headline, children, cb=() => {}}) => (
-  <Paragraph>
-    <h3 id={headline}><a onClick={() => cb(headline)} href={'#' + headline}>{headline}</a></h3>
-    {children}
-  </Paragraph>
+const Note = styled.p`
+  color: rgb(153, 153, 153);
+  font-size: 14px;
+  text-align: left;
+  margin: 16px 24px;
+`
+
+const SmallNote = Note.extend`
+  font-size: 12px;
+`
+
+const BlockquoteWrapper = styled.blockquote`
+  border-left: 5px solid rgb(0, 0, 0); // #e2e2e2;
+
+  font-size: 14px;
+  color: rgb(153, 153, 153);
+  text-align: left;
+  padding: 8px 16px;
+  margin: 10px 0px;
+
+  div {
+    margin: 0px;
+    margin-bottom: 1px;
+  }
+`
+
+const Blockquote = ({children}) => (
+  <BlockquoteWrapper>
+    <div>{children}</div>
+  </BlockquoteWrapper>
 )
+
+const ParagraphWrapper = styled.div`
+  text-align: left;
+  min-width: 200px;
+  max-width: calc(100vw - 256px);
+`
+
+const Paragraph = ({paragraph, headline, children, cb=() => {}}) => (
+  <ParagraphWrapper>
+    <H3 id={headline}><a onClick={() => cb(headline)} href={'#' + headline}>{headline}</a></H3>
+    {children}
+  </ParagraphWrapper>
+)
+
+export { H3, Note, SmallNote, Blockquote, Codeblock, Code, Paragraph, P }
