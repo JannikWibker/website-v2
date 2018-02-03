@@ -17,15 +17,15 @@ export default ({href, name, children, style=false, ignore_prefetch=false}) => {
   const isAnchor = href => href.charAt(0) === '#'
 
   return (isAnchor(href)
-      ? <A  styled={style} href={href}>
+      ? <A styled={style} href={href}>
           {name || children}
         </A>
       : isAbsolute(href) || ignore_prefetch
-        ? <A  styled={style} href={href} target="_blank" rel="noreferrer noopener">
+        ? <A styled={style} href={href} target="_blank" rel="noreferrer noopener">
             {name || children}
           </A>
         : <Link href={href} prefetch>
-            <A styled={style}>
+            <A href={href} styled={style}>
               {name || children}
             </A>
           </Link>)
