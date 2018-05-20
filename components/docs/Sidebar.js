@@ -88,7 +88,7 @@ export default class SideBar extends Component {
             <div>
               {Object.keys(this.props.data[category]).map((item, i) => (
                 <Item key={i}>
-                  {this.state.route === item
+                  {this.state.route === item || decodeURI(this.state.route) === item
                     ? <Selected><a onClick={this.props.cb.bind(this, item)} href={'#' + item}>{item}</a></Selected>
                     : <NotSelected><a onClick={this.props.cb.bind(this, item)} href={'#' + item}>{item}</a></NotSelected>
                   }

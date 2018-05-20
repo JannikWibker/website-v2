@@ -7,7 +7,7 @@ import Main from '../../components/Main.js'
 import Globals from '../../components/Globals.js'
 
 import Sidebar from '../../components/docs/Sidebar.js'
-import { Paragraph, P, Code, Codeblock } from '../../components/docs/Paragraph.js'
+import { Paragraph, P, Code, Codeblock } from '../../components/docs/Components.js'
 import MainSection from '../../components/docs/Main.js'
 
 import Link from '../../components/Link.js'

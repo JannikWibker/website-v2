@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const Tab = ({n=2}) => <span>{'\u00A0'.repeat(n)}</span> // \u00A0 = &nbsp;
+
 const P = styled.p`
   font-weight: 400px;
   font-size: 14px;
@@ -21,6 +23,10 @@ const Codeblock = styled.code`
 const Code = styled.code`
   font-family: 'Menlo';
   margin: 0 2px 0 2px;
+`
+
+const Codecomment = styled.span`
+  color: rgb(153, 153, 153);
 `
 
 const H3 = styled.h3`
@@ -79,4 +85,4 @@ const Paragraph = ({paragraph, headline, children, cb=() => {}}) => (
   </ParagraphWrapper>
 )
 
-export { H3, Note, SmallNote, Blockquote, Codeblock, Code, Paragraph, P }
+export { H3, Note, SmallNote, Blockquote, Codeblock, Code, Codecomment, Tab, Paragraph, P }

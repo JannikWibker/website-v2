@@ -39,21 +39,37 @@ export default class Terminal extends Component {
   constructor(props) {
     super(props)
 
+    const color_white = {
+      text: 'black',
+      bg: 'white',
+      border: '#ccc'
+    }
+
+    const color_black = {
+      text: 'white',
+      bg: 'black',
+      border: '#666'
+    }
+
+    const color = (this.props.color || 'black') === 'white'
+      ? color_white
+      : color_black
+
     Container = styled.div`
       box-sizing: border-box;
       border-radius: 6px;
       width: ${props.width || 450}px;
       height: ${props.height || 260}px;
-      background-color: black;
-      color: white;
+      background-color: ${color.bg};
+      color: ${color.text};
       max-width: 90vw;
     `
 
     Border = styled.div`
       box-sizing: inherit;
       position: relative;
-      background-color: black;
-      border: 1px solid #666;
+      background-color: ${color.bg};
+      border: 1px solid ${color.border};
       border-radius: 5px;
       width: 100%;
       height: 100%;
@@ -76,9 +92,10 @@ export default class Terminal extends Component {
       height: calc(100% - 36px);
       margin: 36px 12px 0 12px;
       text-align: left;
-      font-size: 10px;
+      font-size: ${this.props.fontsize || 10}px;
+      line-height: ${this.props.fontsize ? this.props.fontsize + 1 : 10+1}px;
       font-family: "Menlo", DejaVu Sans Mono, Lucida Console, monospace, sans-serif;
-      color: white;
+      color: ${color.text};
     `
   }
 
