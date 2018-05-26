@@ -48,7 +48,7 @@ const info = {
       <Codeblock>/qr http://jannik.ddns.net/enceladusbot</Codeblock>
     ],
     md: [
-      <P>create a pdf from the specified markdown (supports LaTeX math syntax, dot diagrams, ...; uses <Link href="https://github.com/shd101wyy/mume">mume</Link> (creator has also made one of the best markdown plugins for atom / vscode for which mume is the backend of) and <Link href="https://github.com/googlechrome/puppeteer">puppeteer</Link> under the hood)</P>,
+      <P>create a pdf from the specified markdown<br />(supports LaTeX math syntax, dot diagrams, ...; uses <a href="https://github.com/shd101wyy/mume">mume</a> (creator has also made one of the best markdown plugins for atom / vscode for which mume is the backend of) and <a href="https://github.com/googlechrome/puppeteer">puppeteer</a> under the hood)</P>,
       <Codeblock>{'/md this is the **sum** for calculating the *left sum* for a given $f(x)$ from $0$ to $l$ and with a stepsize of $s$: $$\\sum_{i=0}^{\\frac{l}{s}} f(i \\cdot s) \\cdot s$$'}</Codeblock>
     ],
     lmgtfy: [
@@ -92,7 +92,7 @@ export default class EnceladusBotDocsPage extends Component {
   render() {
     return (
       <Docs>
-        <Globals pathname={'/EnceladusBot'} color={color.bg} />
+        <Globals pathname={'/enceladusbot'} color={color.bg} />
         <Header
           left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
           right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}

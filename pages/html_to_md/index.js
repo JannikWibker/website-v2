@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import Header from '../components/Header.js'
-import Footer from '../components/Footer.js'
-import Main from '../components/Main.js'
-import Globals from '../components/Globals.js'
+import Header from '../../components/Header.js'
+import Footer from '../../components/Footer.js'
+import Main from '../../components/Main.js'
+import Globals from '../../components/Globals.js'
 
-import Sidebar from '../components/docs/Sidebar.js'
-import { Paragraph, P, Code, Codeblock, Note, Blockquote } from '../components/docs/Components.js'
-import MainSection from '../components/docs/Main.js'
+import Sidebar from '../../components/docs/Sidebar.js'
+import { Paragraph, P, Code, Codeblock, Note, Blockquote } from '../../components/docs/Components.js'
+import MainSection from '../../components/docs/Main.js'
 
-import isNode from '../util/isNode.js'
+import isNode from '../../util/isNode.js'
 
 const color = {
   bg: 'white',

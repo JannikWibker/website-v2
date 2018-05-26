@@ -45,8 +45,10 @@ const Indent = styled.div`
 const projects = [
   {name: 'EnceladusBot', url: '/enceladusbot'},
   {name: 'LRMS', url: '/lrms'},
+  {name: 'weather', url: 'http://jannik.ddns.net:9129'},
   {name: 'Spreadsheets', url: '/spreadsheets'},
-  {name: 'html_to_md', url: '/html_to_md'}
+  {name: 'html_to_md', url: '/html_to_md'},
+  {name: 'utils', url: '/utils'},
 ]
 
 export default class ProjectsPage extends Component {
