@@ -25,7 +25,7 @@ const Docs = styled.div`
 const info = {
   'enceladusbot': {
     Introduction: [
-      <P>EnceladusBot is a telegram bot (@<strong>EnceladusBot</strong>)</P>
+      <P>EnceladusBot is a telegram bot (@<strong><Link href="https://t.me/enceladusbot">EnceladusBot</Link></strong>)</P>
     ],
     author: [
       <P>returns my name and telegram username</P>,
@@ -48,7 +48,7 @@ const info = {
       <Codeblock>/qr http://jannik.ddns.net/enceladusbot</Codeblock>
     ],
     md: [
-      <P>create a pdf from the specified markdown (supports LaTeX math syntax, dot diagrams, ...; uses mume and puppeteer under the hood)</P>,
+      <P>create a pdf from the specified markdown (supports LaTeX math syntax, dot diagrams, ...; uses <Link href="https://github.com/shd101wyy/mume">mume</Link> (creator has also made one of the best markdown plugins for atom / vscode for which mume is the backend of) and <Link href="https://github.com/googlechrome/puppeteer">puppeteer</Link> under the hood)</P>,
       <Codeblock>{'/md this is the **sum** for calculating the *left sum* for a given $f(x)$ from $0$ to $l$ and with a stepsize of $s$: $$\\sum_{i=0}^{\\frac{l}{s}} f(i \\cdot s) \\cdot s$$'}</Codeblock>
     ],
     lmgtfy: [
