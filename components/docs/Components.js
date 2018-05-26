@@ -60,7 +60,8 @@ const BlockquoteWrapper = styled.blockquote`
   padding: 8px 16px;
   margin: 10px 0px;
 
-  div {
+  span {
+    display: block
     margin: 0px;
     margin-bottom: 1px;
   }
@@ -68,7 +69,7 @@ const BlockquoteWrapper = styled.blockquote`
 
 const Blockquote = ({children}) => (
   <BlockquoteWrapper>
-    <div>{children}</div>
+    <span>{children}</span>
   </BlockquoteWrapper>
 )
 

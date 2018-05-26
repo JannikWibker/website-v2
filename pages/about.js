@@ -61,6 +61,7 @@ Obi-Wan: Don't try it.
 #### programming languages:
 - javascript
 - java
+- php
 - C/C++
 - python
 - lua

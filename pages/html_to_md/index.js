@@ -25,7 +25,10 @@ const HtmlToMd = styled.div`
 const info = {
   'html_to_md': {
     'html_to_md': [
-      <P>github repo: <a href="https://github.com/JannikWibker/html_to_md">html_to_md</a></P>,
+      <P>
+        github repo: <a href="https://github.com/JannikWibker/html_to_md">html_to_md</a><br />
+        own site: <a href="http://jannik.ddns.net:9124/html_to_md">html_to_md</a>
+        </P>,
       <P>Ever wanted to turn existing HTML into markdown? No? Yeah maybe it's not super useful but it has its use cases:</P>,
       <ul>
         <li>'caching' strategy for simple pages for offline usage (such as wikipedia pages or other similar pages with information such as <a href="http://www.vlsm-calc.net/models.php">this one</a> for example)</li>

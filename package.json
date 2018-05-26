@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "btoa": "^1.1.2",
     "compression": "^1.7.1",
     "express": "^4.16.2",
     "is-absolute-url": "^2.1.0",
@@ -19,6 +20,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-keyframes": "^0.2.3",
+    "react-markdown": "^3.3.2",
     "styled-components": "^2.2.3"
   },
   "babel": {

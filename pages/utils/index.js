@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Markdown from 'react-markdown'
 
 import Header from '../../components/Header.js'
 import Footer from '../../components/Footer.js'
 import Main from '../../components/Main.js'
 import Globals from '../../components/Globals.js'
+import Promisable from '../../components/Promisable.js'
 
 import Sidebar from '../../components/docs/Sidebar.js'
-import { Paragraph, P, Code, Codeblock, Blockquote } from '../../components/docs/Components.js'
+import { Paragraph, P, Code, Codeblock, Blockquote, H3 } from '../../components/docs/Components.js'
 import MainSection from '../../components/docs/Main.js'
+
+import isNode from '../../util/isNode.js'
 
 import Link from '../../components/Link.js'
 
@@ -20,6 +24,36 @@ const color = {
 const Docs = styled.div`
   background-color: ${color.bg};
   color: ${color.text};
+
+  .md {
+    margin-left: 8px;
+  }
+
+  .md h2 {
+
+    font-size: 1.17em;
+  }
+
+  .md h3 {
+    font-size: 1em;
+  }
+
+  .md code {
+    font-family: 'Menlo';
+    margin: 0 2px 0 2px;
+  }
+
+  .md pre code {
+    font-family: 'Menlo';
+    display: block;
+    min-width: 200px;
+    font-size: 13px;
+    line-height: 20px;
+    border: 1px solid rgb(234, 234, 234);
+    border-image: initial;
+    padding: 8px;
+    overflow: auto;
+  }
 `
 
 const info = {
@@ -34,10 +68,18 @@ const info = {
       <P>All of them can be found on <a href="https://github.com/JannikWibker/jannik-utils">GitHub</a>.</P>
     ],
     'documentation': [
-      <P>
-        complete documentation can be found on <a href="https://github.com/JannikWibker/jannik-utils">GitHub</a> or on utils' own <a href="http://jannik.ddns.net:9124/utils">site</a>.<br />
-        <Blockquote>In the future it will probably be displayed here too</Blockquote>
-      </P>
+      <Promisable client_only={true} promise={() => (isNode
+          ? Promise.reject('server side only')
+          : fetch('https://raw.githubusercontent.com/JannikWibker/jannik-utils/master/README.md') /*Promise.resolve('success')*/
+            .then(x => x.text())
+        )
+          .then(x => (
+            <Markdown className="md" source={x} />
+          ))
+          .catch(x => (
+            <Blockquote className="reject">something went wrong: {x.toString()}</Blockquote>
+          ))
+      } />
     ]
   }
 }
@@ -45,7 +87,6 @@ const info = {
 export default class UtilsDocPage extends Component {
   constructor(props) {
     super(props)
-    console.log(this.props)
 
     this.update = this.update.bind(this)
 

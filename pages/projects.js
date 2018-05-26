@@ -46,6 +46,7 @@ const projects = [
   {name: 'EnceladusBot', url: '/enceladusbot'},
   {name: 'LRMS', url: '/lrms'},
   {name: 'weather', url: 'http://jannik.ddns.net:9129'},
+  {name: 'fileManager', url: 'http://jannik.ddns.net:9124/files'},
   {name: 'Spreadsheets', url: '/spreadsheets'},
   {name: 'html_to_md', url: '/html_to_md'},
   {name: 'utils', url: '/utils'},
