@@ -26,7 +26,7 @@ const LRMS = styled.div`
 const info = {
   'lrms': {
     'Introduction': [
-      <P>1234</P>,
+      <P>LRMS is a school-related project. It is a service for reserving and managing school internal resources like laptops.</P>,
     ],
     'install & run': [
       <Terminal title="zsh" fontsize={12} color="white"><TerminalAnimation /></Terminal>,

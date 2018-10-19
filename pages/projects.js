@@ -10,7 +10,7 @@ import Display from '../components/Display.js'
 import Globals from '../components/Globals.js'
 import Link from '../components/Link.js'
 
-const path = '/static/school_stuff/'
+// const path = '/static/school_stuff/'
 
 const color = {
   bg: 'white',
@@ -42,14 +42,21 @@ const Indent = styled.div`
   padding-left: 20px;
 `
 
+const Description = styled.span`
+  color: slategrey;
+`
+
 const projects = [
-  {name: 'EnceladusBot', url: '/enceladusbot'},
-  {name: 'LRMS', url: '/lrms'},
-  {name: 'weather', url: 'http://jannik.ddns.net:9129'},
-  {name: 'fileManager', url: 'http://jannik.ddns.net:9124/files'},
-  {name: 'Spreadsheets', url: '/spreadsheets'},
-  {name: 'html_to_md', url: '/html_to_md'},
-  {name: 'utils', url: '/utils'},
+  {name: 'EnceladusBot', private: false, description: 'telegram bot', url: '/enceladusbot'},
+  {name: 'LRMS', private: true, description: 'Laptop Reservation Management System', url: '/lrms'},
+  {name: 'docs', private: true, description: 'school documents', url: 'https://docs.jannik.ml'},
+  {name: 'Notes', private: false, description: 'note taking web app', url: 'https://notes.jannik.ml'},
+  {name: 'weather', private: false, description: 'weather web app', url: 'https://weather.jannik.ml'},
+  {name: 'git', private: true, description: 'personal git server', url: 'https://git.jannik.ml'},
+  {name: 'fileManager', private: true, description: '', url: 'http://jannik.ddns.net:9124/files'},
+  {name: 'spreadsheets', private: true, description: '', url: '/spreadsheets'},
+  {name: 'html_to_md', private: false, description: '', url: '/html_to_md'},
+  {name: 'utils', private: false, description: '', url: '/utils'},
 ]
 
 export default class ProjectsPage extends Component {
@@ -68,14 +75,33 @@ export default class ProjectsPage extends Component {
         <Main>
           <Display>
             <h3>Projects</h3>
-            <ul>
-              {projects.map((project, i) => (
+            <Indent>
+              <h4>public projects (no login required)</h4>
+              <ul>
+              {projects.filter(project => !project.private).map((project, i) => (
                 <li key={i}>
-                  <Link href={project.url}>{project.name}</Link>
+                  <Link href={project.url}>
+                  {project.name}
+                  {project.description ? <Description>&nbsp;&nbsp;&nbsp;&nbsp;{project.description}</Description> : null}
+                </Link>
                 </li>
               ))}
             </ul>
-            <h3>school stuff</h3>
+            </Indent>
+            <Indent>
+              <h4>private projects (login required or not online at all)</h4>
+              <ul>
+              {projects.filter(project => project.private).map((project, i) => (
+                <li key={i}>
+                  <Link href={project.url}>
+                    {project.name}
+                    {project.description ? <Description>&nbsp;&nbsp;&nbsp;&nbsp;{project.description}</Description> : null}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            </Indent>
+            {/*<h3>school stuff</h3>
             <Indent>
               <h4>PDF Files</h4>
               <ul>
@@ -87,7 +113,7 @@ export default class ProjectsPage extends Component {
                   </li>
                 ))}
               </ul>
-            </Indent>
+                  </Indent>*/}
           </Display>
         </Main>
         <Footer color={color.bg} />

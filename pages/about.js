@@ -10,6 +10,14 @@ import Terminal from '../components/Terminal.js'
 import TerminalInfo from '../components/TerminalInfo.js'
 import Link from '../components/Link.js'
 
+const age = (birthday, today=new Date()) => {
+  const age = today.getFullYear() - birthday.getFullYear()
+  const months = today.getMonth() - birthday.getMonth()
+  return (months < 0 || (months === 0 && today.getDate() < birthday.getDate()))
+    ? age - 1
+    : age
+}
+
 const color = {
   bg: 'black',
   text: 'white'
@@ -46,13 +54,12 @@ const LI = styled.li`
 
 const Markdown = markdown({h3: H3, h4: H4, a: Link, p: P, li: LI})`
 ### who am I?
-Obi-Wan: It's over Anakin, I have the high ground.<br />
-Anakin Skywalker: You underestimate my power!<br />
-Obi-Wan: Don't try it.
+
+Hi, im Jannik and I program things
 
 ### personal info
 - name: Jannik Wibker
-- age: 18
+- age: ${age(new Date('1999/10/20'))}
 - location: North-Rhein-Westfalia, Germany
 - languages: english, german, (a bit of) french
 
@@ -73,31 +80,29 @@ Obi-Wan: Don't try it.
 - html & css
 
 #### programming related interests:
-- web development
+- **web development**
 - compiler design
 - raspberry pi's & IoT / automation
-- neural networks and artificial intelligene
-- blockchain technology
 - mathematics
 
-#### OS stuff:
-- Linux
-- OS X
-- Windows
 
-#### favourite editors & tools:
+### cool stuff i like:
+- [vscode](https://code.visualstudio.com)
 - [atom](https://atom.io)
+- [typora](https://typora.ai)
+- [notion](https://notion.so)
 - [nodejs](https://nodejs.org)
 - [react](https://reactjs.org)
 - [markdown-preview-enhanced](https://shd101wyy.github.io/markdown-preview-enhanced/) (w/ [headless chrome](https://www.npmjs.com/package/puppeteer))
-- [sublime](https://www.sublimetext.com/3)
-- [IntelliJ](http://www.jetbrains.com/idea/)
 - [tmux](https://tmux.github.io)
 - [zsh (oh-my-zsh)](http://ohmyz.sh/)
 
-#### other:
-- LaTeX
-- Microsoft Office
+#### qualifications that are pretty much mandatory
+- linux knowledge
+- windows knowledge
+- mac os x knowledge
+- microsoft office 
+- latex
 `
 
 const About = styled.div`

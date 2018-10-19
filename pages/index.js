@@ -16,6 +16,11 @@ const Index = styled.div`
   color: ${color.text};
 `
 
+const P = styled.p`
+  font-size: 24px;
+  padding-top: 32px;
+`
+
 
 export default class IndexPage extends Component {
   constructor(props) {
@@ -31,7 +36,7 @@ export default class IndexPage extends Component {
           right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
           color={color.bg} />
         <Main>
-          Index
+          <P>Hi, im Jannik</P>
         </Main>
         <Footer color={color.bg} />
       </Index>

@@ -27,6 +27,22 @@ const info = {
     Introduction: [
       <P>EnceladusBot is a telegram bot (@<strong><Link href="https://t.me/enceladusbot">EnceladusBot</Link></strong>)</P>
     ],
+    spotify: [
+      <P>Connect EnceladusBot to Spotify. This allows using play/pause to control playback (as long as you have a Spotify premium account; Spotify only allows this for premium users) and asking for the currently playing song</P>,
+      <Codeblock>/spotify</Codeblock>
+    ],
+    spotify_logout: [
+      <P>Log out of Spotify.</P>,
+      <Codeblock>/spotify_logout</Codeblock>
+    ],
+    qr: [
+      <P>create a QR code for the specified text</P>,
+      <Codeblock>/qr http://jannik.ddns.net/enceladusbot</Codeblock>
+    ],
+    md: [
+      <P>create a pdf from the specified markdown<br />(supports LaTeX math syntax, dot diagrams, ...; uses <a href="https://github.com/shd101wyy/mume">mume</a> (creator has also made one of the best markdown plugins for atom / vscode for which mume is the backend of) and <a href="https://github.com/googlechrome/puppeteer">puppeteer</a> under the hood)</P>,
+      <Codeblock>{'/md this is the **sum** for calculating the *left sum* for a given $f(x)$ from $0$ to $l$ and with a stepsize of $s$: $$\\sum_{i=0}^{\\frac{l}{s}} f(i \\cdot s) \\cdot s$$'}</Codeblock>
+    ],
     author: [
       <P>returns my name and telegram username</P>,
       <Codeblock>/author</Codeblock>
@@ -42,14 +58,6 @@ const info = {
     src: [
       <P>returns the github repo with the source code of this bot</P>,
       <Codeblock>/src</Codeblock>
-    ],
-    qr: [
-      <P>create a QR code for the specified text</P>,
-      <Codeblock>/qr http://jannik.ddns.net/enceladusbot</Codeblock>
-    ],
-    md: [
-      <P>create a pdf from the specified markdown<br />(supports LaTeX math syntax, dot diagrams, ...; uses <a href="https://github.com/shd101wyy/mume">mume</a> (creator has also made one of the best markdown plugins for atom / vscode for which mume is the backend of) and <a href="https://github.com/googlechrome/puppeteer">puppeteer</a> under the hood)</P>,
-      <Codeblock>{'/md this is the **sum** for calculating the *left sum* for a given $f(x)$ from $0$ to $l$ and with a stepsize of $s$: $$\\sum_{i=0}^{\\frac{l}{s}} f(i \\cdot s) \\cdot s$$'}</Codeblock>
     ],
     lmgtfy: [
       <P>create a lmgtfy link for the specified text</P>,
