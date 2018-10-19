@@ -52,6 +52,14 @@ const LI = styled.li`
   list-style-type: decimal;
 `
 
+// const hiddenMarkdown = markdown({h3: H3, h4: H4, a: Link, p: P, li: LI})`
+// * [jannik.ml](https://jannik.ml 'website')
+// * [JannikWibker](https://github.com/JannikWibker 'github')
+// * [jannikwibker@gmail.com](mailto:jannikwibker@gmail.com 'email')
+// `
+
+const hiddenMarkdown = null
+
 const Markdown = markdown({h3: H3, h4: H4, a: Link, p: P, li: LI})`
 ### who am I?
 
@@ -66,7 +74,7 @@ Hi, im Jannik and I program things
 ### technical skills
 
 #### programming languages:
-- javascript
+- **javascript**
 - java
 - php
 - C/C++
@@ -75,11 +83,18 @@ Hi, im Jannik and I program things
 
 #### web stuff & technologies:
 - javascript
-- [nodejs](https://nodejs.org)
 - [react](https://reactjs.org)
+- [nodejs](https://nodejs.org)
 - html & css
 
-#### programming related interests:
+#### qualifications that are pretty much mandatory
+- linux knowledge
+- windows knowledge
+- mac os x knowledge
+- microsoft office 
+- latex
+
+### programming related interests:
 - **web development**
 - compiler design
 - raspberry pi's & IoT / automation
@@ -96,13 +111,6 @@ Hi, im Jannik and I program things
 - [markdown-preview-enhanced](https://shd101wyy.github.io/markdown-preview-enhanced/) (w/ [headless chrome](https://www.npmjs.com/package/puppeteer))
 - [tmux](https://tmux.github.io)
 - [zsh (oh-my-zsh)](http://ohmyz.sh/)
-
-#### qualifications that are pretty much mandatory
-- linux knowledge
-- windows knowledge
-- mac os x knowledge
-- microsoft office 
-- latex
 `
 
 const About = styled.div`
@@ -122,6 +130,10 @@ const Info = styled.div`
   text-align: left;
 `
 
+const HiddenUnlessPrint = styled.div`
+  display: none;
+`
+
 export default class AboutPage extends Component {
   constructor(props) {
     super(props)
@@ -129,7 +141,7 @@ export default class AboutPage extends Component {
 
   render() {
     return (
-      <About>
+      <About className="Page">
         <Globals pathname={'/about'} color={color.bg} />
         <Header
           left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
@@ -137,11 +149,12 @@ export default class AboutPage extends Component {
           color={color.bg} />
         <Main>
           <Terminal title={'Terminal'}>
-            <TerminalInfo />
+            <TerminalInfo age={age(new Date('1999/10/20'))} />
           </Terminal>
           <br />
-          <Info>
+          <Info className="info">
             {Markdown}
+            <HiddenUnlessPrint className="hiddenUnlessPrint">{hiddenMarkdown}</HiddenUnlessPrint>
           </Info>
         </Main>
         <Footer color={color.bg} />

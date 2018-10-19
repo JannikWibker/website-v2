@@ -1,0 +1,156 @@
+@media print {
+  header, footer, .Terminal {
+    display: none;
+  }
+
+  .Page {
+    background-color: white!important;
+    color: black!important;
+  }
+
+  .Page main {
+    min-height: unset;
+  }
+
+  .Page main .info {
+    min-width: unset;
+    width: unset;
+  }
+
+  .hiddenUnlessPrint {
+    display: initial!important;
+  }
+
+  .Page main .info ._markdown_ {
+    font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'segoe ui', 'fira sans', roboto, noto, 'droid sans', 'liberation sans', 'lucida grande', 'helvetica neue', helvetica, 'franklin gothic medium', 'century gothic', cantarell, oxygen, ubuntu, sans-serif;
+    font-weight: 300;
+    color: #323336;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 auto;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  ._markdown_ p {
+    margin: 0 0 7px;
+    color: darkslategrey;
+  }
+
+  ._markdown_ blockquote {
+    margin: 0;
+    padding: 0;
+  }
+
+  ._markdown_ blockquote > p {
+    color: #323336;
+  }
+
+  ._markdown_ ul,
+  ._markdown_ ol {
+    margin: 12px 0px;
+  }
+  ._markdown_ ul li,
+  ._markdown_ ol li {
+    font-size: 12px!important;
+  }
+
+  ._markdown_ ul a::after,
+  ._markdown_ ol a::after {
+    content: '↗';
+    color: grey;
+    font-size: 10px;
+  }
+
+  ._markdown_ a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  ._markdown_ img,
+  ._markdown_ picture {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  ._markdown_ h3 {
+    text-decoration: none!important;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 20px 0px
+  }
+  
+  ._markdown_ h2, ._markdown_ h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0;
+    text-decoration: none!important;
+  }
+
+  ._markdown_ h2 {
+    padding-top: 9px;
+    font-size: 30px;
+    letter-spacing: 1.3px;
+    margin-bottom: 45px;
+  }
+  
+  ._markdown_ h4 {
+    margin: 18px 0px 12px 0;
+    color: darkgrey;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+  }
+  ._markdown_ h3 ~ p {
+    margin-top: -8px;
+  }
+  ._markdown_ a[title]::before {
+    content: '';
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  ._markdown_ h4>a:not(.anchorjs-link) {
+    text-decoration: none;
+  }
+  ._markdown_ h4>a:not(.anchorjs-link)::after {
+    display: inline-block;
+    content: '';
+    height: 14px;
+    width: 14px;
+    margin-left: 5px;
+    background-size: 14px 14px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath fill='%23999' d='M3 1v1h4.5L.8 8.6l.6.6L8 2.5V7h1V1z'/%3E%3C/svg%3E");
+  }
+
+  ._markdown_ h4 + ul {
+    margin: 0;
+    padding: 0;
+  }
+  ._markdown_ h4 + ul::before,
+  ._markdown_ h4 + ul::after {
+    content: '';
+    display: table;
+  }
+  ._markdown_ h4 + ul::after {
+    clear: both;
+  }
+
+  ._markdown_ h4 + ul > li {
+    float: left;
+    padding: 5px 18px;
+    background-color: #f1f5f7;
+    margin-right: 3px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    display: inline-block;
+  }
+}
+
+

@@ -13,6 +13,7 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
+          <link rel="stylesheet" media="print" href="static/css/print.css" />
           {this.props.styleTags}
         </Head>
         <body>

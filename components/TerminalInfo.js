@@ -4,7 +4,7 @@ import { Keyframes, Frame } from 'react-keyframes'
 
 import { TerminalLink, space, C, Int, Str, Key, StillCaret, Caret } from './Shell.js'
 
-export default () => (
+export default ({ age=19 }) => (
   <Keyframes loop={false} delay={300}>
     <Frame duration={500}><C c='#d33682'>λ</C> ~ <StillCaret /></Frame>
     <Frame duration={70}><C c='#d33682'>λ</C> ~ i<StillCaret /></Frame>
@@ -15,7 +15,7 @@ export default () => (
       <C c='#d33682'>λ</C> ~ info<br />
       {'{'}<br />
       {space(1)}name:{space(1)}<Str>"Jannik Wibker"</Str>,<br />
-      {space(1)}age:{space(2)}<Int>18</Int>,<br />
+      {space(1)}age:{space(2)}<Int>{age}</Int>,<br />
       {space(1)}location:{space(1)}<Str>"Germany"</Str>,<br />
       {space(1)}languages:{space(1)}{'{'}...{'}'}<br />
       {space(1)}contact:{space(1)}{'{'}...{'}'}<br />
@@ -24,7 +24,7 @@ export default () => (
       <C c='#d33682'>λ</C> ~ info<br />
       {'{'}<br />
       {space(1)}name:{space(1)}<Str>"Jannik Wibker"</Str>,<br />
-      {space(1)}age:{space(2)}<Int>18</Int>,<br />
+      {space(1)}age:{space(2)}<Int>{age}</Int>,<br />
       {space(1)}location:{space(1)}<Str>"Germany"</Str>,<br />
       {space(1)}languages:{space(1)}{'{'}<br />
       {space(2)}german:{space(2)}<Str>"native speaker"</Str>,<br />
