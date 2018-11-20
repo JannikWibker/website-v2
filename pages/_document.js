@@ -13,6 +13,7 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
+	  <meta name="google-site-verification" content="pRHqspliCrXCKj_H1ivjcAIVL-r9_vTwX6bDg_IIigM" />
           <link rel="stylesheet" media="print" href="static/css/print.css" />
           {this.props.styleTags}
         </Head>
