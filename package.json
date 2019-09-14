@@ -20,7 +20,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-keyframes": "^0.2.3",
-    "react-markdown": "^3.3.2",
+    "react-markdown": "^3.6.0",
     "styled-components": "^2.2.3"
   },
   "babel": {

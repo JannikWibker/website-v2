@@ -10,6 +10,6 @@ WORKDIR /app
 RUN npm i
 
 # build step
-RUN npm build
+RUN npm run build
 
 CMD node index.js
