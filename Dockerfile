@@ -12,4 +12,4 @@ RUN npm i
 # build step
 RUN npm run build
 
-CMD node index.js
+CMD node main.js
