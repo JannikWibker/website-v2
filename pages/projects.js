@@ -108,8 +108,8 @@ export default class ProjectsPage extends Component {
             </Indent>
             <Indent>
                 <h4>other projects</h4>
-                <p>There are many more projects which are completely private at the moment and don't have a hosted version or only consist of api endpoints.</p>
-                <p>Some of these projects are an <i>ip lookup</i> api, <i>exif metadata</i> parser, <i>proxy server</i> with authentication support.</p>
+                <p>There are many more projects which are completely private at the moment and don't have a hosted version or only consist of api endpoints or are just not nearly completed.</p>
+                <p>Some of these projects are an <i>ip lookup</i> api, <i>exif metadata</i> parser, <i>proxy server</i> with authentication support, <i>spreadsheet</i> program, <i>bottom up</i> parser for regular languages.</p>
             </Indent>
           </Display>
         </Main>
