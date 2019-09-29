@@ -47,16 +47,21 @@ const Description = styled.span`
 `
 
 const projects = [
-  {name: 'EnceladusBot', private: false, description: 'telegram bot', url: '/enceladusbot'},
-  {name: 'LRMS', private: true, description: 'Laptop Reservation Management System', url: '/lrms'},
-  {name: 'docs', private: true, description: 'school documents', url: 'https://docs.jannik.ml'},
-  {name: 'Notes', private: false, description: 'note taking web app', url: 'https://notes.jannik.ml'},
-  {name: 'weather', private: false, description: 'weather web app', url: 'https://weather.jannik.ml'},
-  {name: 'git', private: true, description: 'personal git server', url: 'https://git.jannik.ml'},
-  {name: 'fileManager', private: true, description: '', url: 'http://jannik.ddns.net:9124/files'},
-  {name: 'spreadsheets', private: true, description: '', url: '/spreadsheets'},
-  {name: 'html_to_md', private: false, description: '', url: '/html_to_md'},
-  {name: 'utils', private: false, description: '', url: '/utils'},
+  
+  {name: 'git',               private: true,  description: 'personal git server', url: 'https://git.jannik.ml'},
+  {name: 'lrms',              private: true,  description: 'Laptop Reservation Management System (discontinued)', url: '/lrms'},
+
+  {name: 'docs',              private: false, description: 'self hosted math/it wiki (ger)', url: 'https://docs.jannik.ml'},
+  {name: 'notes',             private: false, description: 'note taking web app', url: 'https://notes.jannik.ml'},
+  {name: 'auth',              private: false, description: 'self-made IDP system (link to dashboard)', url: 'https://accounts.jannik.ml'},
+  {name: 'EnceladusBot',      private: false, description: 'telegram bot', url: '/enceladusbot'},
+  {name: '6502-disassembler', private: false, description: '6502 disassembler (Lua)', url: 'https://github.com/JannikWibker/6502-disassembler'},
+  {name: 'dd-update',         private: false, description: 'ddclient alternative (cloudflare only)', url: 'https://github.com/JannikWibker/dd-update'},
+  {name: 'weather',           private: false, description: 'weather web app', url: 'https://weather.jannik.ml'},
+  // {name: 'fileManager', private: true, description: '', url: 'https://files.jannik.ml'},
+  // {name: 'spreadsheets', private: true, description: '', url: '/spreadsheets'},
+  {name: 'html_to_md',        private: false, description: '', url: '/html_to_md'},
+  {name: 'utils',             private: false, description: '', url: '/utils'},
 ]
 
 export default class ProjectsPage extends Component {
@@ -76,7 +81,7 @@ export default class ProjectsPage extends Component {
           <Display>
             <h3>Projects</h3>
             <Indent>
-              <h4>public projects (no login required)</h4>
+              <h4>public projects</h4>
               <ul>
               {projects.filter(project => !project.private).map((project, i) => (
                 <li key={i}>
@@ -89,7 +94,7 @@ export default class ProjectsPage extends Component {
             </ul>
             </Indent>
             <Indent>
-              <h4>private projects (login required or not online at all)</h4>
+              <h4>private projects (offline or login with privileged account required)</h4>
               <ul>
               {projects.filter(project => project.private).map((project, i) => (
                 <li key={i}>
@@ -101,19 +106,11 @@ export default class ProjectsPage extends Component {
               ))}
             </ul>
             </Indent>
-            {/*<h3>school stuff</h3>
             <Indent>
-              <h4>PDF Files</h4>
-              <ul>
-                {info.files
-                  .filter(file => file.format === 'pdf')
-                  .map((file, i) => (
-                  <li key={i}>
-                    <Link href={path + file.file} name={file.name} ignore_prefetch={true} />
-                  </li>
-                ))}
-              </ul>
-                  </Indent>*/}
+                <h4>other projects</h4>
+                <p>There are many more projects which are completely private at the moment and don't have a hosted version or only consist of api endpoints.</p>
+                <p>Some of these projects are an <i>ip lookup</i> api, <i>exif metadata</i> parser, <i>proxy server</i> with authentication support.</p>
+            </Indent>
           </Display>
         </Main>
         <Footer color={color.bg} />
