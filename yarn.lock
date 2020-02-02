@@ -2115,8 +2115,10 @@ gauge@~2.7.3:
     wide-align "^1.1.0"
 
 generate-function@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/generate-function/-/generate-function-2.0.0.tgz#6858fe7c0969b7d4e9093337647ac79f60dfbe74"
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/generate-function/-/generate-function-2.3.1.tgz#f069617690c10c868e73b8465746764f97c3479f"
+  dependencies:
+    is-property "^1.0.2"
 
 generate-object-property@^1.1.0:
   version "1.2.0"
@@ -2672,12 +2674,17 @@ is-hexadecimal@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-hexadecimal/-/is-hexadecimal-1.0.2.tgz#b6e710d7d07bb66b98cb8cece5c9b4921deeb835"
 
+is-my-ip-valid@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-my-ip-valid/-/is-my-ip-valid-1.0.0.tgz#7b351b8e8edd4d3995d4d066680e664d94696824"
+
 is-my-json-valid@^2.12.4:
-  version "2.17.1"
-  resolved "https://registry.yarnpkg.com/is-my-json-valid/-/is-my-json-valid-2.17.1.tgz#3da98914a70a22f0a8563ef1511a246c6fc55471"
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/is-my-json-valid/-/is-my-json-valid-2.20.0.tgz#1345a6fca3e8daefc10d0fa77067f54cedafd59a"
   dependencies:
     generate-function "^2.0.0"
     generate-object-property "^1.1.0"
+    is-my-ip-valid "^1.0.0"
     jsonpointer "^4.0.0"
     xtend "^4.0.0"
 
@@ -2735,7 +2742,7 @@ is-primitive@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/is-primitive/-/is-primitive-2.0.0.tgz#207bab91638499c07b2adf240a41a87210034575"
 
-is-property@^1.0.0:
+is-property@^1.0.0, is-property@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-property/-/is-property-1.0.2.tgz#57fe1c4e48474edd65b09911f26b1cd4095dda84"
 
@@ -3110,6 +3117,12 @@ md5.js@^1.3.4:
   dependencies:
     hash-base "^3.0.0"
     inherits "^2.0.1"
+
+mdast-add-list-metadata@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/mdast-add-list-metadata/-/mdast-add-list-metadata-1.0.1.tgz#95e73640ce2fc1fa2dcb7ec443d09e2bfe7db4cf"
+  dependencies:
+    unist-util-visit-parents "1.1.2"
 
 "mdurl@~ 1.0.1":
   version "1.0.1"
@@ -4016,10 +4029,11 @@ react-keyframes@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/react-keyframes/-/react-keyframes-0.2.3.tgz#1dca7e5684b36718f8080c7cf9bf24ce750b1b38"
 
-react-markdown@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/react-markdown/-/react-markdown-3.3.2.tgz#35d305e8a29b640717b9dac4658a1caeafd44c94"
+react-markdown@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/react-markdown/-/react-markdown-3.6.0.tgz#29f6aaab5270c8ef0a5e234093a873ec3e01722b"
   dependencies:
+    mdast-add-list-metadata "1.0.1"
     prop-types "^15.6.1"
     remark-parse "^5.0.0"
     unified "^6.1.5"
@@ -4938,6 +4952,10 @@ unist-util-stringify-position@^1.0.0, unist-util-stringify-position@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/unist-util-stringify-position/-/unist-util-stringify-position-1.1.2.tgz#3f37fcf351279dcbca7480ab5889bb8a832ee1c6"
 
+unist-util-visit-parents@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/unist-util-visit-parents/-/unist-util-visit-parents-1.1.2.tgz#f6e3afee8bdbf961c0e6f028ea3c0480028c3d06"
+
 unist-util-visit@^1.1.0, unist-util-visit@^1.3.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.3.1.tgz#c019ac9337a62486be58531bc27e7499ae7d55c7"
@@ -5175,8 +5193,8 @@ xss-filters@1.2.7:
   resolved "https://registry.yarnpkg.com/xss-filters/-/xss-filters-1.2.7.tgz#59fa1de201f36f2f3470dcac5f58ccc2830b0a9a"
 
 xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
 
 y18n@^3.2.1:
   version "3.2.1"
