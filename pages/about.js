@@ -52,12 +52,6 @@ const LI = styled.li`
   list-style-type: decimal;
 `
 
-// const hiddenMarkdown = markdown({h3: H3, h4: H4, a: Link, p: P, li: LI})`
-// * [jannik.ml](https://jannik.ml 'website')
-// * [JannikWibker](https://github.com/JannikWibker 'github')
-// * [jannikwibker@gmail.com](mailto:jannikwibker@gmail.com 'email')
-// `
-
 const hiddenMarkdown = null
 
 const Markdown = markdown({h3: H3, h4: H4, a: Link, p: P, li: LI})`
@@ -80,6 +74,7 @@ Hi, im Jannik and I program things
 - C/C++
 - python
 - lua
+- nim
 
 #### web stuff & technologies:
 - javascript
@@ -97,20 +92,8 @@ Hi, im Jannik and I program things
 ### programming related interests:
 - **web development**
 - compiler design
-- raspberry pi's & IoT / automation
+- linux window managers & scripting
 - mathematics
-
-
-### cool stuff i like:
-- [vscode](https://code.visualstudio.com)
-- [atom](https://atom.io)
-- [typora](https://typora.ai)
-- [notion](https://notion.so)
-- [nodejs](https://nodejs.org)
-- [react](https://reactjs.org)
-- [markdown-preview-enhanced](https://shd101wyy.github.io/markdown-preview-enhanced/) (w/ [headless chrome](https://www.npmjs.com/package/puppeteer))
-- [tmux](https://tmux.github.io)
-- [zsh (oh-my-zsh)](http://ohmyz.sh/)
 `
 
 const About = styled.div`
