@@ -47,7 +47,7 @@ const Note = styled.p`
   margin: 16px 24px;
 `
 
-const SmallNote = Note.extend`
+const SmallNote = styled(Note)`
   font-size: 12px;
 `
 

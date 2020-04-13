@@ -18,17 +18,17 @@ const Button = styled.span`
   transform: translateY(-50%);
 `
 
-const ButtonClose = Button.extend`
+const ButtonClose = styled(Button)`
   left: 13px;
   background-color: #ff5f56;
 `
 
-const ButtonMinimize = Button.extend`
+const ButtonMinimize = styled(Button)`
   left: 33px;
   background-color: #ffbd2e;
 `
 
-const ButtonMaximize = Button.extend`
+const ButtonMaximize = styled(Button)`
   left: 53px;
   background-color: #27c93f;
 `
