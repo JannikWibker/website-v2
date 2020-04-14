@@ -10,21 +10,21 @@ const p = (str='', duration=100) => ({
   str, duration
 })
 
-const render_command = (input_parts=[], input='', output_parts=[], output='', caret=true, folder='~', previous_commands=[]) => {
+const render_command = (unique_name, input_parts=[], input='', output_parts=[], output='', caret=true, folder='~', previous_commands=[]) => {
   const l_input = <span><C c='#d33682'>λ</C> {folder} {input}</span>
   const l_output = <span>{output}</span>
   const l_input_parts = input_parts.map((x, i) => (
-    <Frame key={i} duration={x.duration}>
+    <Frame key={unique_name + '_input_' + i} duration={x.duration}>
       {previous_commands.map((x, _i) => (
-        <span key={i + '.' + _i}>{x.input}<br />{x.output}<br /></span>
+        <span key={unique_name + '_' + i + '.' + _i}>{x.input}<br />{x.output}<br /></span>
       ))}
       <C c='#d33682'>λ</C> {folder} {x.str}{caret ? <StillCaretB /> : ''}
     </Frame>
   ))
   const l_output_parts = output_parts.map((x, i) => (
-    <Frame key={i} duration={x.duration}>
+    <Frame key={unique_name + '_output_' + i} duration={x.duration}>
       {previous_commands.map((x, _i) => (
-        <span key={i + '.' + _i}>{x.input}<br />{x.output}<br /></span>
+        <span key={unique_name + '_' + i + '.' + _i}>{x.input}<br />{x.output}<br /></span>
       ))}
       {l_input}<br />{x.str}
     </Frame>
@@ -40,7 +40,7 @@ const render_command = (input_parts=[], input='', output_parts=[], output='', ca
 
 // installing yarn and serve, cloning both frontend and backend repos
 
-const install_yarn = render_command([
+const install_yarn = render_command('install_yarn', [
   p('', 500),
   p('n', 70),
   p('npm', 90),
@@ -56,7 +56,7 @@ const install_yarn = render_command([
   p('└── yarn@1.3.2', 400)
 ], '└── yarn@1.3.2', true, '~')
 
-const install_serve = render_command([
+const install_serve = render_command('install_serve', [
   p('', 500),
   p('n', 70),
   p('npm', 90),
@@ -73,7 +73,7 @@ const install_serve = render_command([
   p('└── serve@6.4.11', 400),
 ], '└── serve@6.4.11', true, '~', [install_yarn])
 
-const git_clone_frontend = render_command([
+const git_clone_frontend = render_command('git_clone_frontend', [
   p('', 500),
   p('g', 70),
   p('git', 80),
@@ -99,7 +99,7 @@ const git_clone_frontend = render_command([
   p(["Cloning into 'rpi-frontend'...", <br />, 'Receiving objects: ', <strong>100%</strong>, ' (209/209), 182.21 KiB | 243.00 KiB/s, done.'], 500),
 ], ["Cloning into 'rpi-frontend'...", <br />, 'Receiving objects: ', <strong>100%</strong>, ' (209/209), 182.21 KiB | 243.00 KiB/s, done.', <br />, 'done'], true, '~', [])
 
-const git_clone_backend = render_command([
+const git_clone_backend = render_command('git_clone_backend', [
   p('', 500),
   p('g', 70),
   p('git', 80),
@@ -127,7 +127,7 @@ const git_clone_backend = render_command([
 
 // cd to rpi-backend, install dependencies and run the server
 
-const cd_rpi_backend = render_command([
+const cd_rpi_backend = render_command('cd_rpi_backend', [
   p('', 500),
   p('cd', 90),
   p('cd rp', 90),
@@ -140,7 +140,7 @@ const cd_rpi_backend = render_command([
 
 ], '', true, '~', [])
 
-const yarn_install_backend = render_command([
+const yarn_install_backend = render_command('yarn_install_backend', [
   p('', 500),
   p('ya', 110),
   p('yarn', 110),
@@ -149,7 +149,7 @@ const yarn_install_backend = render_command([
   p(['yarn install v1.3.2', <br />, '[...]'], 480)
 ], ['yarn install v1.3.2', <br />, '[...]'], true, '~/rpi-backend', [cd_rpi_backend])
 
-const node_main = render_command([
+const node_main = render_command('node_main', [
   p('', 500),
   p('no', 90),
   p('node', 90),
@@ -164,7 +164,7 @@ const node_main = render_command([
 
 // cd to rpi-frontend, install dependencies, build, serve
 
-const cd_rpi_frontend = render_command([
+const cd_rpi_frontend = render_command('cd_rpi_frontend', [
   p('', 500),
   p('cd', 90),
   p('cd rp', 90),
@@ -177,7 +177,7 @@ const cd_rpi_frontend = render_command([
 
 ], '', true, '~', [])
 
-const yarn_install_frontend = render_command([
+const yarn_install_frontend = render_command('yarn_install_frontend', [
   p('', 500),
   p('ya', 110),
   p('yarn', 110),
@@ -186,7 +186,7 @@ const yarn_install_frontend = render_command([
   p(['yarn install v1.3.2', <br />, '[...]'], 580)
 ], ['yarn install v1.3.2', <br />, '[...]'], true, '~/rpi-frontend', [cd_rpi_frontend])
 
-const yarn_build = render_command([
+const yarn_build = render_command('yarn_build', [
   p('', 500),
   p('ya', 110),
   p('yarn', 110),
@@ -201,7 +201,7 @@ const yarn_build = render_command([
   p(['yarn run v1.3.2', <br />, '$ react-scripts build', <br />, 'Creating an optimized production build...', <br />, <br />, 'The build folder is ready to be deployed.', <br />, 'You may serve it with a static server:', <br />, <br />, space(2), 'serve -s build'], 700),
 ], ['yarn run v1.3.2', <br />, '$ react-scripts build', <br />, 'Creating an optimized production build...', <br />, <br />, 'The build folder is ready to be deployed.', <br />, 'You may serve it with a static server:', <br />, <br />, space(2), 'serve -s build'], true, '~/rpi-frontend', [cd_rpi_frontend, yarn_install_frontend])
 
-const serve_build = render_command([
+const serve_build = render_command('serve_build', [
   p('', 500),
   p('se', 110),
   p('ser', 90),

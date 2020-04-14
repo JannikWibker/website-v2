@@ -1,8 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Keyframes, Frame } from 'react-keyframes'
 
-import { TerminalLink, space, C, Int, Str, Key, StillCaret, Caret } from './Shell.js'
+import { TerminalLink, space, C, Int, Str, StillCaret, Caret } from './Shell.js'
 
 export default ({ age=19 }) => (
   <Keyframes loop={false} delay={300}>
