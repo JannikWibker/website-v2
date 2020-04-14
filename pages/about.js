@@ -70,11 +70,12 @@ Hi, im Jannik and I program things
 #### programming languages:
 - **javascript**
 - java
-- php
-- C/C++
-- python
 - lua
+- ruby
 - nim
+- python
+- C/C++
+- php
 
 #### web stuff & technologies:
 - javascript
