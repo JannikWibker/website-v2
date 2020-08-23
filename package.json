@@ -19,7 +19,7 @@
     "next": "^9.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-keyframes": "^0.2.3",
+    "react-keyframes": "^1.0.0-canary.3",
     "react-markdown": "^4.3.1",
     "styled-components": "^5.1.0"
   },

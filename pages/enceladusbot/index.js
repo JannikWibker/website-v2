@@ -99,7 +99,7 @@ export default class EnceladusBotDocsPage extends Component {
 
   render() {
     return (
-      <Docs className="Page>
+      <Docs className="Page">
         <Globals pathname={'/enceladusbot'} color={color.bg} />
         <Header
           left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}

@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-export default ({pathname, color}) => (
+const Globals = ({pathname, color}) => (
   <Head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel='shortcut icon' type='image/x-icon' href='/static/favicon/favicon.ico' />
@@ -23,3 +23,5 @@ export default ({pathname, color}) => (
     <style>{`@font-face{font-family: Menlo;font-display:optional;src:local("Menlo"),url(/static/font/Menlo-Regular.woff2) format("woff2"),url(/static/font/Menlo-Regular.ttf) format("ttf");} body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Fira Sans,Droid Sans,sans-serif;text-rendering:geometricPrecision;margin:0px;padding:0px;} ::selection{background-color:rgba(248,28,229,0.75);color:white;}`}</style>
   </Head>
 )
+
+export default Globals
