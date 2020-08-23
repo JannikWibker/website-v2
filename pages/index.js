@@ -21,7 +21,6 @@ const P = styled.p`
   padding-top: 32px;
 `
 
-
 export default class IndexPage extends Component {
   constructor(props) {
     super(props)
@@ -29,7 +28,7 @@ export default class IndexPage extends Component {
 
   render() {
     return (
-      <Index>
+      <Index className="Page">
         <Globals pathname={'/'} color={color.bg} />
         <Header
           left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}

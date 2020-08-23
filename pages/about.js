@@ -70,6 +70,7 @@ Hi, im Jannik and I program things
 #### programming languages:
 - **javascript**
 - java
+- kotlin
 - lua
 - ruby
 - nim
@@ -87,7 +88,7 @@ Hi, im Jannik and I program things
 - linux knowledge
 - windows knowledge
 - mac os x knowledge
-- microsoft office 
+- microsoft office
 - latex
 
 ### programming related interests:

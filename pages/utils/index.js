@@ -102,7 +102,7 @@ export default class UtilsDocPage extends Component {
 
   render() {
     return (
-      <Docs>
+      <Docs className="Page">
         <Globals pathname={'/utils'} color={color.bg} />
         <Header
           left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}

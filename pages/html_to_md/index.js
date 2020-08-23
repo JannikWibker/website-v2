@@ -102,7 +102,7 @@ export default class HtmlToMdPage extends Component {
 
   render() {
     return (
-      <HtmlToMd>
+      <HtmlToMd className="Page">
         <Globals pathname={'/'} color={color.bg} />
         <Header
           left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}

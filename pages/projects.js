@@ -42,7 +42,7 @@ const Description = styled.span`
   color: slategrey;
 `
 
-const projects = [ 
+const projects = [
   { name: 'git',                private: true,  description: 'personal git server', url: 'https://git.jannik.ml' },
   { name: 'lrms',               private: true,  description: 'Laptop Reservation Management System (discontinued)', url: '/lrms' },
 
@@ -67,7 +67,7 @@ export default class ProjectsPage extends Component {
 
   render() {
     return (
-      <Projects>
+      <Projects className="Page">
         <Globals pathname={'/projects'} color={color.bg} />
         <Header
           left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}

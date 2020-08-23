@@ -16,6 +16,11 @@ export default class MyDocument extends Document {
 	  <meta name="google-site-verification" content="pRHqspliCrXCKj_H1ivjcAIVL-r9_vTwX6bDg_IIigM" />
           <link rel="stylesheet" media="print" href="static/css/print.css" />
           {this.props.styleTags}
+          <style>{`
+            .Page {
+              padding-left: calc(100vw - 100%);
+            }
+          `}</style>
         </Head>
         <body>
           <Main />
@@ -25,3 +30,4 @@ export default class MyDocument extends Document {
     )
   }
 }
+
