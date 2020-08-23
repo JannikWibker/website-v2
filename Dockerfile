@@ -1,6 +1,6 @@
 FROM node:11
 
-LABEL version="1.0.1"
+LABEL version="1.0.2"
 LABEL name="website"
 
 COPY . /app

@@ -17,6 +17,12 @@ Building:
 npm run build # next build
 ```
 
+Docker:
+
+```sh
+docker build -t website:<version> .
+```
+
 Starting (when already built):
 
 ```sh
