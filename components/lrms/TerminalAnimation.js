@@ -228,7 +228,7 @@ const serve_build = render_command('serve_build', [
   '└──────────────────────────────┘'
 ], true, '~/rpi-frontend', [])
 
-export default () => (
+const TerminalAnimation = () => (
   <Keyframes loop={true} delay={300}>
     {[
       ...install_yarn.input_parts, ...install_yarn.output_parts,
@@ -245,3 +245,6 @@ export default () => (
     ]}
   </Keyframes>
 )
+
+
+export default TerminalAnimation

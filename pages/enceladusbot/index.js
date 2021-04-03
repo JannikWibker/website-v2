@@ -37,7 +37,7 @@ const info = {
     ],
     qr: [
       <P>create a QR code for the specified text</P>,
-      <Codeblock>/qr https://docs.jannik.ml/</Codeblock>
+      <Codeblock>/qr https://docs.jannikwibker.dev/</Codeblock>
     ],
     md: [
       <P>create a pdf from the specified markdown<br />(supports LaTeX math syntax, dot diagrams, ...; uses <a href="https://github.com/shd101wyy/mume">mume</a> (creator has also made one of the best markdown plugins for atom / vscode for which mume is the backend of) and <a href="https://github.com/googlechrome/puppeteer">puppeteer</a> under the hood)</P>,

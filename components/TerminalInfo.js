@@ -3,7 +3,7 @@ import { Keyframes, Frame } from 'react-keyframes'
 
 import { TerminalLink, space, C, Int, Str, StillCaret, Caret } from './Shell.js'
 
-export default ({ age=19 }) => (
+const TerminalInfo = ({ age = 21 }) => (
   <Keyframes loop={false} delay={300}>
     <Frame duration={500}><C c='#d33682'>λ</C> ~ <StillCaret /></Frame>
     <Frame duration={70}><C c='#d33682'>λ</C> ~ i<StillCaret /></Frame>
@@ -33,7 +33,7 @@ export default ({ age=19 }) => (
       {space(1)}contact:{space(1)}{'{'}<br />
       {space(2)}email:{space(2)}<Str>"<TerminalLink href={'mailto:jannikwibker@gmail.com'}>jannikwibker@gmail.com</TerminalLink>"</Str>,<br />
       {space(2)}github:{space(1)}<Str>"<TerminalLink href={'https://github.com/JannikWibker'}>JannikWibker</TerminalLink>"</Str>,<br />
-      {space(2)}website:{space(1)}<Str>"<TerminalLink href={'https://jannik.ml'}>jannik.ml</TerminalLink>"</Str>,<br />
+      {space(2)}website:{space(1)}<Str>"<TerminalLink href={'https://jannikwibker.dev'}>jannikwibker.dev</TerminalLink>"</Str>,<br />
       {space(2)}twitter:{space(1)}<Str>"<TerminalLink href={'https://twitter.com/JannikWibker'}>@JannikWibker</TerminalLink>"</Str><br />
       {space(1)}{'}'}<br />
       {'}'}<br />
@@ -41,3 +41,6 @@ export default ({ age=19 }) => (
     </Frame>
   </Keyframes>
 )
+
+
+export default TerminalInfo

@@ -43,10 +43,10 @@ const Description = styled.span`
 `
 
 const projects = [
-  { name: 'git',                private: true,  description: 'personal git server', url: 'https://git.jannik.ml' },
+  { name: 'git',                private: true,  description: 'personal git server', url: 'https://git.jannikwibker.dev' },
   { name: 'lrms',               private: true,  description: 'Laptop Reservation Management System (discontinued)', url: '/lrms' },
 
-  { name: 'docs',               private: false, description: 'self hosted math/it wiki (ger)', url: 'https://docs.jannik.ml' },
+  { name: 'docs',               private: false, description: 'self hosted math/it wiki (ger)', url: 'https://docs.jannikwibker.dev' },
   { name: 'notes',              private: false, description: 'note taking web app', url: 'https://notes.jannik.ml' },
   { name: 'dotfiles',           private: false, description: 'my personal dotfiles for both linux and macOS', url: 'https://github.com/JannikWibker/dots' },
   { name: 'spreadsheets',       private: false, description: 'little spreadsheets app with formula support', url: 'https://github.com/JannikWibker/spreadsheets' },
