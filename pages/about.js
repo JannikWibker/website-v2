@@ -54,47 +54,49 @@ const LI = styled.li`
 
 const hiddenMarkdown = null
 
-const Markdown = markdown({h3: H3, h4: H4, a: Link, p: P, li: LI})`
+const Markdown = markdown({ h3: H3, h4: H4, a: Link, p: P, li: LI })`
 ### who am I?
 
-Hi, im Jannik and I program things
+Hi, im Jannik and like to program all kind of things
 
 ### personal info
 - name: Jannik Wibker
 - age: ${age(new Date('1999/10/20'))}
-- location: North-Rhein-Westfalia, Germany
-- languages: english, german, (a bit of) french
+- location: Baden-Württemberg, Germany
+- languages: english, german, (a bit of) french, (super tiny bit of) mandarin
 
 ### technical skills
 
 #### programming languages:
 - **javascript**
+- **typescript**
 - java
 - kotlin
+- c/c++
 - lua
+- python
 - ruby
 - nim
-- python
-- C/C++
 - php
 
 #### web stuff & technologies:
 - javascript
+- typescript
 - [react](https://reactjs.org)
 - [nodejs](https://nodejs.org)
 - html & css
 
 #### qualifications that are pretty much mandatory
 - linux knowledge
-- windows knowledge
 - mac os x knowledge
-- microsoft office
+- windows knowledge
 - latex
+- microsoft office
 
 ### programming related interests:
 - **web development**
 - compiler design
-- linux window managers & scripting
+- linux, window managers & scripting
 - mathematics
 `
 
