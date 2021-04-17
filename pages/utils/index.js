@@ -96,7 +96,6 @@ export default class UtilsDocPage extends Component {
   }
 
   update(selected) {
-    console.log('selected ' + selected)
     this.setState({ selected })
   }
 

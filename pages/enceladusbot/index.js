@@ -67,23 +67,9 @@ const info = {
 }
 
 export default class EnceladusBotDocsPage extends Component {
-  static async getInitialProps({ req }) {
-    let obj = {}
-    if(req) {
-      console.log('server side')
-      if(req.db) {
-        req.db.fn()
-        obj.secret_info = req.db.secret_info
-      }
-    } else {
-      console.log('client side')
-    }
-    return obj
-  }
 
   constructor(props) {
     super(props)
-    console.log(this.props)
 
     this.update = this.update.bind(this)
 
@@ -93,7 +79,6 @@ export default class EnceladusBotDocsPage extends Component {
   }
 
   update(selected) {
-    console.log('selected ' + selected)
     this.setState({ selected })
   }
 

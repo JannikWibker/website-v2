@@ -59,7 +59,6 @@ const info = {
 export default class LRMSIndexPage extends Component {
   constructor(props) {
     super(props)
-    console.log(this.props)
 
     this.update = this.update.bind(this)
 
@@ -69,7 +68,6 @@ export default class LRMSIndexPage extends Component {
   }
 
   update(selected) {
-    console.log('selected ' + selected)
     this.setState({ selected })
   }
 

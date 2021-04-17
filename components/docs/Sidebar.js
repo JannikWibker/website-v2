@@ -60,7 +60,6 @@ export default class SideBar extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props.selected, nextProps.selected)
     this.setState({ route: nextProps.selected })
   }
 
@@ -72,14 +71,12 @@ export default class SideBar extends Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount component mounted; should update now')
     this.setState({
       route: !isNode && location.hash ? location.hash.substring(1) : 'html_to_md'
-    }, x => console.log('componentDidMount', this.state))
+    })
   }
 
   render() {
-    console.log({props: this.props, state: this.state})
     return (
       <SideNav>
         {Object.keys(this.props.data).map((category, i) => (
