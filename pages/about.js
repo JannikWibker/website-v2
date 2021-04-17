@@ -30,7 +30,7 @@ const H3 = styled.h3`
 `
 
 const H4 = styled.h4`
-  font-size: 12px;
+  font-size: 13px;
   font-align: left
 `
 
@@ -43,12 +43,12 @@ const A = styled.a`
 `
 
 const P = styled.p`
-  font-size: 12px;
+  font-size: 13px;
   font-align: left
 `
 
 const LI = styled.li`
-  font-size: 11px;
+  font-size: 12px;
   list-style-type: decimal;
 `
 

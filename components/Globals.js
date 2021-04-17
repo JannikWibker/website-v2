@@ -12,13 +12,13 @@ const Globals = ({pathname, color}) => (
     <link rel="manifest" href="/static/favicon/manifest.json" />
     <title>{(pathname.replace('/', '') || 'home') + ' - Jannik Wibker'}</title>
     <meta name="theme-color" content={color || '#000'} />
-    <meta property="og:site_name" content="web.jannikwibker.dev" />
+    <meta property="og:site_name" content="jannikwibker.dev" />
     <meta property="og:title" content={(pathname.replace('/', '') || 'home') + ' - Jannik Wibker'} />
     <meta property="og:description" content="Jannik Wibkers personal website" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:locale:alternative" content="de_DE" />
-    <meta property="og:url" content={'https://web.jannikwibker.dev' + pathname} />
+    <meta property="og:url" content={'https://jannikwibker.dev' + pathname} />
     <meta property="og:image" content='/static/favicon/favicon.ico' />
     <style>{`@font-face{font-family: Menlo;font-display:optional;src:local("Menlo"),url(/static/font/Menlo-Regular.woff2) format("woff2"),url(/static/font/Menlo-Regular.ttf) format("ttf");} body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Fira Sans,Droid Sans,sans-serif;text-rendering:geometricPrecision;margin:0px;padding:0px;} ::selection{background-color:rgba(248,28,229,0.75);color:white;}`}</style>
   </Head>

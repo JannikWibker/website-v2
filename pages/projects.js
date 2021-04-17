@@ -43,21 +43,17 @@ const Description = styled.span`
 `
 
 const projects = [
-  { name: 'git',                private: true,  description: 'personal git server', url: 'https://git.jannikwibker.dev' },
-  { name: 'lrms',               private: true,  description: 'Laptop Reservation Management System (discontinued)', url: '/lrms' },
-
-  { name: 'docs',               private: false, description: 'self hosted math/it wiki (ger)', url: 'https://docs.jannikwibker.dev' },
+  { name: 'docs',               private: false, description: 'self hosted math/computer science wiki (mostly german)', url: 'https://docs.jannikwibker.dev' },
   { name: 'notes',              private: false, description: 'note taking web app', url: 'https://notes.jannik.ml' },
-  { name: 'dotfiles',           private: false, description: 'my personal dotfiles for both linux and macOS', url: 'https://github.com/JannikWibker/dots' },
+  { name: 'dotfiles',           private: false, description: 'personal dotfiles for both linux and macOS', url: 'https://github.com/JannikWibker/dots' },
   { name: 'spreadsheets',       private: false, description: 'little spreadsheets app with formula support', url: 'https://github.com/JannikWibker/spreadsheets' },
-  { name: 'auth',               private: false, description: 'self-made IDP system (link to dashboard)', url: 'https://accounts.jannik.ml' },
-  { name: 'mima-x vm',          private: false, description: 'vm for the educational mimax instruction set', url: 'https://github.com/JannikWibker/mimax-vm' },
+  { name: 'auth',               private: false, description: 'self-made identity provider (link to account dashboard)', url: 'https://accounts.jannik.ml' },
+  { name: 'mima-x vm',          private: false, description: 'vm for the educational mima-x instruction set', url: 'https://github.com/JannikWibker/mimax-vm' },
+  { name: 'tm_vm',              private: false, description: 'turing machine simulator with tikz / LaTeX output (and gif, pdf, ...)', url: 'https://github.com/JannikWibker/tm_vm' },
   { name: '6502-disassembler',  private: false, description: '6502 disassembler (Lua)', url: 'https://github.com/JannikWibker/6502-disassembler' },
   { name: 'dd-update',          private: false, description: 'ddclient alternative (cloudflare only)', url: 'https://github.com/JannikWibker/dd-update' },
-  { name: 'EnceladusBot',       private: false, description: 'telegram bot', url: '/enceladusbot' },
-  { name: 'weather',            private: false, description: 'weather web app', url: 'https://weather.jannik.ml' },
-  { name: 'html_to_md',         private: false, description: '', url: '/html_to_md' },
-  { name: 'utils',              private: false, description: '', url: '/utils' },
+  { name: 'smart tv system',    private: false, description: 'university project: displaying useful information on a smart tv', url: 'https://git.jannikwibker.dev/PSE' },
+  { name: 'jdkbd',              private: false, description: 'custom mechanical keyboard (pcb & case; split 40% ortho; based on crkbd)', url: 'https://github.com/JannikWibker/jdkbd' }
 ]
 
 export default class ProjectsPage extends Component {
@@ -75,41 +71,26 @@ export default class ProjectsPage extends Component {
           color={color.bg} />
         <Main>
           <Display>
-            <h3>Projects</h3>
+            <h3>projects</h3>
             <Indent>
-              <h4>public projects</h4>
+              <p>
+                A list of some of my projects
+              </p>
               <ul>
-              {projects.filter(project => !project.private).map((project, i) => (
-                <li key={i}>
-                  <Link href={project.url}>
-                  {project.name}
-                  {project.description ? <Description>&nbsp;&nbsp;&nbsp;&nbsp;{project.description}</Description> : null}
-                </Link>
-                </li>
-              ))}
-            </ul>
-            </Indent>
-            <Indent>
-              <h4>private projects (offline or login with privileged account required)</h4>
-              <ul>
-              {projects.filter(project => project.private).map((project, i) => (
-                <li key={i}>
-                  <Link href={project.url}>
-                    {project.name}
-                    {project.description ? <Description>&nbsp;&nbsp;&nbsp;&nbsp;{project.description}</Description> : null}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            </Indent>
-            <Indent>
-                <h4>other projects</h4>
-                <p>There are many more projects which are completely private at the moment, don't have a hosted version or only consist of api endpoints, are just not anywhere near completion.</p>
-                <p>Some of these projects are an <i>ip lookup</i> api, <i>exif metadata</i> parser, <i>proxy server</i> with authentication support, <Link href="https://github.com/JannikWibker/yaii"><i>bottom up</i> parser for regular languages</Link> and a <i>database viewer</i> for MySQL with undo/redo/...</p>
-            </Indent>
-            <Indent>
-              <br />
-              <h4>Github: <Link href="https://github.com/JannikWibker">JannikWibker</Link></h4>
+                {projects.map((project, i) => (
+                  <li key={i}>
+                    <Link href={project.url}>
+                      {project.name}
+                      {project.description ? <Description>&nbsp;&nbsp;&nbsp;&nbsp;{project.description}</Description> : null}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+            <p>Many more unfinished projects, private projects or projects without a live version running.</p>
+            <p>You might find something interesting here:</p>
+            <b>github</b>: <Link href="https://github.com/JannikWibker">JannikWibker</Link><br />
+            <b>personal git server</b>: <Link href="https://git.jannikwibker.dev/">git.jannikwibker.dev</Link>
             </Indent>
           </Display>
         </Main>
