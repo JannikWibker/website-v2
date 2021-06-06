@@ -28,7 +28,7 @@ const TerminalInfo = ({ age = 21 }) => (
       {space(1)}languages:{space(1)}{'{'}<br />
       {space(2)}german:{space(2)}<Str>"native speaker"</Str>,<br />
       {space(2)}english:{space(1)}<Str>"advanced"</Str>,<br />
-      {space(2)}french:{space(2)}<Str>"beginner"</Str><br />
+      {space(2)}french:{space(2)}<Str>"beginner"</Str>,<br />
       {space(2)}chinese:{space(2)}<Str>"beginner"</Str><br />
       {space(1)}{'}'},<br />
       {space(1)}contact:{space(1)}{'{'}<br />
