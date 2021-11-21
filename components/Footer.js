@@ -116,9 +116,9 @@ export default class Header extends Component {
           </FooterItem>
           <Offset />
           <FooterItem color={color} className="four columns">
-            <Link style={true} href={'mailto:jannikwibker@gmail.com'}>
+            <Link style={true} href={'mailto:jannik@jannikwibker.dev'}>
               <EmailIcon labelledby="email_adress" alt="E-mail" color={color} />
-              <span id="email_adress">jannikwibker@gmail.com</span>
+              <span id="email_adress">jannik@jannikwibker.dev</span>
             </Link>
           </FooterItem>
         </FooterWrapper>

@@ -29,10 +29,10 @@ const TerminalInfo = ({ age = 21 }) => (
       {space(2)}german:{space(2)}<Str>"native speaker"</Str>,<br />
       {space(2)}english:{space(1)}<Str>"advanced"</Str>,<br />
       {space(2)}french:{space(2)}<Str>"beginner"</Str>,<br />
-      {space(2)}chinese:{space(2)}<Str>"beginner"</Str><br />
+      {space(2)}chinese:{space(1)}<Str>"beginner"</Str><br />
       {space(1)}{'}'},<br />
       {space(1)}contact:{space(1)}{'{'}<br />
-      {space(2)}email:{space(2)}<Str>"<TerminalLink href={'mailto:jannikwibker@gmail.com'}>jannikwibker@gmail.com</TerminalLink>"</Str>,<br />
+      {space(2)}email:{space(2)}<Str>"<TerminalLink href={'mailto:jannik@jannikwibker.dev'}>jannik@jannikwibker.dev</TerminalLink>"</Str>,<br />
       {space(2)}github:{space(1)}<Str>"<TerminalLink href={'https://github.com/JannikWibker'}>JannikWibker</TerminalLink>"</Str>,<br />
       {space(2)}website:{space(1)}<Str>"<TerminalLink href={'https://jannikwibker.dev'}>jannikwibker.dev</TerminalLink>"</Str>,<br />
       {space(2)}twitter:{space(1)}<Str>"<TerminalLink href={'https://twitter.com/JannikWibker'}>@JannikWibker</TerminalLink>"</Str><br />

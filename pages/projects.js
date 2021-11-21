@@ -44,10 +44,10 @@ const Description = styled.span`
 
 const projects = [
   { name: 'docs',               private: false, description: 'self hosted math/computer science wiki (mostly german)', url: 'https://docs.jannikwibker.dev' },
-  { name: 'notes',              private: false, description: 'note taking web app', url: 'https://notes.jannik.ml' },
+  { name: 'notes',              private: false, description: 'note taking web app', url: 'https://notes.jannikwibker.dev' },
   { name: 'dotfiles',           private: false, description: 'personal dotfiles for both linux and macOS', url: 'https://github.com/JannikWibker/dots' },
   { name: 'spreadsheets',       private: false, description: 'little spreadsheets app with formula support', url: 'https://github.com/JannikWibker/spreadsheets' },
-  { name: 'auth',               private: false, description: 'self-made identity provider (link to account dashboard)', url: 'https://accounts.jannik.ml' },
+  { name: 'auth',               private: false, description: 'self-made identity provider (link to account dashboard)', url: 'https://accounts.jannikwibker.dev' },
   { name: 'mima-x vm',          private: false, description: 'vm for the educational mima-x instruction set', url: 'https://github.com/JannikWibker/mimax-vm' },
   { name: 'tm_vm',              private: false, description: 'turing machine simulator with tikz / LaTeX output (and gif, pdf, ...)', url: 'https://github.com/JannikWibker/tm_vm' },
   { name: '6502-disassembler',  private: false, description: '6502 disassembler (Lua)', url: 'https://github.com/JannikWibker/6502-disassembler' },
