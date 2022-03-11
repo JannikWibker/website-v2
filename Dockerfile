@@ -1,7 +1,7 @@
 FROM node:15
 
 LABEL version="1.0.3"
-LABEL name="website"
+LABEL name="website-jannik"
 
 COPY package.json      /app/package.json
 COPY package-lock.json /app/package-lock.json
