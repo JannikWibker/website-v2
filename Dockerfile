@@ -1,4 +1,5 @@
-FROM node:16
+# **build stage*
+FROM node:18 as build
 
 LABEL version="2.0.0"
 LABEL name="website-jannik"
@@ -16,4 +17,12 @@ COPY . /app
 # build step
 RUN npm run build
 
-CMD npm run start
+# **execution stage**
+FROM gcr.io/distroless/nodejs:18
+
+COPY --from=build /app/.next/standalone ./
+COPY --from=build /app/public ./public
+COPY --from=build /app/.next/static ./.next/static
+
+CMD ["server.js"]
+
