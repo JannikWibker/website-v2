@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import Link from '../Link.js'
-import isNode from '../../util/isNode.js'
+import isNode from '../../utils/isNode.js'
 
 const SideNav = styled.div`
   width: 144px;

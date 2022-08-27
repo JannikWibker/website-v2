@@ -10,7 +10,7 @@ import Sidebar from '../../components/docs/Sidebar.js'
 import { Paragraph, P, Code, Codeblock, Note, Blockquote } from '../../components/docs/Components.js'
 import MainSection from '../../components/docs/Main.js'
 
-import isNode from '../../util/isNode.js'
+import isNode from '../../utils/isNode.js'
 
 const color = {
   bg: 'white',

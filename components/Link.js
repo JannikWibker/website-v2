@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import isAbsolute from 'is-absolute-url'
+import isAbsoluteUrl from '../utils/is-absolute-url'
 
 const A = styled.a`
   text-decoration: none;
@@ -20,9 +20,9 @@ const MyLink = ({href, name, children, style=false, ignore_prefetch=false}) => {
 
   return (isAnchor(href)
     ? <A styled={style} href={href}>{child}</A>
-    : isAbsolute(href) || ignore_prefetch
+    : isAbsoluteUrl(href) || ignore_prefetch
       ? <A styled={style} href={href} target="_blank" rel="noreferrer noopener">{child}</A>
-      : <Link href={href} prefetch><A href={href} styled={style}>{child}</A></Link>
+      : <Link href={href}><A href={href} styled={style}>{child}</A></Link>
   )
 }
 
