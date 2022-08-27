@@ -16,5 +16,4 @@ COPY . /app
 # build step
 RUN npm run build
 
-CMD node main.js
-
+CMD npm run start

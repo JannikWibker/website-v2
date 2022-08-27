@@ -8,7 +8,7 @@
 Development:
 
 ```sh
-npm run dev # node main.js dev
+npm run dev # next dev
 ```
 
 Building:
@@ -26,5 +26,5 @@ docker build -t website:<version> .
 Starting (when already built):
 
 ```sh
-npm run start # node main.js
+npm run start # next start
 ```
