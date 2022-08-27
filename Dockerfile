@@ -1,4 +1,4 @@
-FROM node:15
+FROM node:16
 
 LABEL version="1.0.3"
 LABEL name="website-jannik"

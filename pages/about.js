@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import markdown from 'markdown-in-js'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 
 import Header from '../components/Header.js'
 import Footer from '../components/Footer.js'
@@ -54,7 +55,11 @@ const LI = styled.li`
 
 const hiddenMarkdown = null
 
-const Markdown = markdown({ h3: H3, h4: H4, a: Link, p: P, li: LI })`
+const components = {
+  h3: H3, h4: H4, a: Link, p: P, li: LI
+}
+
+const markdownSource = `
 ### who am I?
 
 Hi, im Jannik and like to program all kind of things
@@ -121,31 +126,31 @@ const HiddenUnlessPrint = styled.div`
   display: none;
 `
 
-export default class AboutPage extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      <About className="Page">
-        <Globals pathname={'/about'} color={color.bg} />
-        <Header
-          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
-          right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
-          color={color.bg} />
-        <Main>
-          <Terminal title={'Terminal'}>
-            <TerminalInfo age={age(new Date('1999/10/20'))} />
-          </Terminal>
-          <br />
-          <Info className="info">
-            {Markdown}
-            <HiddenUnlessPrint className="hiddenUnlessPrint">{hiddenMarkdown}</HiddenUnlessPrint>
-          </Info>
-        </Main>
-        <Footer color={color.bg} />
-      </About>
-    )
-  }
+export async function getStaticProps() {
+  const source = markdownSource
+  const mdx = await serialize(source)
+  return { props: { mdx } }
 }
+
+const AboutPage = ({ mdx }) => (
+  <About className="Page">
+    <Globals pathname={'/about'} color={color.bg} />
+    <Header
+      left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
+      right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
+      color={color.bg} />
+    <Main>
+      <Terminal title={'Terminal'}>
+        <TerminalInfo age={age(new Date('1999/10/20'))} />
+      </Terminal>
+      <br />
+      <Info className="info">
+        <MDXRemote {...mdx} components={components} />
+        <HiddenUnlessPrint className="hiddenUnlessPrint">{hiddenMarkdown}</HiddenUnlessPrint>
+      </Info>
+    </Main>
+    <Footer color={color.bg} />
+  </About>
+)
+
+export default AboutPage
