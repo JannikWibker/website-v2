@@ -1,75 +1,74 @@
-import styled from 'styled-components'
+import { styled } from '../stitches.config'
 
-const Grid = styled.div`
-  .container {
-    position: relative;
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
-  }
+const Grid = styled('div', {
+  '.container': {
+    position: 'relative',
+    width: '100%',
+    maxWidth: '960px',
+    margin: '0 auto',
+    padding: '0',
+    boxSizing: 'border-box'
+  },
 
-  .column, .columns {
-    width: 100%;
-    float: left;
-    box-sizing: border-box;
-  }
+  '.column, .columns': {
+    width: '100%',
+    float: 'left',
+    boxSizing: 'border-box',
+  },
 
-  @media(min-width:400px) {
-    .container {
-      width: 85%;
-      padding: 0;
+  '@media(min-width:400px)': {
+    '.container': {
+      width: '85%',
+      padding: '0'
     }
-  }
+  },
 
-  @media(min-width:750px) {
-    .container {
-      width:80%;
-      padding-top: 20px;
-      padding-bottom: 20px;
+  '@media(min-width:750px)': {
+    '.container': {
+      width: '80%',
+      paddingTop: '20px',
+      paddingBottom: '20px',
+    },
+    '.column, .columns': {
+      marginLeft: '4%',
+    },
+    '.column:first-child, .columns:first-child': {
+      marginLeft: '0',
     }
+  },
 
-    .column, .columns {
-      margin-left:4%;
-    }
-    .column:first-child, .columns:first-child {
-      margin-left: 0;
-    }
-  }
+  '.one.column,.one.columns': { width: '4.66666666667%' },
+  '.two.columns': { width: '13.3333333333%' },
+  '.three.columns': { width: '22%' },
+  '.four.columns': { width: '30.6666666667%' },
+  '.five.columns': { width: '39.3333333333%' },
+  '.six.columns': { width: '48%' },
+  '.seven.columns': { width: '56.6666666667%' },
+  '.eight.columns': { width: '65.3333333333%' },
+  '.nine.columns': { width: '74.0%' },
+  '.ten.columns': { width: '82.6666666667%' },
+  '.eleven.columns': { width: '91.3333333333%' },
+  '.twelve.columns': { width: '100%', marginLeft: '0' },
 
-  .one.column,.one.columns {width:4.66666666667%;}
-  .two.columns       {width:13.3333333333%;}
-  .three.columns     {width:22%;}
-  .four.columns      {width:30.6666666667%;}
-  .five.columns      {width:39.3333333333%;}
-  .six.columns       {width:48%;}
-  .seven.columns     {width:56.6666666667%;}
-  .eight.columns     {width:65.3333333333%;}
-  .nine.columns      {width:74.0%;}
-  .ten.columns       {width:82.6666666667%;}
-  .eleven.columns    {width:91.3333333333%;}
-  .twelve.columns    {width:100%;margin-left:0;}
+  '.one-third.column': { width: '30.6666666667%' },
+  '.two-thirds.column': { width: '65.3333333333%' },
+  '.one-half.column': { width: '48%' },
 
-  .one-third.column  {width:30.6666666667%;}
-  .two-thirds.column {width:65.3333333333%;}
-  .one-half.column   {width:48%;}
+  '.offset-by-one.column,.offset-by-one.columns': { marginLeft: '8.66666666667%' },
+  '.offset-by-two.columns': { marginLeft: '17.3333333333%' },
+  '.offset-by-three.columns': { marginLeft: '26%' },
+  '.offset-by-four.columns': { marginLeft: '34.6666666667%' },
+  '.offset-by-five.columns': { marginLeft: '43.3333333333%' },
+  '.offset-by-six.columns': { marginLeft: '52%' },
+  '.offset-by-seven.columns': { marginLeft: '60.6666666667%' },
+  '.offset-by-eight.columns': { marginLeft: '69.3333333333%' },
+  '.offset-by-nine.columns': { marginLeft: '78.0%' },
+  '.offset-by-ten.columns': { marginLeft: '86.6666666667%' },
+  '.offset-by-eleven.columns': { marginLeft: '95.3333333333%' },
 
-  .offset-by-one.column,.offset-by-one.columns {margin-left:8.66666666667%;}
-  .offset-by-two.columns    {margin-left:17.3333333333%;}
-  .offset-by-three.columns  {margin-left:26%;}
-  .offset-by-four.columns   {margin-left:34.6666666667%;}
-  .offset-by-five.columns   {margin-left:43.3333333333%;}
-  .offset-by-six.columns    {margin-left:52%;}
-  .offset-by-seven.columns  {margin-left:60.6666666667%;}
-  .offset-by-eight.columns  {margin-left:69.3333333333%;}
-  .offset-by-nine.columns   {margin-left:78.0%;}
-  .offset-by-ten.columns    {margin-left:86.6666666667%;}
-  .offset-by-eleven.columns {margin-left:95.3333333333%;}
-
-  .offset-by-one-third.column,.offset-by-one-third.columns   {margin-left:34.6666666667%;}
-  .offset-by-two-thirds.column,.offset-by-two-thirds.columns {margin-left:69.3333333333%;}
-  .offset-by-one-half.column,.offset-by-one-half.columns     {margin-left:52%;}
-`
+  '.offset-by-one-third.column,.offset-by-one-third.columns': { marginLeft: '34.6666666667%' },
+  '.offset-by-two-thirds.column,.offset-by-two-thirds.columns': { marginLeft: '69.3333333333%' },
+  '.offset-by-one-half.column,.offset-by-one-half.columns': { marginLeft: '52%' }
+})
 
 export default Grid

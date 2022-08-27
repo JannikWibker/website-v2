@@ -1,46 +1,46 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React from 'react'
+import { styled } from '../stitches.config'
 
-import Header from '../components/Header.js'
-import Footer from '../components/Footer.js'
-import Main from '../components/Main.js'
-import Display from '../components/Display.js'
-import Globals from '../components/Globals.js'
-import Link from '../components/Link.js'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import Main from '../components/Main'
+import Display from '../components/Display'
+import Globals from '../components/Globals'
+import Link from '../components/Link'
 
 const color = {
   bg: 'white',
   text: 'black'
 }
 
-const Projects = styled.div`
-  background-color: ${color.bg};
-  color: ${color.text};
+const Projects = styled('div', {
+  backgroundColor: color.bg,
+  color: color.text,
 
-  ul {
-    margin: 0px;
-    padding: 0px;
-    padding-left: 14px;
-    list-style: none;
+  'ul': {
+    margin: '0px',
+    padding: '0px',
+    paddingLeft: '14px',
+    listStyle: 'none'
+  },
+
+  'ul li': {
+    paddingBottom: '2px',
+  },
+
+  'ul li::before': {
+    content: '\uFE61',
+    paddingRight: '6px',
   }
+})
 
-  ul li {
-    padding-bottom: 2px;
-  }
+const Indent = styled('div', {
+  paddingLeft: '20px'
+})
 
-  ul li::before {
-    content: "\uFE61";
-    padding-right: 6px;
-  }
-`
-
-const Indent = styled.div`
-  padding-left: 20px;
-`
-
-const Description = styled.span`
-  color: slategrey;
-`
+const Description = styled('span', {
+  color: 'slategrey'
+})
 
 const projects = [
   { name: 'docs',               private: false, description: 'self hosted math/computer science wiki (mostly german)', url: 'https://docs.jannikwibker.dev' },
@@ -56,46 +56,40 @@ const projects = [
   { name: 'jdkbd',              private: false, description: 'custom mechanical keyboard (pcb & case; split 40% ortho; based on crkbd)', url: 'https://github.com/JannikWibker/jdkbd' }
 ]
 
-export default class ProjectsPage extends Component {
-  constructor(props) {
-    super(props)
-  }
+const ProjectsPage = () => (
+  <Projects className="Page">
+    <Globals pathname={'/projects'} color={color.bg} />
+    <Header
+      left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
+      right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
+      color={color.bg} />
+    <Main>
+      <Display>
+        <h3>projects</h3>
+        <Indent>
+          <p>
+            A list of some of my projects
+          </p>
+          <ul>
+            {projects.map((project, i) => (
+              <li key={i}>
+                <Link href={project.url}>
+                  {project.name}
+                  {project.description ? <Description>&nbsp;&nbsp;&nbsp;&nbsp;{project.description}</Description> : null}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-  render() {
-    return (
-      <Projects className="Page">
-        <Globals pathname={'/projects'} color={color.bg} />
-        <Header
-          left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
-          right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
-          color={color.bg} />
-        <Main>
-          <Display>
-            <h3>projects</h3>
-            <Indent>
-              <p>
-                A list of some of my projects
-              </p>
-              <ul>
-                {projects.map((project, i) => (
-                  <li key={i}>
-                    <Link href={project.url}>
-                      {project.name}
-                      {project.description ? <Description>&nbsp;&nbsp;&nbsp;&nbsp;{project.description}</Description> : null}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+        <p>Many more unfinished projects, private projects or projects without a live version running.</p>
+        <p>You might find something interesting here:</p>
+        <b>github</b>: <Link href="https://github.com/JannikWibker">JannikWibker</Link><br />
+        <b>personal git server</b>: <Link href="https://git.jannikwibker.dev/">git.jannikwibker.dev</Link>
+        </Indent>
+      </Display>
+    </Main>
+    <Footer color={color.bg} />
+  </Projects>
+)
 
-            <p>Many more unfinished projects, private projects or projects without a live version running.</p>
-            <p>You might find something interesting here:</p>
-            <b>github</b>: <Link href="https://github.com/JannikWibker">JannikWibker</Link><br />
-            <b>personal git server</b>: <Link href="https://git.jannikwibker.dev/">git.jannikwibker.dev</Link>
-            </Indent>
-          </Display>
-        </Main>
-        <Footer color={color.bg} />
-      </Projects>
-    )
-  }
-}
+export default ProjectsPage

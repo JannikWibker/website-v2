@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-const Globals = ({pathname, color}) => (
+const Globals = ({ pathname, color }) => (
   <Head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel='shortcut icon' type='image/x-icon' href='/static/favicon/favicon.ico' />

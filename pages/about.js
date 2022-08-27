@@ -1,15 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from '../stitches.config'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 
-import Header from '../components/Header.js'
-import Footer from '../components/Footer.js'
-import Main from '../components/Main.js'
-import Globals from '../components/Globals.js'
-import Terminal from '../components/Terminal.js'
-import TerminalInfo from '../components/TerminalInfo.js'
-import Link from '../components/Link.js'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import Main from '../components/Main'
+import Globals from '../components/Globals'
+import Terminal from '../components/Terminal'
+import TerminalInfo from '../components/TerminalInfo'
+import Link from '../components/Link'
 
 const age = (birthday, today=new Date()) => {
   const age = today.getFullYear() - birthday.getFullYear()
@@ -24,34 +24,34 @@ const color = {
   text: 'white'
 }
 
-const H3 = styled.h3`
-  font-size: 14px;
-  font-align: left;
-  text-decoration: underline;
-`
+const H3 = styled('h3', {
+  fontSize: '14px',
+  fontAlign: 'left',
+  textDecoration: 'underline'
+})
 
-const H4 = styled.h4`
-  font-size: 13px;
-  font-align: left
-`
+const H4 = styled('h4', {
+  fontSize: '13px',
+  fontAlign: 'left'
+})
 
-const A = styled.a`
-  color: unset;
-  text-decoration: none;
-  :hover {
-    text-decoration: underline;
+const A = styled('a', {
+  color: 'unset',
+  textDecoration: 'none',
+  '> :hover': {
+    textDecoration: 'underline',
   }
-`
+})
 
-const P = styled.p`
-  font-size: 13px;
-  font-align: left
-`
+const P = styled('p', {
+  fontSize: '13px',
+  fontAlign: 'left'
+})
 
-const LI = styled.li`
-  font-size: 12px;
-  list-style-type: decimal;
-`
+const LI = styled('li', {
+  fontSize: '12px',
+  listStyleType: 'decimal',
+})
 
 const hiddenMarkdown = null
 
@@ -105,26 +105,26 @@ Hi, im Jannik and like to program all kind of things
 - mathematics
 `
 
-const About = styled.div`
-  background-color: ${color.bg};
-  color: ${color.text};
-  font-family: "Menlo", DejaVu Sans Mono, Lucida Console, monospace, sans-serif;
+const About = styled('div', {
+  backgroundColor: color.bg,
+  color: color.text,
+  fontFamily: 'Menlo, DejaVu Sans Mono, Lucida Console, monospace, sans-serif',
 
-  .Terminal {
-    margin: auto;
+  '.Terminal': {
+    margin: 'auto'
   }
-`
+})
 
-const Info = styled.div`
-  max-width: 90vw;
-  width: 450px;
-  margin: auto;
-  text-align: left;
-`
+const Info = styled('div', {
+  maxWidth: '90vw',
+  width: '450px',
+  margin: 'auto',
+  textAlign: 'left'
+})
 
-const HiddenUnlessPrint = styled.div`
-  display: none;
-`
+const HiddenUnlessPrint = styled('div', {
+  display: 'none'
+})
 
 export async function getStaticProps() {
   const source = markdownSource

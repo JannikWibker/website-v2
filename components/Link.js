@@ -1,28 +1,39 @@
 import React from 'react'
 import Link from 'next/link'
-import styled from 'styled-components'
+import { styled } from '../stitches.config'
 import isAbsoluteUrl from '../utils/is-absolute-url'
 
-const A = styled.a`
-  text-decoration: none;
-  color: inherit;
-  :hover {
-    ${props => props.styled ? 'background-color: rgba(248,28,229,0.75);' : ''}
-    ${props => props.styled ? '' : 'text-decoration: underline;'}
-    ${props => props.styled ? 'color: white;' : ''}
-  }
-`
+const A = styled('a', {
+  textDecoration: 'none',
+  color: 'inherit',
 
-const MyLink = ({href, name, children, style=false, ignore_prefetch=false}) => {
-  const isAnchor = href => href.charAt(0) === '#'
+  variants: {
+    styled: {
+      true: {
+        '&:hover': {
+          backgroundColor: 'rgba(248,28,229,0.75)',
+          color: 'white'
+        }
+      },
+      false: {
+        '&:hover': {
+          textDecoration: 'underline'
+        }
+      }
+    }
+  }
+})
+
+const MyLink = ({ href, name, children, isStyled=false, ignorePrefetch=false }) => {
+  const isAnchor = (href) => href.charAt(0) === '#'
 
   const child = name || children
 
-  return (isAnchor(href)
-    ? <A styled={style} href={href}>{child}</A>
-    : isAbsoluteUrl(href) || ignore_prefetch
-      ? <A styled={style} href={href} target="_blank" rel="noreferrer noopener">{child}</A>
-      : <Link href={href}><A href={href} styled={style}>{child}</A></Link>
+  return (isAnchor(href || '')
+    ? <A styled={isStyled} href={href}>{child}</A>
+    : isAbsoluteUrl(href || '') || ignorePrefetch
+      ? <A styled={isStyled} href={href} target="_blank" rel="noreferrer noopener">{child}</A>
+      : <Link href={href || ''}><A href={href} styled={isStyled}>{child}</A></Link>
   )
 }
 

@@ -1,32 +1,46 @@
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from '../stitches.config'
 import { Keyframes, Frame } from 'react-keyframes'
 
-const TerminalLink = styled.a`
-  color: unset;
-  text-decoration: none;
-  :hover {
-    text-decoration: underline;
+const TerminalLink = styled('a', {
+  color: 'unset',
+  textDecoration: 'none',
+  ':hover': {
+    textDecoration: 'underline'
   }
-`
+})
 
 const space = (amount) => <span>{'\u00A0'.repeat(amount)}</span>
 
-const C = ({c, children}) => <span style={{color: c}}>{children}</span>
+const C = ({ c, children }) => <span style={{color: c}}>{children}</span>
 
-const Int = ({children}) => <span style={{color: '#2aa198'}}>{children}</span>
 // <Int></Int>
-const Str = ({children}) => <span style={{color: 'hsla(45, 100%, 45%, 1)'}}>{children}</span>
-// <Str></Str>
-const Key = ({children}) => <span style={{color: ''}}>{children}</span>
-// <Key></Key>
-const StillCaret = ({font_size = 10, color = 'white'}) => <span style={{display: 'inline-block', width: 4, height: font_size, backgroundColor: color, marginBottom: -2}} />
+const Int = styled('span', { color: '#2aa198' })
 
-const Caret = ({speed = 400, font_size = 10}) => (
+// <Str></Str>
+const Str = styled('span', { color: 'hsla(45, 100%, 45%, 1)' })
+
+// <Key></Key>
+const Key = styled('span', { color: '' })
+
+const StillCaret = ({ fontSize = 10, color = 'white' }) => {
+
+  const StillCaretStyled = styled('span', {
+    display: 'inline-block',
+    width: 4,
+    height: fontSize,
+    backgroundColor: color,
+    marginBottom: '-2px'
+  })
+
+  return <StillCaretStyled />
+}
+
+const Caret = ({speed = 400, fontSize = 10}) => (
   <Keyframes loop={true}>
     <Frame duration={speed}>&nbsp;</Frame>
     <Frame duration={speed}>
-      <StillCaret font_size={font_size} />
+      <StillCaret fontSize={fontSize} />
     </Frame>
   </Keyframes>
 )

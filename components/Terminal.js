@@ -1,119 +1,131 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React from 'react'
+import { styled } from '../stitches.config'
 
-const Title = styled.span`
-  position: absolute;
-  top: 12px;
-  text-align: center;
-  font-size: 12px;
-  margin-left: -26.5px;
-`
+const Title = styled('span', {
+  position: 'absolute',
+  top: '12px',
+  textAlign: 'center',
+  fontSize: '12px',
+  marginLeft: '-26.5px'
+})
 
-const Button = styled.span`
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-`
+const Button = styled('span', {
+  position: 'absolute',
+  width: '12px',
+  height: '12px',
+  borderRadius: '50%',
+  top: '50%',
+  transform: 'translateY(-50%)'
+})
 
-const ButtonClose = styled(Button)`
-  left: 13px;
-  background-color: #ff5f56;
-`
+const ButtonClose = styled(Button, {
+  left: '13px',
+  backgroundColor: '#ff5f56'
+})
 
-const ButtonMinimize = styled(Button)`
-  left: 33px;
-  background-color: #ffbd2e;
-`
+const ButtonMinimize = styled(Button, {
+  left: '33px',
+  backgroundColor: '#ffbd2e'
+})
 
-const ButtonMaximize = styled(Button)`
-  left: 53px;
-  background-color: #27c93f;
-`
+const ButtonMaximize = styled(Button, {
+  left: '53px',
+  backgroundColor: '#27c93f'
+})
 
-let Container, Border, Header, Main
+const BareContainer = ({ width, height }) => styled('div', {
+  boxSizing: 'border-box',
+  borderRadius: '6px',
+  width: width + 'px',
+  height: height + 'px',
+  maxWidth: '90vw',
 
-export default class Terminal extends Component {
-  constructor(props) {
-    super(props)
-
-    const color_white = {
-      text: 'black',
-      bg: 'white',
-      border: '#ccc'
+  variants: {
+    color: {
+      black: {
+        backgroundColor: 'black',
+        color: 'white'
+      },
+      white: {
+        backgroundColor: 'white',
+        color: 'black'
+      }
     }
+  }
+})
 
-    const color_black = {
-      text: 'white',
-      bg: 'black',
-      border: '#666'
+const Header = styled('div', {
+  boxSizing: 'inherit',
+  position: 'absolute',
+  width: '100%',
+  height: '36px',
+  maxWidth: '90vw',
+  textAlign: 'center',
+})
+
+const Border = styled('div', {
+  boxSizing: 'inherit',
+  position: 'relative',
+  borderRadius: '5px',
+  width: '100%',
+  height: '100%',
+  maxWidth: '90vw',
+
+  variants: {
+    color: {
+      black: {
+        backgroundColor: 'black',
+        border: '1px solid #666'
+      },
+      white: {
+        backgroundColor: 'white',
+        border: '1px solid #ccc'
+      }
     }
-
-    const color = (this.props.color || 'black') === 'white'
-      ? color_white
-      : color_black
-
-    Container = styled.div`
-      box-sizing: border-box;
-      border-radius: 6px;
-      width: ${props.width || 450}px;
-      height: ${props.height || 260}px;
-      background-color: ${color.bg};
-      color: ${color.text};
-      max-width: 90vw;
-    `
-
-    Border = styled.div`
-      box-sizing: inherit;
-      position: relative;
-      background-color: ${color.bg};
-      border: 1px solid ${color.border};
-      border-radius: 5px;
-      width: 100%;
-      height: 100%;
-      max-width: 90vw;
-    `
-
-    Header = styled.div`
-      box-sizing: inherit;
-      position: absolute;
-      width: 100%;
-      height: 36px;
-      max-width: 90vw;
-      text-align: center;
-    `
-
-
-    Main = styled.div`
-      box-sizing: inherit;
-      width: calc(100% - 24px);
-      height: calc(100% - 36px);
-      margin: 36px 12px 0 12px;
-      text-align: left;
-      font-size: ${this.props.fontsize || 10}px;
-      line-height: ${this.props.fontsize ? this.props.fontsize + 1 : 10+1}px;
-      font-family: "Menlo", DejaVu Sans Mono, Lucida Console, monospace, sans-serif;
-      color: ${color.text};
-    `
   }
+})
 
-  render() {
-    return (
-      <Container className="Terminal">
-        <Border>
-          <Header>
-            <ButtonClose />
-            <ButtonMinimize />
-            <ButtonMaximize />
-            <Title>{this.props.title}</Title>
-          </Header>
-          <Main>
-            {this.props.children}
-          </Main>
-        </Border>
-      </Container>
-    )
+const BareMain = ({ fontsize }) => styled('div', {
+  boxSizing: 'inherit',
+  width: 'calc(100% - 24px)',
+  height: 'calc(100% - 36px)',
+  margin: '36px 12px 0 12px',
+  textAlign: 'left',
+  fontSize: (fontsize) + 'px',
+  lineHeight: (fontsize + 1) + 'px',
+  fontFamily: 'Menlo, DejaVu Sans Mono, Lucida Console, monospace, sans-serif',
+
+  variants: {
+    color: {
+      black: {
+        color: 'white'
+      },
+      white: {
+        color: 'black'
+      }
+    }
   }
+})
+
+const Terminal = ({ width=450, height=260, fontsize=10, color='black', title, children }) => {
+  const Container = BareContainer({ width: width || 450, height: height || 260 })
+  const Main = BareMain({ fontsize: fontsize })
+
+  return (
+    <Container color={color} className="Terminal">
+      <Border color={color}>
+        <Header>
+          <ButtonClose />
+          <ButtonMinimize />
+          <ButtonMaximize />
+          <Title>{title}</Title>
+        </Header>
+        <Main color={color}>
+          {children}
+        </Main>
+      </Border>
+    </Container>
+  )
 }
+
+export default Terminal

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Keyframes, Frame } from 'react-keyframes'
 
-import { TerminalLink, space, C, Int, Str, StillCaret, Caret } from './Shell.js'
+import { TerminalLink, space, C, Int, Str, StillCaret, Caret } from './Shell'
 
-const TerminalInfo = ({ age = 21 }) => (
+const TerminalInfo = ({ age }) => (
   <Keyframes loop={false} delay={300}>
     <Frame duration={500}><C c='#d33682'>λ</C> ~ <StillCaret /></Frame>
     <Frame duration={70}><C c='#d33682'>λ</C> ~ i<StillCaret /></Frame>
@@ -38,7 +38,7 @@ const TerminalInfo = ({ age = 21 }) => (
       {space(2)}twitter:{space(1)}<Str>"<TerminalLink href={'https://twitter.com/JannikWibker'}>@JannikWibker</TerminalLink>"</Str><br />
       {space(1)}{'}'}<br />
       {'}'}<br />
-      <C c='#d33682'>λ</C> ~ <Caret font_size={10} />
+      <C c='#d33682'>λ</C> ~ <Caret fontSize={10} />
     </Frame>
   </Keyframes>
 )
