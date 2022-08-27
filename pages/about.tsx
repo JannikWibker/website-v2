@@ -11,7 +11,7 @@ import Terminal from '../components/Terminal'
 import TerminalInfo from '../components/TerminalInfo'
 import Link from '../components/Link'
 
-const age = (birthday, today=new Date()) => {
+const age = (birthday: Date, today=new Date()) => {
   const age = today.getFullYear() - birthday.getFullYear()
   const months = today.getMonth() - birthday.getMonth()
   return (months < 0 || (months === 0 && today.getDate() < birthday.getDate()))
@@ -22,7 +22,7 @@ const age = (birthday, today=new Date()) => {
 const color = {
   bg: 'black',
   text: 'white'
-}
+} as const
 
 const H3 = styled('h3', {
   fontSize: '14px',
@@ -132,7 +132,9 @@ export async function getStaticProps() {
   return { props: { mdx } }
 }
 
-const AboutPage = ({ mdx }) => (
+type Unpromise<T> = T extends Promise<infer U> ? U : T
+
+const AboutPage: React.FC<{ mdx: Unpromise<ReturnType<typeof serialize>>}> = ({ mdx }) => (
   <About className="Page">
     <Globals pathname={'/about'} color={color.bg} />
     <Header

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import Link from 'next/link'
 import { styled } from '../stitches.config'
 import isAbsoluteUrl from '../utils/is-absolute-url'
@@ -24,8 +24,15 @@ const A = styled('a', {
   }
 })
 
-const MyLink = ({ href, name, children, isStyled=false, ignorePrefetch=false }) => {
-  const isAnchor = (href) => href.charAt(0) === '#'
+type LinkProps = PropsWithChildren<{
+  href?: string,
+  name?: string,
+  isStyled?: boolean,
+  ignorePrefetch?: boolean
+}>
+
+const MyLink: React.FC<LinkProps> = ({ href, name, children, isStyled=false, ignorePrefetch=false }) => {
+  const isAnchor = (href: string) => href.charAt(0) === '#'
 
   const child = name || children
 

@@ -11,7 +11,7 @@ import Link from '../components/Link'
 const color = {
   bg: 'white',
   text: 'black'
-}
+} as const
 
 const Projects = styled('div', {
   backgroundColor: color.bg,

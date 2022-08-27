@@ -1,6 +1,6 @@
 FROM node:16
 
-LABEL version="1.0.3"
+LABEL version="2.0.0"
 LABEL name="website-jannik"
 
 COPY package.json      /app/package.json

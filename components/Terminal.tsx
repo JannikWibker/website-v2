@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { styled } from '../stitches.config'
 
 const Title = styled('span', {
@@ -33,7 +33,7 @@ const ButtonMaximize = styled(Button, {
   backgroundColor: '#27c93f'
 })
 
-const BareContainer = ({ width, height }) => styled('div', {
+const BareContainer = ({ width, height }: { width: number, height: number }) => styled('div', {
   boxSizing: 'border-box',
   borderRadius: '6px',
   width: width + 'px',
@@ -85,7 +85,7 @@ const Border = styled('div', {
   }
 })
 
-const BareMain = ({ fontsize }) => styled('div', {
+const BareMain = ({ fontsize }: { fontsize: number }) => styled('div', {
   boxSizing: 'inherit',
   width: 'calc(100% - 24px)',
   height: 'calc(100% - 36px)',
@@ -107,7 +107,15 @@ const BareMain = ({ fontsize }) => styled('div', {
   }
 })
 
-const Terminal = ({ width=450, height=260, fontsize=10, color='black', title, children }) => {
+type TerminalProps = PropsWithChildren<{
+  title: string,
+  color?: 'white' | 'black',
+  fontsize?: number,
+  width?: number,
+  height?: number,
+}>
+
+const Terminal: React.FC<TerminalProps> = ({ width=450, height=260, fontsize=10, color='black', title, children }) => {
   const Container = BareContainer({ width: width || 450, height: height || 260 })
   const Main = BareMain({ fontsize: fontsize })
 

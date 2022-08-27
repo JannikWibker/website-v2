@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { styled } from '../stitches.config'
 import { Keyframes, Frame } from 'react-keyframes'
 
@@ -10,9 +10,9 @@ const TerminalLink = styled('a', {
   }
 })
 
-const space = (amount) => <span>{'\u00A0'.repeat(amount)}</span>
+const space = (amount: number) => <span>{'\u00A0'.repeat(amount)}</span>
 
-const C = ({ c, children }) => <span style={{color: c}}>{children}</span>
+const C: React.FC<PropsWithChildren<{ c: string }>> = ({ c, children }) => <span style={{color: c}}>{children}</span>
 
 // <Int></Int>
 const Int = styled('span', { color: '#2aa198' })
@@ -23,7 +23,7 @@ const Str = styled('span', { color: 'hsla(45, 100%, 45%, 1)' })
 // <Key></Key>
 const Key = styled('span', { color: '' })
 
-const StillCaret = ({ fontSize = 10, color = 'white' }) => {
+const StillCaret: React.FC<{ fontSize?: number, color?: string }> = ({ fontSize = 10, color = 'white' }) => {
 
   const StillCaretStyled = styled('span', {
     display: 'inline-block',

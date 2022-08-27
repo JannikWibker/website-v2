@@ -9,7 +9,7 @@ import Globals from '../components/Globals'
 const color = {
   bg: 'black',
   text: 'white'
-}
+} as const
 
 const Index = styled('div', {
   backgroundColor: color.bg,

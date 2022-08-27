@@ -57,7 +57,13 @@ const HeaderItem = styled('span', {
   }
 })
 
-const Header = ({ left, right, color }) => {
+type HeaderProps = {
+  left: { url: string, name: string }[],
+  right: { url: string, name: string }[],
+  color?: 'black' | 'white'
+}
+
+const Header: React.FC<HeaderProps> = ({ left, right, color }) => {
   return (
     <HeaderWrapper>
       <HeaderIcon>

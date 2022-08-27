@@ -99,27 +99,31 @@ const FooterItem = styled('div', {
   }
 })
 
-const Footer = ({ color = 'white' }) => {
+type FooterProps = {
+  color?: 'white' | 'black'
+}
+
+const Footer: React.FC<FooterProps> = ({ color } = { color: 'white' }) => {
   return (
     <Grid>
       <FooterWrapper className="container">
         <FooterItem color={color} className="four columns">
           <Link isStyled href={'https://twitter.com/JannikWibker'}>
-            <TwitterIcon labelledby="twitter_username" alt="Twitter" color={color} />
+            <TwitterIcon labelledby="twitter_username" />
             <span id="twitter_username">@JannikWibker</span>
           </Link>
         </FooterItem>
         <Offset />
         <FooterItem color={color} className="four columns">
           <Link isStyled href={'https://github.com/JannikWibker'}>
-            <GithubIcon labelledby="github_username" alt="Github" color={color} />
+            <GithubIcon labelledby="github_username" />
             <span id="github_username">JannikWibker</span>
           </Link>
         </FooterItem>
         <Offset />
         <FooterItem color={color} className="four columns">
           <Link isStyled href={'mailto:jannik@jannikwibker.dev'}>
-            <EmailIcon labelledby="email_adress" alt="E-mail" color={color} />
+            <EmailIcon labelledby="email_adress" />
             <span id="email_adress">jannik@jannikwibker.dev</span>
           </Link>
         </FooterItem>
