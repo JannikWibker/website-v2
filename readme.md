@@ -1,6 +1,6 @@
 # Personal website (v2)
 
-![](./screenshots/main.png)
+![](.github/assets/main.png)
 
 
 ## Building and running
