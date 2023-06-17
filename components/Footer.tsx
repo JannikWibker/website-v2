@@ -46,9 +46,6 @@ const FooterItem = styled('div', {
     height: '16px',
     margin: '-4px 4px'
   },
-  'a:hover svg path:not([fill])': {
-    fill: 'white'
-  },
   'a:hover span': {
     color: 'white'
   },
@@ -76,9 +73,6 @@ const FooterItem = styled('div', {
   varaints: {
     color: {
       white: {
-        'svg path:not([fill])': {
-          fill: 'white'
-        },
         '@media(min-width:750px)': {
           span: {
             color: 'white'
@@ -86,9 +80,6 @@ const FooterItem = styled('div', {
         }
       },
       black: {
-        'svg path:not([fill])': {
-          fill: 'black'
-        },
         '@media(min-width:750px)': {
           span: {
             color: 'black'
@@ -103,7 +94,7 @@ type FooterProps = {
   color?: 'white' | 'black'
 }
 
-const Footer: React.FC<FooterProps> = ({ color } = { color: 'white' }) => {
+const Footer: React.FC<FooterProps> = ({ color = 'white' }) => {
   return (
     <Grid>
       <FooterWrapper className="container">
