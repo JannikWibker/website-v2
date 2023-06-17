@@ -1,4 +1,5 @@
-import React, { PropsWithChildren } from 'react'
+import React from 'react'
+import type { PropsWithChildren } from 'react'
 import Link from 'next/link'
 import { styled } from '../stitches.config'
 import isAbsoluteUrl from '../utils/is-absolute-url'
@@ -25,22 +26,31 @@ const A = styled('a', {
 })
 
 type LinkProps = PropsWithChildren<{
-  href?: string,
-  name?: string,
-  isStyled?: boolean,
+  href?: string
+  name?: string
+  isStyled?: boolean
   ignorePrefetch?: boolean
 }>
 
-const MyLink: React.FC<LinkProps> = ({ href, name, children, isStyled=false, ignorePrefetch=false }) => {
+const MyLink: React.FC<LinkProps> = ({ href, name, children, isStyled = false, ignorePrefetch = false }) => {
   const isAnchor = (href: string) => href.charAt(0) === '#'
 
   const child = name || children
 
-  return (isAnchor(href || '')
-    ? <A styled={isStyled} href={href}>{child}</A>
-    : isAbsoluteUrl(href || '') || ignorePrefetch
-      ? <A styled={isStyled} href={href} target="_blank" rel="noreferrer noopener">{child}</A>
-      : <Link href={href || ''}><A href={href} styled={isStyled}>{child}</A></Link>
+  return isAnchor(href || '') ? (
+    <A styled={isStyled} href={href}>
+      {child}
+    </A>
+  ) : isAbsoluteUrl(href || '') || ignorePrefetch ? (
+    <A styled={isStyled} href={href} target="_blank" rel="noreferrer noopener">
+      {child}
+    </A>
+  ) : (
+    <Link href={href || ''}>
+      <A href={href} styled={isStyled}>
+        {child}
+      </A>
+    </Link>
   )
 }
 

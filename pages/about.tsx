@@ -11,12 +11,10 @@ import Terminal from '../components/Terminal'
 import TerminalInfo from '../components/TerminalInfo'
 import Link from '../components/Link'
 
-const age = (birthday: Date, today=new Date()) => {
+const age = (birthday: Date, today = new Date()) => {
   const age = today.getFullYear() - birthday.getFullYear()
   const months = today.getMonth() - birthday.getMonth()
-  return (months < 0 || (months === 0 && today.getDate() < birthday.getDate()))
-    ? age - 1
-    : age
+  return months < 0 || (months === 0 && today.getDate() < birthday.getDate()) ? age - 1 : age
 }
 
 const color = {
@@ -35,14 +33,6 @@ const H4 = styled('h4', {
   fontAlign: 'left'
 })
 
-const A = styled('a', {
-  color: 'unset',
-  textDecoration: 'none',
-  '> :hover': {
-    textDecoration: 'underline',
-  }
-})
-
 const P = styled('p', {
   fontSize: '13px',
   fontAlign: 'left'
@@ -50,13 +40,17 @@ const P = styled('p', {
 
 const LI = styled('li', {
   fontSize: '12px',
-  listStyleType: 'decimal',
+  listStyleType: 'decimal'
 })
 
 const hiddenMarkdown = null
 
 const components = {
-  h3: H3, h4: H4, a: Link, p: P, li: LI
+  h3: H3,
+  h4: H4,
+  a: Link,
+  p: P,
+  li: LI
 }
 
 const markdownSource = `
@@ -134,15 +128,23 @@ export async function getStaticProps() {
 
 type Unpromise<T> = T extends Promise<infer U> ? U : T
 
-const AboutPage: React.FC<{ mdx: Unpromise<ReturnType<typeof serialize>>}> = ({ mdx }) => (
+const AboutPage: React.FC<{ mdx: Unpromise<ReturnType<typeof serialize>> }> = ({ mdx }) => (
   <About className="Page">
-    <Globals pathname={'/about'} color={color.bg} />
+    <Globals pathname="/about" color={color.bg} />
     <Header
-      left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
-      right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
-      color={color.bg} />
+      left={[
+        { url: '/', name: 'home' },
+        { url: '/about', name: 'about' },
+        { url: '/projects', name: 'projects' }
+      ]}
+      right={[
+        { url: 'https://github.com/JannikWibker/website-v2', name: '(src)' },
+        { url: '/', name: 'Jannik Wibker' }
+      ]}
+      color={color.bg}
+    />
     <Main>
-      <Terminal title={'Terminal'}>
+      <Terminal title="Terminal">
         <TerminalInfo age={age(new Date('1999/10/20'))} />
       </Terminal>
       <br />

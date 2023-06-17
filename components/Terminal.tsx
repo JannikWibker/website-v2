@@ -1,4 +1,5 @@
-import React, { PropsWithChildren } from 'react'
+import React from 'react'
+import type { PropsWithChildren } from 'react'
 import { styled } from '../stitches.config'
 
 const Title = styled('span', {
@@ -33,26 +34,27 @@ const ButtonMaximize = styled(Button, {
   backgroundColor: '#27c93f'
 })
 
-const BareContainer = ({ width, height }: { width: number, height: number }) => styled('div', {
-  boxSizing: 'border-box',
-  borderRadius: '6px',
-  width: width + 'px',
-  height: height + 'px',
-  maxWidth: '90vw',
+const BareContainer = ({ width, height }: { width: number; height: number }) =>
+  styled('div', {
+    boxSizing: 'border-box',
+    borderRadius: '6px',
+    width: width + 'px',
+    height: height + 'px',
+    maxWidth: '90vw',
 
-  variants: {
-    color: {
-      black: {
-        backgroundColor: 'black',
-        color: 'white'
-      },
-      white: {
-        backgroundColor: 'white',
-        color: 'black'
+    variants: {
+      color: {
+        black: {
+          backgroundColor: 'black',
+          color: 'white'
+        },
+        white: {
+          backgroundColor: 'white',
+          color: 'black'
+        }
       }
     }
-  }
-})
+  })
 
 const Header = styled('div', {
   boxSizing: 'inherit',
@@ -60,7 +62,7 @@ const Header = styled('div', {
   width: '100%',
   height: '36px',
   maxWidth: '90vw',
-  textAlign: 'center',
+  textAlign: 'center'
 })
 
 const Border = styled('div', {
@@ -85,39 +87,40 @@ const Border = styled('div', {
   }
 })
 
-const BareMain = ({ fontsize }: { fontsize: number }) => styled('div', {
-  boxSizing: 'inherit',
-  width: 'calc(100% - 24px)',
-  height: 'calc(100% - 36px)',
-  margin: '36px 12px 0 12px',
-  textAlign: 'left',
-  fontSize: (fontsize) + 'px',
-  lineHeight: (fontsize + 1) + 'px',
-  fontFamily: 'Menlo, DejaVu Sans Mono, Lucida Console, monospace, sans-serif',
+const BareMain = ({ fontsize }: { fontsize: number }) =>
+  styled('div', {
+    boxSizing: 'inherit',
+    width: 'calc(100% - 24px)',
+    height: 'calc(100% - 36px)',
+    margin: '36px 12px 0 12px',
+    textAlign: 'left',
+    fontSize: fontsize + 'px',
+    lineHeight: fontsize + 1 + 'px',
+    fontFamily: 'Menlo, DejaVu Sans Mono, Lucida Console, monospace, sans-serif',
 
-  variants: {
-    color: {
-      black: {
-        color: 'white'
-      },
-      white: {
-        color: 'black'
+    variants: {
+      color: {
+        black: {
+          color: 'white'
+        },
+        white: {
+          color: 'black'
+        }
       }
     }
-  }
-})
+  })
 
 type TerminalProps = PropsWithChildren<{
-  title: string,
-  color?: 'white' | 'black',
-  fontsize?: number,
-  width?: number,
-  height?: number,
+  title: string
+  color?: 'white' | 'black'
+  fontsize?: number
+  width?: number
+  height?: number
 }>
 
-const Terminal: React.FC<TerminalProps> = ({ width=450, height=260, fontsize=10, color='black', title, children }) => {
+const Terminal: React.FC<TerminalProps> = ({ width = 450, height = 260, fontsize = 10, color = 'black', title, children }) => {
   const Container = BareContainer({ width: width || 450, height: height || 260 })
-  const Main = BareMain({ fontsize: fontsize })
+  const Main = BareMain({ fontsize })
 
   return (
     <Container color={color} className="Terminal">
@@ -128,9 +131,7 @@ const Terminal: React.FC<TerminalProps> = ({ width=450, height=260, fontsize=10,
           <ButtonMaximize />
           <Title>{title}</Title>
         </Header>
-        <Main color={color}>
-          {children}
-        </Main>
+        <Main color={color}>{children}</Main>
       </Border>
     </Container>
   )

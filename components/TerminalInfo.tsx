@@ -35,7 +35,6 @@ const TerminalInfo = ({ age }: { age: number }) => (
       {space(2)}email:{space(2)}<Str>{'"'}<TerminalLink href={'mailto:jannik@jannikwibker.dev'}>jannik@jannikwibker.dev</TerminalLink>{'"'}</Str>,<br />
       {space(2)}github:{space(1)}<Str>{'"'}<TerminalLink href={'https://github.com/JannikWibker'}>JannikWibker</TerminalLink>{'"'}</Str>,<br />
       {space(2)}website:{space(1)}<Str>{'"'}<TerminalLink href={'https://jannikwibker.dev'}>jannikwibker.dev</TerminalLink>{'"'}</Str>,<br />
-      {space(2)}twitter:{space(1)}<Str>{'"'}<TerminalLink href={'https://twitter.com/JannikWibker'}>@JannikWibker</TerminalLink>{'"'}</Str><br />
       {space(1)}{'}'}<br />
       {'}'}<br />
       <C c='#d33682'>λ</C> ~ <Caret fontSize={10} />

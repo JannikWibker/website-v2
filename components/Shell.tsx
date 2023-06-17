@@ -1,4 +1,5 @@
-import React, { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
+import React from 'react'
 import { styled } from '../stitches.config'
 import { Keyframes, Frame } from 'react-keyframes'
 
@@ -25,6 +26,7 @@ const Key = styled('span', { color: '' })
 
 const StillCaret: React.FC<{ fontSize?: number, color?: string }> = ({ fontSize = 10, color = 'white' }) => {
 
+const StillCaret: React.FC<{ fontSize?: number; color?: string }> = ({ fontSize = 10, color = 'white' }) => {
   const StillCaretStyled = styled('span', {
     display: 'inline-block',
     width: 4,
@@ -36,7 +38,7 @@ const StillCaret: React.FC<{ fontSize?: number, color?: string }> = ({ fontSize 
   return <StillCaretStyled />
 }
 
-const Caret = ({speed = 400, fontSize = 10}) => (
+const Caret = ({ speed = 400, fontSize = 10 }) => (
   <Keyframes loop={true}>
     <Frame duration={speed}>&nbsp;</Frame>
     <Frame duration={speed}>
@@ -45,6 +47,4 @@ const Caret = ({speed = 400, fontSize = 10}) => (
   </Keyframes>
 )
 
-export {
-  TerminalLink, space, C, Int, Str, Key, StillCaret, Caret
-}
+export { TerminalLink, space, C, Int, Str, Key, StillCaret, Caret }

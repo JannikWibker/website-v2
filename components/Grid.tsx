@@ -13,7 +13,7 @@ const Grid = styled('div', {
   '.column, .columns': {
     width: '100%',
     float: 'left',
-    boxSizing: 'border-box',
+    boxSizing: 'border-box'
   },
 
   '@media(min-width:400px)': {
@@ -27,13 +27,13 @@ const Grid = styled('div', {
     '.container': {
       width: '80%',
       paddingTop: '20px',
-      paddingBottom: '20px',
+      paddingBottom: '20px'
     },
     '.column, .columns': {
-      marginLeft: '4%',
+      marginLeft: '4%'
     },
     '.column:first-child, .columns:first-child': {
-      marginLeft: '0',
+      marginLeft: '0'
     }
   },
 

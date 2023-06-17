@@ -12,10 +12,7 @@ export default function MyDocument() {
             padding-left: calc(100vw - 100%); /* dafuq? */
           }
         `}</style>
-        <style
-          id="stitches"
-          dangerouslySetInnerHTML={{ __html: getCssText() }}
-        />
+        <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
       </Head>
       <body>
         <Main />

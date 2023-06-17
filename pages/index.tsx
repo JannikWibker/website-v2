@@ -17,17 +17,25 @@ const Index = styled('div', {
 })
 
 const P = styled('p', {
- fontSize: '24px',
- paddingTop: '32px'
+  fontSize: '24px',
+  paddingTop: '32px'
 })
 
 const IndexPage = () => (
   <Index className="Page">
-    <Globals pathname={'/'} color={color.bg} />
+    <Globals pathname="/" color={color.bg} />
     <Header
-      left={[{url: '/', name: 'home'}, {url: '/about', name: 'about'}, {url: '/projects', name: 'projects'}]}
-      right={[{url: 'https://github.com/JannikWibker/website-v2', name: '(src)'}, {url: '/', name: 'Jannik Wibker'}]}
-      color={color.bg} />
+      left={[
+        { url: '/', name: 'home' },
+        { url: '/about', name: 'about' },
+        { url: '/projects', name: 'projects' }
+      ]}
+      right={[
+        { url: 'https://github.com/JannikWibker/website-v2', name: '(src)' },
+        { url: '/', name: 'Jannik Wibker' }
+      ]}
+      color={color.bg}
+    />
     <Main>
       <P>Hi, im Jannik</P>
     </Main>
