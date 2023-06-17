@@ -1,7 +1,7 @@
 # **build stage*
-FROM node:18 as build
+FROM node:20 as build
 
-LABEL version="2.0.0"
+LABEL version="2.1.0"
 LABEL name="website-jannik"
 
 COPY package.json      /app/package.json
@@ -10,12 +10,12 @@ COPY package-lock.json /app/package-lock.json
 WORKDIR /app
 
 # install all dependencies via npm
-RUN npm ci
+RUN npx pnpm@latest install
 
 COPY . /app
 
 # build step
-RUN npm run build
+RUN npx pnpm@latest build
 
 # **execution stage**
 FROM gcr.io/distroless/nodejs:18
