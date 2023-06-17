@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 
+import '../styles/globals.css'
 import '../styles/print.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
