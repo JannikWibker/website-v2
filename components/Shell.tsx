@@ -3,28 +3,24 @@ import React from 'react'
 import { styled } from '../stitches.config'
 import { Keyframes, Frame } from 'react-keyframes'
 
-const TerminalLink = styled('a', {
-  color: 'unset',
-  textDecoration: 'none',
-  ':hover': {
-    textDecoration: 'underline'
-  }
-})
+const TerminalLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  <a href={href} className="no-underline hover:underline" style={{ color: 'unset' }}>
+    {children}
+  </a>
+)
 
 const space = (amount: number) => <span>{'\u00A0'.repeat(amount)}</span>
 
-const C: React.FC<PropsWithChildren<{ c: string }>> = ({ c, children }) => <span style={{color: c}}>{children}</span>
+const C = ({ c, children }: PropsWithChildren<{ c: string }>) => <span style={{ color: c }}>{children}</span>
 
 // <Int></Int>
-const Int = styled('span', { color: '#2aa198' })
+const Int = ({ children }: PropsWithChildren) => <span className="text-[#2aa198]">{children}</span>
 
 // <Str></Str>
-const Str = styled('span', { color: 'hsla(45, 100%, 45%, 1)' })
+const Str = ({ children }: PropsWithChildren) => <span className="text-[hsla(45,100%,45%,1)]">{children}</span>
 
 // <Key></Key>
-const Key = styled('span', { color: '' })
-
-const StillCaret: React.FC<{ fontSize?: number, color?: string }> = ({ fontSize = 10, color = 'white' }) => {
+const Key = ({ children }: PropsWithChildren) => <span className="text-white">{children}</span>
 
 const StillCaret: React.FC<{ fontSize?: number; color?: string }> = ({ fontSize = 10, color = 'white' }) => {
   const StillCaretStyled = styled('span', {

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { styled } from '../stitches.config'
 import isAbsoluteUrl from '../utils/is-absolute-url'
 
-const A = styled('a', {
+const A = styled(Link, {
   textDecoration: 'none',
   color: 'inherit',
 
@@ -38,19 +38,17 @@ const MyLink: React.FC<LinkProps> = ({ href, name, children, isStyled = false, i
   const child = name || children
 
   return isAnchor(href || '') ? (
-    <A styled={isStyled} href={href}>
+    <A styled={isStyled} href={href || ''}>
       {child}
     </A>
   ) : isAbsoluteUrl(href || '') || ignorePrefetch ? (
-    <A styled={isStyled} href={href} target="_blank" rel="noreferrer noopener">
+    <A styled={isStyled} href={href || ''} target="_blank" rel="noreferrer noopener">
       {child}
     </A>
   ) : (
-    <Link href={href || ''}>
-      <A href={href} styled={isStyled}>
-        {child}
-      </A>
-    </Link>
+    <A href={href || ''} styled={isStyled}>
+      {child}
+    </A>
   )
 }
 

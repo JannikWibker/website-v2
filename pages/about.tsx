@@ -1,7 +1,5 @@
 import React from 'react'
 import { styled } from '../stitches.config'
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -9,95 +7,14 @@ import Main from '../components/Main'
 import Globals from '../components/Globals'
 import Terminal from '../components/Terminal'
 import TerminalInfo from '../components/TerminalInfo'
-import Link from '../components/Link'
+import { age } from '../utils/age'
 
-const age = (birthday: Date, today = new Date()) => {
-  const age = today.getFullYear() - birthday.getFullYear()
-  const months = today.getMonth() - birthday.getMonth()
-  return months < 0 || (months === 0 && today.getDate() < birthday.getDate()) ? age - 1 : age
-}
+import Page from '../components/about-page.mdx'
 
 const color = {
   bg: 'black',
   text: 'white'
 } as const
-
-const H3 = styled('h3', {
-  fontSize: '14px',
-  fontAlign: 'left',
-  textDecoration: 'underline'
-})
-
-const H4 = styled('h4', {
-  fontSize: '13px',
-  fontAlign: 'left'
-})
-
-const P = styled('p', {
-  fontSize: '13px',
-  fontAlign: 'left'
-})
-
-const LI = styled('li', {
-  fontSize: '12px',
-  listStyleType: 'decimal'
-})
-
-const hiddenMarkdown = null
-
-const components = {
-  h3: H3,
-  h4: H4,
-  a: Link,
-  p: P,
-  li: LI
-}
-
-const markdownSource = `
-### who am I?
-
-Hi, im Jannik and like to program all kind of things
-
-### personal info
-- name: Jannik Wibker
-- age: ${age(new Date('1999/10/20'))}
-- location: Baden-Württemberg, Germany
-- languages: english, german, (a bit of) french, (super tiny bit of) mandarin
-
-### technical skills
-
-#### programming languages:
-- **javascript**
-- **typescript**
-- java
-- kotlin
-- c/c++
-- lua
-- python
-- ruby
-- nim
-- php
-
-#### web stuff & technologies:
-- javascript
-- typescript
-- [react](https://reactjs.org)
-- [nodejs](https://nodejs.org)
-- html & css
-
-#### qualifications that are pretty much mandatory
-- linux knowledge
-- mac os x knowledge
-- windows knowledge
-- latex
-- microsoft office
-
-### programming related interests:
-- **web development**
-- compiler design
-- linux, window managers & scripting
-- mathematics
-`
 
 const About = styled('div', {
   backgroundColor: color.bg,
@@ -111,24 +28,10 @@ const About = styled('div', {
 
 const Info = styled('div', {
   maxWidth: '90vw',
-  width: '450px',
-  margin: 'auto',
-  textAlign: 'left'
+  width: '450px'
 })
 
-const HiddenUnlessPrint = styled('div', {
-  display: 'none'
-})
-
-export async function getStaticProps() {
-  const source = markdownSource
-  const mdx = await serialize(source)
-  return { props: { mdx } }
-}
-
-type Unpromise<T> = T extends Promise<infer U> ? U : T
-
-const AboutPage: React.FC<{ mdx: Unpromise<ReturnType<typeof serialize>> }> = ({ mdx }) => (
+const AboutPage = () => (
   <About className="Page">
     <Globals pathname="/about" color={color.bg} />
     <Header
@@ -148,9 +51,8 @@ const AboutPage: React.FC<{ mdx: Unpromise<ReturnType<typeof serialize>> }> = ({
         <TerminalInfo age={age(new Date('1999/10/20'))} />
       </Terminal>
       <br />
-      <Info className="info">
-        <MDXRemote {...mdx} components={components} />
-        <HiddenUnlessPrint className="hiddenUnlessPrint">{hiddenMarkdown}</HiddenUnlessPrint>
+      <Info className="info m-auto text-left">
+        <Page />
       </Info>
     </Main>
     <Footer color={color.bg} />
