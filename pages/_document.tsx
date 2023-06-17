@@ -6,7 +6,6 @@ export default function MyDocument() {
     <Html lang="en">
       <Head>
         <meta name="google-site-verification" content="pRHqspliCrXCKj_H1ivjcAIVL-r9_vTwX6bDg_IIigM" />
-        <link rel="stylesheet" media="print" href="/static/css/print.css" />
         <style>{`
           .Page {
             padding-left: calc(100vw - 100%); /* dafuq? */
