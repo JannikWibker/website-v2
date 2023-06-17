@@ -6,11 +6,6 @@ export default function MyDocument() {
     <Html lang="en">
       <Head>
         <meta name="google-site-verification" content="pRHqspliCrXCKj_H1ivjcAIVL-r9_vTwX6bDg_IIigM" />
-        <style>{`
-          .Page {
-            padding-left: calc(100vw - 100%); /* dafuq? */
-          }
-        `}</style>
         <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
       </Head>
       <body>
