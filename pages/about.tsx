@@ -17,10 +17,6 @@ const color = {
 } as const
 
 const About = styled('div', {
-  backgroundColor: color.bg,
-  color: color.text,
-  fontFamily: 'Menlo, DejaVu Sans Mono, Lucida Console, monospace, sans-serif',
-
   '.Terminal': {
     margin: 'auto'
   }
@@ -32,7 +28,7 @@ const Info = styled('div', {
 })
 
 const AboutPage = () => (
-  <About className="Page">
+  <About className={`bg-${color.bg} text-${color.text} font-mono`}>
     <Globals pathname="/about" color={color.bg} />
     <Header
       left={[

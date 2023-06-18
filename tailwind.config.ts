@@ -7,7 +7,8 @@ export default {
     extend: {
       colors: {}, // TODO: add some colors here!
       fontFamily: {
-        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segeo UI', ...defaultTheme.fontFamily.sans]
+        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segeo UI', ...defaultTheme.fontFamily.sans],
+        mono: ['Menlo', ...defaultTheme.fontFamily.mono]
       }
     }
   },

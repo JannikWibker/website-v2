@@ -1,140 +1,40 @@
 import React from 'react'
 import type { PropsWithChildren } from 'react'
-import { styled } from '../stitches.config'
-
-const Title = styled('span', {
-  position: 'absolute',
-  top: '12px',
-  textAlign: 'center',
-  fontSize: '12px',
-  marginLeft: '-26.5px'
-})
-
-const Button = styled('span', {
-  position: 'absolute',
-  width: '12px',
-  height: '12px',
-  borderRadius: '50%',
-  top: '50%',
-  transform: 'translateY(-50%)'
-})
-
-const ButtonClose = styled(Button, {
-  left: '13px',
-  backgroundColor: '#ff5f56'
-})
-
-const ButtonMinimize = styled(Button, {
-  left: '33px',
-  backgroundColor: '#ffbd2e'
-})
-
-const ButtonMaximize = styled(Button, {
-  left: '53px',
-  backgroundColor: '#27c93f'
-})
-
-const BareContainer = ({ width, height }: { width: number; height: number }) =>
-  styled('div', {
-    boxSizing: 'border-box',
-    borderRadius: '6px',
-    width: width + 'px',
-    height: height + 'px',
-    maxWidth: '90vw',
-
-    variants: {
-      color: {
-        black: {
-          backgroundColor: 'black',
-          color: 'white'
-        },
-        white: {
-          backgroundColor: 'white',
-          color: 'black'
-        }
-      }
-    }
-  })
-
-const Header = styled('div', {
-  boxSizing: 'inherit',
-  position: 'absolute',
-  width: '100%',
-  height: '36px',
-  maxWidth: '90vw',
-  textAlign: 'center'
-})
-
-const Border = styled('div', {
-  boxSizing: 'inherit',
-  position: 'relative',
-  borderRadius: '5px',
-  width: '100%',
-  height: '100%',
-  maxWidth: '90vw',
-
-  variants: {
-    color: {
-      black: {
-        backgroundColor: 'black',
-        border: '1px solid #666'
-      },
-      white: {
-        backgroundColor: 'white',
-        border: '1px solid #ccc'
-      }
-    }
-  }
-})
-
-const BareMain = ({ fontsize }: { fontsize: number }) =>
-  styled('div', {
-    boxSizing: 'inherit',
-    width: 'calc(100% - 24px)',
-    height: 'calc(100% - 36px)',
-    margin: '36px 12px 0 12px',
-    textAlign: 'left',
-    fontSize: fontsize + 'px',
-    lineHeight: fontsize + 1 + 'px',
-    fontFamily: 'Menlo, DejaVu Sans Mono, Lucida Console, monospace, sans-serif',
-
-    variants: {
-      color: {
-        black: {
-          color: 'white'
-        },
-        white: {
-          color: 'black'
-        }
-      }
-    }
-  })
+import clsx from 'clsx'
 
 type TerminalProps = PropsWithChildren<{
   title: string
-  color?: 'white' | 'black'
-  fontsize?: number
+  variant?: 'light' | 'dark'
   width?: number
   height?: number
 }>
 
-const Terminal: React.FC<TerminalProps> = ({ width = 450, height = 260, fontsize = 10, color = 'black', title, children }) => {
-  const Container = BareContainer({ width: width || 450, height: height || 260 })
-  const Main = BareMain({ fontsize })
-
-  return (
-    <Container color={color} className="Terminal">
-      <Border color={color}>
-        <Header>
-          <ButtonClose />
-          <ButtonMinimize />
-          <ButtonMaximize />
-          <Title>{title}</Title>
-        </Header>
-        <Main color={color}>{children}</Main>
-      </Border>
-    </Container>
-  )
-}
+const Terminal: React.FC<TerminalProps> = ({ width = 450, height = 280, variant = 'dark', title, children }) => (
+  <div className={clsx('Terminal', 'max-w-[90vw]')} style={{ width: width + 'px', height: height + 'px' }}>
+    <div
+      className={clsx('relative w-full h-full rounded-md border', {
+        'bg-black text-white border-[#666]': variant === 'dark',
+        'bg-white text-black border-[#ccc]': variant === 'light'
+      })}
+    >
+      <div className="relative w-full h-9">
+        <div className={clsx('Terminal-Buttons', 'flex gap-2 h-full items-center ml-[13px]')}>
+          <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+          <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+          <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+        </div>
+        <div className="absolute w-full top-2.5 text-center text-xs leading-[inherit]">{title}</div>
+      </div>
+      <div
+        className={clsx('font-mono w-[100%-24px] h-[100%-36px-24px] m-3 text-[10px] leading-[12px]', {
+          'text-white': variant === 'dark',
+          'text-black': variant === 'light'
+        })}
+      >
+        {children}
+      </div>
+    </div>
+  </div>
+)
 
 export default Terminal

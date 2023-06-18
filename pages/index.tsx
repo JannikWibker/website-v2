@@ -36,7 +36,7 @@ const IndexPage = () => (
       ]}
       color={color.bg}
     />
-    <Main>
+    <Main className="text-center">
       <P>Hi, im Jannik</P>
     </Main>
     <Footer color={color.bg} />

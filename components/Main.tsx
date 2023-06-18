@@ -3,7 +3,6 @@ import { styled } from '../stitches.config'
 const Main = styled('main', {
   minHeight: 'calc(100vh - 110px - 72px)',
   fontSize: '14px',
-  textAlign: 'center',
   fontWeight: '300',
   overflow: 'auto',
 

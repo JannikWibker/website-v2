@@ -32,7 +32,6 @@ const FooterItem = styled('div', {
   textAlign: 'center',
   width: '100%',
   height: '32px',
-  fontFamily: 'Menlo, DejaVu Sans Mono, Lucida Console, monospace, sans-serif',
   fontWeight: '100',
   fontSize: '12px',
   lineHeight: '32px',
@@ -98,21 +97,21 @@ const Footer: React.FC<FooterProps> = ({ color = 'white' }) => {
   return (
     <Grid>
       <FooterWrapper className="container">
-        <FooterItem color={color} className="four columns">
+        <FooterItem color={color} className="four columns font-mono">
           <Link isStyled href="https://twitter.com/JannikWibker">
             <TwitterIcon labelledby="twitter_username" />
             <span id="twitter_username">@JannikWibker</span>
           </Link>
         </FooterItem>
         <Offset />
-        <FooterItem color={color} className="four columns">
+        <FooterItem color={color} className="four columns font-mono">
           <Link isStyled href="https://github.com/JannikWibker">
             <GithubIcon labelledby="github_username" />
             <span id="github_username">JannikWibker</span>
           </Link>
         </FooterItem>
         <Offset />
-        <FooterItem color={color} className="four columns">
+        <FooterItem color={color} className="four columns font-mono">
           <Link isStyled href="mailto:jannik@jannikwibker.dev">
             <EmailIcon labelledby="email_adress" />
             <span id="email_adress">jannik@jannikwibker.dev</span>
