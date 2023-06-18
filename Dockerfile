@@ -4,8 +4,8 @@ FROM node:20 as build
 LABEL version="2.1.0"
 LABEL name="website-jannik"
 
-COPY package.json      /app/package.json
-COPY package-lock.json /app/package-lock.json
+COPY package.json   /app/package.json
+COPY pnpm-lock.yaml /app/pnpm-lock.yaml
 
 WORKDIR /app
 
