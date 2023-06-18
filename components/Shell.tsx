@@ -1,6 +1,5 @@
 import type { PropsWithChildren } from 'react'
 import React from 'react'
-import { styled } from '../stitches.config'
 import { Keyframes, Frame } from 'react-keyframes'
 
 const TerminalLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
@@ -22,16 +21,8 @@ const Str = ({ children }: PropsWithChildren) => <span className="text-[hsla(45,
 // <Key></Key>
 const Key = ({ children }: PropsWithChildren) => <span className="text-white">{children}</span>
 
-const StillCaret: React.FC<{ fontSize?: number; color?: string }> = ({ fontSize = 10, color = 'white' }) => {
-  const StillCaretStyled = styled('span', {
-    display: 'inline-block',
-    width: 4,
-    height: fontSize,
-    backgroundColor: color,
-    marginBottom: '-2px'
-  })
-
-  return <StillCaretStyled />
+const StillCaret: React.FC<{ fontSize?: number; color?: string }> = ({ color = 'white' }) => {
+  return <span className="inline-block w-1 h-2.5 -mb-0.5" style={{ backgroundColor: color }} />
 }
 
 const Caret = ({ speed = 400, fontSize = 10 }) => (

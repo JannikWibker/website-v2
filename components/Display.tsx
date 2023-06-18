@@ -4,7 +4,6 @@ const Display = styled('div', {
   maxWidth: '80vw',
   minWidth: '20vw',
   width: '512px',
-  textAlign: 'left',
   margin: 'auto'
 })
 

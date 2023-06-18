@@ -1,5 +1,4 @@
 import React from 'react'
-import { styled } from '../stitches.config'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -16,19 +15,8 @@ const color = {
   text: 'white'
 } as const
 
-const About = styled('div', {
-  '.Terminal': {
-    margin: 'auto'
-  }
-})
-
-const Info = styled('div', {
-  maxWidth: '90vw',
-  width: '450px'
-})
-
 const AboutPage = () => (
-  <About className={`bg-${color.bg} text-${color.text} font-mono`}>
+  <div className={`Page bg-${color.bg} text-${color.text} font-mono`}>
     <Globals pathname="/about" color={color.bg} />
     <Header
       left={[
@@ -42,17 +30,17 @@ const AboutPage = () => (
       ]}
       color={color.bg}
     />
-    <Main>
+    <Main className="[&>.Terminal]:m-auto">
       <Terminal title="Terminal">
         <TerminalInfo age={age(new Date('1999/10/20'))} />
       </Terminal>
       <br />
-      <Info className="info m-auto text-left">
+      <div className="info m-auto text-left w-[450px] max-w-[90vw]">
         <Page />
-      </Info>
+      </div>
     </Main>
     <Footer color={color.bg} />
-  </About>
+  </div>
 )
 
 export default AboutPage

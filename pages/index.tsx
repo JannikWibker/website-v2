@@ -1,28 +1,18 @@
 import React from 'react'
-import { styled } from '../stitches.config'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Main from '../components/Main'
 import Globals from '../components/Globals'
+import { clsx } from 'clsx'
 
 const color = {
   bg: 'black',
   text: 'white'
 } as const
 
-const Index = styled('div', {
-  backgroundColor: color.bg,
-  color: color.text
-})
-
-const P = styled('p', {
-  fontSize: '24px',
-  paddingTop: '32px'
-})
-
 const IndexPage = () => (
-  <Index className="Page">
+  <div className={clsx(`Page bg-${color.bg} text-${color.text}`)}>
     <Globals pathname="/" color={color.bg} />
     <Header
       left={[
@@ -37,10 +27,10 @@ const IndexPage = () => (
       color={color.bg}
     />
     <Main className="text-center">
-      <P>Hi, im Jannik</P>
+      <p className="pt-8 text-2xl">Hi, im Jannik</p>
     </Main>
     <Footer color={color.bg} />
-  </Index>
+  </div>
 )
 
 export default IndexPage
