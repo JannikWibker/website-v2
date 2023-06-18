@@ -4,7 +4,6 @@ import { styled } from '../stitches.config'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Main from '../components/Main'
-import Display from '../components/Display'
 import Globals from '../components/Globals'
 import Link from '../components/Link'
 
@@ -12,6 +11,13 @@ const color = {
   bg: 'white',
   text: 'black'
 } as const
+
+const Display = styled('div', {
+  maxWidth: '80vw',
+  minWidth: '20vw',
+  width: '512px',
+  margin: 'auto'
+})
 
 const Projects = styled('div', {
   backgroundColor: color.bg,

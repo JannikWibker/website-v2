@@ -8,7 +8,7 @@ import Terminal from '../components/Terminal'
 import TerminalInfo from '../components/TerminalInfo'
 import { age } from '../utils/age'
 
-import Page from '../components/about-page.mdx'
+import Page from '../content/about.mdx'
 
 const color = {
   bg: 'black',
