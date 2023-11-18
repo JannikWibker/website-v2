@@ -1,9 +1,6 @@
 # **build stage*
 FROM node:18 as build
 
-LABEL version="2.1.0"
-LABEL name="website-jannik"
-
 COPY package.json   /app/package.json
 COPY pnpm-lock.yaml /app/pnpm-lock.yaml
 
